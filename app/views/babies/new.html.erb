@@ -4,8 +4,8 @@
   <h2>Babies New Page</h2>
 
   <%= bootstrap_form_for @baby do |f| %>
-    <%= f.text_field :name, :placeholder =>"Enter a baby" %>
-    <%= f.text_field :birthday, :placeholder => "Enter a birthday" %>
+    <%= f.text_field :name, :placeholder =>"Baby's Name" %>
+    <%= f.text_field :birthday, :placeholder => "Enter a birthday (ex. 'March 22, 2014')" %>
     <%= f.submit "Create baby", :class => "btn btn-primary" %>
   <% end %>
 
