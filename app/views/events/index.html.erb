@@ -3,6 +3,8 @@
 
   <h2>Events Index Page</h2>
 
+  <%= link_to " Make an Event", new_baby_event_path, :class => "btn btn-success glyphicon glyphicon-hand-right" %>
+
   <% @events.each do |event| %>
     <li><%= event.topic %></li>
   <% end %>
