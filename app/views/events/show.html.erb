@@ -7,7 +7,7 @@
 
   <div class="container">
     <p> <%=@event.body%> </p>
-    <p> <%=@event.date%> </p>
+    <p> <%=@event.date.strftime("%A, %B %e, %Y")%> </p>
   </div>
 
 </div>
