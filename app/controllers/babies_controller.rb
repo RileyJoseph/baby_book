@@ -1,22 +1,29 @@
 class BabiesController < ApplicationController
 
+  before_action :is_authenticated?
+
+
   def index
-    @babies = Baby.all
+    @babies = current_user.babies
   end
+
 
   def new
     @baby = Baby.new
   end
+
 
   def show
     p params[:id]
     @baby = Baby.find(params[:id])
   end
 
+
   def create
-    @baby = Baby.create(baby_params)
+    @baby = current_user.babies.create(baby_params)
     redirect_to @baby
   end
+
 
   private
 

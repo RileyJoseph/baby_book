@@ -1,29 +1,65 @@
 class EventsController < ApplicationController
 
-  def index
-    # @events = Event.all
-    @baby = Baby.find(params[:baby_id])
-    @events = Baby.find(params[:baby_id]).events
-  end
+  before_action :is_authenticated?
 
-  def show
-    @baby = Baby.find(params[:baby_id])
-    @event = Event.find(params[:id])
-  end
 
-  def new
-    @event = Event.new
-    @baby = Baby.find(params[:baby_id])
-  end
+    def index
+      baby_id = (params[:baby_id]).to_i
 
-  def create
-    @baby = Baby.find(params[:baby_id])
-    # render :json => @baby
+      if current_user.babies.ids.include?(baby_id)
+        @baby = Baby.find(params[:baby_id])
+        @events = Baby.find(params[:baby_id]).events
+      else
+        flash[:danger] = "You cannot view this page"
+        redirect_to root_path
+      end
 
-    @baby.events.create(event_params)
-    # @event = Event.create(event_params)
-    redirect_to baby_events_path
-  end
+    end
+
+
+    def show
+      baby_id = (params[:baby_id]).to_i
+
+      if current_user.babies.ids.include?(baby_id)
+        @baby = Baby.find(params[:baby_id])
+        @event = Event.find(params[:id])
+      else
+        flash[:danger] = "You cannot view this page"
+        redirect_to root_path
+      end
+
+    end
+
+
+    def new
+      baby_id = (params[:baby_id]).to_i
+
+      if current_user.babies.ids.include?(baby_id)
+        @event = Event.new
+        @baby = Baby.find(params[:baby_id])
+      else
+        flash[:danger] = "You cannot view this page"
+        redirect_to root_path
+      end
+
+    end
+
+
+    def create
+      baby_id = (params[:baby_id]).to_i
+
+      if current_user.babies.ids.include?(baby_id)
+        @baby = Baby.find(params[:baby_id])
+        @baby.events.create(event_params)
+        redirect_to baby_events_path
+      else
+        flash[:danger] = "You cannot view this page"
+        redirect_to root_path
+      end
+
+    end
+
+
 
   private
 
