@@ -3,10 +3,11 @@
 
   <h2>Meaure your baby!</h2>
 
-  <%= bootstrap_form_for @stat do |f| %>
+  <%= bootstrap_form_for [@baby, @stat] do |f| %>
     <%= f.text_field :height, :placeholder =>"Enter your baby's height" %>
     <%= f.text_field :weight, :placeholder => "Enter your baby's weight" %>
-    <%= f.submit "Update", :class => "btn btn-primary" %>
+    <%= f.text_field :date, :placeholder => "Date Recorded" %>
+    <%= f.submit "Update", :class => "btn btn-info" %>
   <% end %>
 
   </div>

@@ -3,15 +3,17 @@
 
   <h2>My Baby's Progress</h2>
 
-  <%= link_to "My ", new_baby_stat_path, :class => "btn btn-success glyphicon glyphicon-hand-right" %>
+<% @stats.each do |stat| %>
+  <p><%= stat.date %></p>
+  <p><%= stat.weight %></p>
+  <p><%= stat.height %></p>
+<% end %>
 
-  <% @stat.each do |s| %>
 
-  <p><%= s.weight %></p>
-  <p><%= s.height %></p>
+  <%= link_to "Create an Update", new_baby_stat_path, :class => "btn btn-success glyphicon glyphicon-hand-right" %>
 
-    <li><%= link_to stat.date, baby_stat_path(stat) %></li>
-  <% end %>
+
+
 
   </div>
 </div>
