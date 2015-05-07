@@ -1,25 +1,64 @@
 class StatsController < ApplicationController
 
+  before_action :is_authenticated?
+
+
   def index
-    @baby = Baby.find(params[:baby_id])
-    @stats = Baby.find(params[:baby_id]).stats
+    baby_id = (params[:baby_id]).to_i
+
+    if current_user.babies.ids.include?(baby_id)
+      @baby = Baby.find(params[:baby_id])
+      @stats = Baby.find(params[:baby_id]).stats
+    else
+      flash[:danger] = "You cannot view this page"
+      redirect_to root_path
+    end
+
   end
+
 
   def new
-    @stat = Stat.new
-    @baby = Baby.find(params[:baby_id])
+    baby_id = (params[:baby_id]).to_i
+
+    if current_user.babies.ids.include?(baby_id)
+      @stat = Stat.new
+      @baby = Baby.find(params[:baby_id])
+    else
+      flash[:danger] = "You cannot view this page"
+      redirect_to root_path
+    end
+
   end
+
 
   def show
-    @stat = Stat.find(params[:id])
+    baby_id = (params[:baby_id]).to_i
+
+    if current_user.babies.ids.include?(baby_id)
+      @stat = Stat.find(params[:id])
+    else
+      flash[:danger] = "You cannot view this page"
+      redirect_to root_path
+    end
+
   end
 
+
   def create
-    @baby = Baby.find(params[:baby_id])
-    @stat = Stat.create(stat_params)
-    @baby.stats << @stat
-    redirect_to baby_stats_path
+    baby_id = (params[:baby_id]).to_i
+
+    if current_user.babies.ids.include?(baby_id)
+      @baby = Baby.find(params[:baby_id])
+      @stat = Stat.create(stat_params)
+      @baby.stats << @stat
+      redirect_to baby_stats_path
+    else
+      flash[:danger] = "You cannot view this page"
+      redirect_to root_path
+    end
+
   end
+
 
   private
 
