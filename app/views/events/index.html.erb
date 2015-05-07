@@ -3,6 +3,9 @@
 
   <h2>Events Index Page</h2>
 
+  <% @events.each do |event| %>
+    <li><%= event.topic %></li>
+  <% end %>
 
   </div>
 </div>
