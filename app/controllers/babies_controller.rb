@@ -9,6 +9,7 @@ class BabiesController < ApplicationController
   end
 
   def show
+    p params[:id]
     @baby = Baby.find(params[:id])
   end
 
