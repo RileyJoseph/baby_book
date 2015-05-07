@@ -5,9 +5,10 @@
   <%= link_to "#{@baby.name}'s Profile", baby_path(@baby) %>
 
 <% @stats.each do |stat| %>
-  <p><%= stat.date %></p>
-  <p><%= stat.weight %></p>
-  <p><%= stat.height %></p>
+  <p><%= stat.date.strftime("%A, %B %e, %Y") %></p>
+  <p><%= stat.weight %> kg</p>
+  <p><%= stat.height %> cm</p>
+  <hr>
 <% end %>
 
 

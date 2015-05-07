@@ -4,9 +4,9 @@
   <h2>Measure your baby!</h2>
 
   <%= bootstrap_form_for [@baby, @stat] do |f| %>
-    <%= f.text_field :height, :placeholder =>"Enter your baby's height" %>
-    <%= f.text_field :weight, :placeholder => "Enter your baby's weight" %>
-    <%= f.text_field :date, :placeholder => "Date Recorded" %>
+    <%= f.text_field :height, :placeholder =>"Enter your baby's height (cm)" %>
+    <%= f.text_field :weight, :placeholder => "Enter your baby's weight (kg)" %>
+    <%= f.text_field :date, :placeholder => "Date Recorded (ex. March 22, 2014)" %>
     <%= f.submit "Update", :class => "btn btn-info" %>
   <% end %>
 
