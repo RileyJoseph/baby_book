@@ -1,6 +1,7 @@
 class StatsController < ApplicationController
 
   def index
+    @baby = Baby.find(params[:baby_id])
     @stats = Baby.find(params[:baby_id]).stats
   end
 
