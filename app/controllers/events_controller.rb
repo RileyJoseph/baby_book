@@ -2,10 +2,12 @@ class EventsController < ApplicationController
 
   def index
     # @events = Event.all
+    @baby = Baby.find(params[:baby_id])
     @events = Baby.find(params[:baby_id]).events
   end
 
   def show
+    @baby = Baby.find(params[:baby_id])
     @event = Event.find(params[:id])
   end
 
@@ -26,7 +28,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:date,:topic,:body)
+    params.require(:event).permit(:date,:topic,:body,:id)
   end
 
 end

@@ -1,7 +1,8 @@
 <div class="row">
   <div class="col-md-8 col-offset-md-2">
 
-  <h2>My Baby's Progress</h2>
+  <h2><%= "#{@baby.name}'s" %> Progress</h2>
+  <%= link_to "#{@baby.name}'s Profile", baby_path(@baby) %>
 
 <% @stats.each do |stat| %>
   <p><%= stat.date %></p>

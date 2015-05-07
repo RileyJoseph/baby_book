@@ -2,6 +2,9 @@
   <div class="col-md-8 col-offset-md-2">
   <h2> <%=@event.topic%> </h2>
 
+  <p><%= link_to "#{@baby.name}'s Profile", baby_path(@baby) %></p>
+  <p><%= link_to "Back to Timeline", baby_events_path %></p>
+
   <div class="container">
     <p> <%=@event.body%> </p>
     <p> <%=@event.date%> </p>
