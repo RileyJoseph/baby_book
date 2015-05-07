@@ -3,6 +3,12 @@
 
   <h2>Events show Page</h2>
 
+  <% @events.each do |e| %>
+    <li><%= e.topic %></li>
+    <li><%= e.body %></li>
+    <li><%= e.date %></li>
+
+  <% end %>
 
   </div>
 </div>
