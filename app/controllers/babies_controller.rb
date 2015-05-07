@@ -11,6 +11,7 @@ class BabiesController < ApplicationController
   def show
     p params[:id]
     @baby = Baby.find(params[:id])
+    @birthday = @baby.birthday.strftime("%A, %B %e, %Y")
   end
 
   def create
