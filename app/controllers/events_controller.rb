@@ -14,8 +14,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create(event_params)
-    redirect_to @event
+    @baby = Baby.find(params[:baby_id])
+    render :json => @baby
+
+    # @event = Event.create(event_params)
+    # redirect_to baby_events_path
   end
 
   private
