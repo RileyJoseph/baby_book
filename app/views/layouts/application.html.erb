@@ -11,7 +11,7 @@
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
-
+<body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -29,22 +29,16 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       <!-- Nav links can go here for left side -->
+        </ul>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <!-- Nave links can go here for right side -->
-      <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Sign In</a></li>
-          </ul>
-        </li>
+        <li><%= link_to "Sign Up", signup_path %></li>
+        <li><%= link_to "Log In", login_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-<body>
 
   <div class="container">
     <%= yield %>
