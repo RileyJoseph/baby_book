@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-8 col-offset-md-2">
+
+  <h2>Babies Index Page</h2>
+
+  <%= link_to " Make a Baby", new_baby_path, :class => "btn btn-success glyphicon glyphicon-hand-right" %>
+
+  <% @babies.each do |baby| %>
+    <li><%= link_to baby.name, baby_path(baby) %></li>
+  <% end %>
+
+  </div>
+</div>
