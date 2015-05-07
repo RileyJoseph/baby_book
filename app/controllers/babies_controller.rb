@@ -14,9 +14,16 @@ class BabiesController < ApplicationController
 
 
   def show
-    p params[:id]
-    @baby = Baby.find(params[:id])
-    @birthday = @baby.birthday.strftime("%A, %B %e, %Y")
+    baby_id = (params[:id]).to_i
+
+    if current_user.babies.ids.include?(baby_id)
+      @baby = Baby.find(params[:id])
+      @birthday = @baby.birthday.strftime("%A, %B %e, %Y")
+    else
+      flash[:danger] = "You cannot view this page"
+      redirect_to root_path
+    end
+
   end
 
 
