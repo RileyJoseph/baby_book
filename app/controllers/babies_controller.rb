@@ -13,12 +13,14 @@ class BabiesController < ApplicationController
   end
 
   def create
+    @baby = Baby.create(baby_params)
+    redirect_to @baby
   end
 
   private
 
   def baby_params
-    params.require(:creature).permit(:name,:birthday)
+    params.require(:baby).permit(:name,:birthday)
   end
 
 end
