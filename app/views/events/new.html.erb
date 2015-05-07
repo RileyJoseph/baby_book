@@ -3,6 +3,12 @@
 
   <h2>Events New Page</h2>
 
+  <%= bootstrap_form_for [@baby, @event] do |f| %>
+    <%= f.text_field :date, :placeholder =>"Enter a date" %>
+    <%= f.text_field :topic, :placeholder => "Enter a topic" %>
+    <%= f.text_field :body, :placeholder => "Enter the details" %>
+    <%= f.submit "Create Event", :class => "btn btn-primary" %>
+  <% end %>
 
   </div>
 </div>

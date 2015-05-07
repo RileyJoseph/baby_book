@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    # @events = Event.all
+    @events = Baby.find(params[:baby_id]).events
   end
 
   def show
@@ -11,11 +12,16 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @baby = Baby.find(params[:baby_id])
   end
 
   def create
-    @event = Event.create(event_params)
-    redirect_to @event
+    @baby = Baby.find(params[:baby_id])
+    # render :json => @baby
+
+    @baby.events.create(event_params)
+    # @event = Event.create(event_params)
+    redirect_to baby_events_path
   end
 
   private
