@@ -1,19 +1,30 @@
 class StatsController < ApplicationController
 
   before_action :is_authenticated?
+  require'csv'
+  require'json'
 
 
   def index
     baby_id = (params[:baby_id]).to_i
-
+    @csv = CSV.foreach(("male_length.csv"), :headers => true, :header_converters => :symbol)
+    @csv1 = CSV.foreach(("female_length.csv"), :headers => true, :header_converters => :symbol)
+    @csv2 = CSV.foreach(("male_weight.csv"), :headers => true, :header_converters => :symbol)
+    @csv3 = CSV.foreach(("female_length.csv"), :headers => true, :header_converters => :symbol)
     if current_user.babies.ids.include?(baby_id)
       @baby = Baby.find(params[:baby_id])
       @stats = Baby.find(params[:baby_id]).stats
     else
       flash[:danger] = "You cannot view this page"
+
       redirect_to root_path
     end
 
+  end
+
+  def is_int(str)
+    # Check if a string should be an integer
+    return !!(str =~ /^[-+]?[1-9]([0-9]*)?$/)
   end
 
 
