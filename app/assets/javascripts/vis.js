@@ -1611,11 +1611,7 @@ return /******/ (function(modules) { // webpackBootstrap
       point.setAttributeNS(null, "style", group.group.options.drawPoints.styles);
     }
     point.setAttributeNS(null, "class", group.className + " point");
-<<<<<<< HEAD
-    //handle label
-=======
     //handle label 
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     var label = exports.getSVGElement('text',JSONcontainer,svgContainer);
     if (labelObj){
         if (labelObj.xOffset) {
@@ -3282,11 +3278,7 @@ return /******/ (function(modules) { // webpackBootstrap
     this.xValueLabel = passValueFn;
     this.yValueLabel = passValueFn;
     this.zValueLabel = passValueFn;
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     this.filterLabel = 'time';
     this.legendLabel = 'value';
 
@@ -4434,11 +4426,7 @@ return /******/ (function(modules) { // webpackBootstrap
         ctx.textBaseline = 'middle';
       }
       ctx.fillStyle = this.colorAxis;
-<<<<<<< HEAD
-      ctx.fillText('  ' + this.xValueLabel(step.getCurrent()) + '  ', text.x, text.y);
-=======
       ctx.fillText('  ' + this.xValueLabel(step.getCurrent()) + '  ', text.x, text.y);    
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
 
       step.next();
     }
@@ -4495,11 +4483,7 @@ return /******/ (function(modules) { // webpackBootstrap
         ctx.textBaseline = 'middle';
       }
       ctx.fillStyle = this.colorAxis;
-<<<<<<< HEAD
-      ctx.fillText('  ' + this.yValueLabel(step.getCurrent()) + '  ', text.x, text.y);
-=======
       ctx.fillText('  ' + this.yValueLabel(step.getCurrent()) + '  ', text.x, text.y);    
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
 
       step.next();
     }
@@ -7209,11 +7193,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
   /**
    * used in Core to convert the options into a volatile variable
-<<<<<<< HEAD
-   *
-=======
    * 
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
    * @param Core
    */
   exports.convertHiddenOptions = function(body, hiddenDates) {
@@ -9187,11 +9167,7 @@ return /******/ (function(modules) { // webpackBootstrap
       var _step = step > 5 ? step / 2 : 1;
       clone.setMilliseconds(Math.round(clone.getMilliseconds() / _step) * _step);
     }
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     return clone;
   };
 
@@ -10848,15 +10824,9 @@ return /******/ (function(modules) { // webpackBootstrap
     if (options && options.time) {
       this.customTime = options.time;
     } else {
-<<<<<<< HEAD
-      this.customTime = new Date();
-    }
-
-=======
       this.customTime = new Date();  
     }
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     this.eventParams = {}; // stores state parameters while dragging the bar
 
     // create the DOM
@@ -11300,11 +11270,7 @@ return /******/ (function(modules) { // webpackBootstrap
   DataAxis.prototype.redraw = function () {
     var resized = false;
     var activeGroups = 0;
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     // Make sure the line container adheres to the vertical scrolling.
     this.dom.lineContainer.style.top = this.body.domProps.scrollTop + 'px';
 
@@ -15381,11 +15347,7 @@ return /******/ (function(modules) { // webpackBootstrap
       //else {
       //  labelValue = null;
       //}
-<<<<<<< HEAD
-      labelValue = datapoints[i].label ? datapoints[i].label : null;
-=======
       labelValue = datapoints[i].label ? datapoints[i].label : null; 
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
       xValue = toScreen(datapoints[i].x) + this.props.width;
       yValue = Math.round(axis.convertValue(datapoints[i].y));
       extractedData.push({x: xValue, y: yValue, label:labelValue});
@@ -16095,13 +16057,8 @@ return /******/ (function(modules) { // webpackBootstrap
     };
     this.constants = util.extend({}, this.defaultOptions);
     this.pixelRatio = 1;
-<<<<<<< HEAD
-
-
-=======
     
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     this.hoverObj = {nodes:{},edges:{}};
     this.controlNodesActive = false;
     this.navigationHammers = [];
@@ -19470,15 +19427,9 @@ return /******/ (function(modules) { // webpackBootstrap
       }
 
   	var yLine = this.labelDimensions.yLine;
-<<<<<<< HEAD
-
-  	ctx.save();
-
-=======
   	
   	ctx.save();
   	
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
   	if (this.options.labelAlignment != "horizontal"){
   		ctx.translate(x, yLine);
   		this._rotateForLabelAlignment(ctx);
@@ -19486,17 +19437,10 @@ return /******/ (function(modules) { // webpackBootstrap
   		yLine = 0;
   	}
 
-<<<<<<< HEAD
-
-  	this._drawLabelRect(ctx);
-  	this._drawLabelText(ctx,x,yLine, lines, lineCount, fontSize);
-
-=======
   	
   	this._drawLabelRect(ctx);
   	this._drawLabelText(ctx,x,yLine, lines, lineCount, fontSize);
   	
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
   	ctx.restore();
     }
   };
@@ -19515,20 +19459,12 @@ return /******/ (function(modules) { // webpackBootstrap
   	if((angleInDegrees < -1 && dx < 0) || (angleInDegrees > 0 && dx < 0)){
   		angleInDegrees = angleInDegrees + Math.PI;
   	}
-<<<<<<< HEAD
-
-=======
   	
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
   	ctx.rotate(angleInDegrees);
   };
 
   /**
-<<<<<<< HEAD
-   * Draws the label rectangle
-=======
    * Draws the label rectangle 
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
    * @param {CanvasRenderingContext2D} ctx
    * @param {String} labelAlignment
    * @private
@@ -19536,11 +19472,7 @@ return /******/ (function(modules) { // webpackBootstrap
   Edge.prototype._drawLabelRect = function(ctx) {
   	if (this.options.fontFill !== undefined && this.options.fontFill !== null && this.options.fontFill !== "none") {
   		ctx.fillStyle = this.options.fontFill;
-<<<<<<< HEAD
-
-=======
   		
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
   		var lineMargin = 2;
 
       if (this.options.labelAlignment == 'line-center') {
@@ -19559,11 +19491,7 @@ return /******/ (function(modules) { // webpackBootstrap
   };
 
   /**
-<<<<<<< HEAD
-   * Draws the label text
-=======
    * Draws the label text 
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
    * @param {CanvasRenderingContext2D} ctx
    * @param {Number} x
    * @param {Number} yLine
@@ -21054,29 +20982,17 @@ return /******/ (function(modules) { // webpackBootstrap
   Node.prototype._drawImageLabel = function (ctx) {
     var yLabel;
     var offset = 0;
-<<<<<<< HEAD
-
-    if (this.height){
-      offset = this.height / 2;
-      var labelDimensions = this.getTextSize(ctx);
-
-=======
     
     if (this.height){
       offset = this.height / 2;
       var labelDimensions = this.getTextSize(ctx);
         
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
       if (labelDimensions.lineCount >= 1){
         offset += labelDimensions.height / 2;
         offset += 3;
       }
     }
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     yLabel = this.y + offset;
 
     this._label(ctx, this.label, this.x, yLabel, undefined);
@@ -21131,11 +21047,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
     this.left   = this.x - this.width / 2;
     this.top    = this.y - this.height / 2;
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     var centerX = this.left + (this.width / 2);
     var centerY = this.top + (this.height / 2);
     var radius = Math.abs(this.height / 2);
@@ -21156,13 +21068,8 @@ return /******/ (function(modules) { // webpackBootstrap
     this.boundingBox.right = this.x + this.options.radius;
     this.boundingBox.bottom = this.y + this.options.radius;
 
-<<<<<<< HEAD
-    this._drawImageLabel(ctx);
-
-=======
     this._drawImageLabel(ctx); 
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     this.boundingBox.left = Math.min(this.boundingBox.left, this.labelDimensions.left);
     this.boundingBox.right = Math.max(this.boundingBox.right, this.labelDimensions.left + this.labelDimensions.width);
     this.boundingBox.bottom = Math.max(this.boundingBox.bottom, this.boundingBox.bottom + this.labelDimensions.height);
@@ -21299,11 +21206,7 @@ return /******/ (function(modules) { // webpackBootstrap
     var clusterLineWidth = 2.5;
     var borderWidth = this.options.borderWidth;
     var selectionLineWidth = this.options.borderWidthSelected || 2 * this.options.borderWidth;
-<<<<<<< HEAD
-
-=======
       
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     ctx.strokeStyle = this.selected ? this.options.color.highlight.border : this.hover ? this.options.color.hover.border : this.options.color.border;
 
     // draw the outer border
@@ -21558,11 +21461,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
   Node.prototype._icon = function (ctx) {
     var relativeIconSize = Number(this.options.iconSize) * this.networkScale;
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
     if (this.options.icon && relativeIconSize > this.options.fontDrawThreshold - 1) {
 
         var iconSize = Number(this.options.iconSize);
@@ -21576,11 +21475,7 @@ return /******/ (function(modules) { // webpackBootstrap
         ctx.fillText(this.options.icon, this.x, this.y);
     }
   };
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
   Node.prototype._label = function (ctx, text, x, y, align, baseline, labelUnderNode) {
     var relativeFontSize = Number(this.options.fontSize) * this.networkScale;
     if (text && relativeFontSize >= this.options.fontDrawThreshold - 1) {
@@ -22735,11 +22630,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-
-=======
   
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
   function parseGephi(gephiJSON, options) {
     var edges = [];
     var nodes = [];
@@ -23213,11 +23104,7 @@ return /******/ (function(modules) { // webpackBootstrap
       customBarId = numIds.length > 0 ? Math.max.apply(null, numIds) + 1 : 1;
 
     } else {
-<<<<<<< HEAD
-
-=======
       
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
       // Check for duplicates
       this.customBarIds.forEach(function (element) {
         if (element === id) {
@@ -25044,11 +24931,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-
-=======
   
->>>>>>> 217aae39648393489c466de868cd2ccd4109336a
   /**
    * Expose `Emitter`.
    */
