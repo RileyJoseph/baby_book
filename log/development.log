@@ -9148,3 +9148,92 @@ Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8b
 
 
 Started GET "/assets/baby.jpg" for ::1 at 2015-05-08 10:33:36 -0700
+
+
+Started GET "/login" for ::1 at 2015-05-08 10:37:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_flash.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 252ms (Views: 228.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 10:37:18 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 10:37:18 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 10:37:18 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 10:37:18 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 10:37:18 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 10:37:18 -0700
+
+
+Started POST "/login" for ::1 at 2015-05-08 10:37:24 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+3fmAJHltzKk+maHB4qATTTy/+t/wnY3K+FnSg+vhe/pH7sQufWa4bb6Q4ThW4t4IMK7g+Yl7sGY8r8t49cfQQ==", "user"=>{"email"=>"test@test.test", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "test@test.test"]]
+Redirected to http://localhost:3000/babies
+Completed 302 Found in 74ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/babies" for ::1 at 2015-05-08 10:37:24 -0700
+Processing by BabiesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mBaby Load (0.4ms)[0m  SELECT "babies".* FROM "babies" WHERE "babies"."user_id" = $1  [["user_id", 1]]
+  Rendered babies/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 43ms (Views: 28.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/babies/1" for ::1 at 2015-05-08 10:37:44 -0700
+Processing by BabiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "babies"."id" FROM "babies" WHERE "babies"."user_id" = $1  [["user_id", 1]]
+  [1m[36mBaby Load (0.2ms)[0m  [1mSELECT  "babies".* FROM "babies" WHERE "babies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered babies/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 66ms (Views: 62.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/babies/1/events" for ::1 at 2015-05-08 10:37:49 -0700
+Processing by EventsController#index as HTML
+  Parameters: {"baby_id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT "babies"."id" FROM "babies" WHERE "babies"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mBaby Load (0.2ms)[0m  SELECT  "babies".* FROM "babies" WHERE "babies"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "babies".* FROM "babies" WHERE "babies"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE "events"."baby_id" = $1  [["baby_id", 1]]
+  Rendered events/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 35ms (Views: 26.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/babies/1/events/new" for ::1 at 2015-05-08 10:37:57 -0700
+Processing by EventsController#new as HTML
+  Parameters: {"baby_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "babies"."id" FROM "babies" WHERE "babies"."user_id" = $1  [["user_id", 1]]
+  [1m[36mBaby Load (0.2ms)[0m  [1mSELECT  "babies".* FROM "babies" WHERE "babies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered events/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/babies/1/events/1" for ::1 at 2015-05-08 10:38:03 -0700
+Processing by EventsController#show as HTML
+  Parameters: {"baby_id"=>"1", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT "babies"."id" FROM "babies" WHERE "babies"."user_id" = $1  [["user_id", 1]]
+  [1m[36mBaby Load (0.2ms)[0m  [1mSELECT  "babies".* FROM "babies" WHERE "babies"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36mMedium Load (0.4ms)[0m  [1mSELECT "media".* FROM "media" WHERE "media"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (61.4ms)
+Completed 200 OK in 85ms (Views: 77.1ms | ActiveRecord: 2.5ms)
