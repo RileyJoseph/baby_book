@@ -4,19 +4,26 @@ class StatsController < ApplicationController
   require'csv'
   require'json'
 
+  def render_data data
+    data.to_a.map {|row| row.to_hash }
+  end
+
 
   def index
     baby_id = (params[:baby_id]).to_i
     @csv = CSV.foreach(("male_length.csv"), :headers => true, :header_converters => :symbol)
     @csv1 = CSV.foreach(("female_length.csv"), :headers => true, :header_converters => :symbol)
     @csv2 = CSV.foreach(("male_weight.csv"), :headers => true, :header_converters => :symbol)
-    @csv3 = CSV.foreach(("female_length.csv"), :headers => true, :header_converters => :symbol)
+    @csv3 = CSV.foreach(("female_weight.csv"), :headers => true, :header_converters => :symbol)
+    @data = render_data @csv
+    @data1 = render_data @csv1
+    @data2 = render_data @csv2
+    @data3 = render_data @csv3
     if current_user.babies.ids.include?(baby_id)
       @baby = Baby.find(params[:baby_id])
       @stats = Baby.find(params[:baby_id]).stats
     else
       flash[:danger] = "You cannot view this page"
-
       redirect_to root_path
     end
 

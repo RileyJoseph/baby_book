@@ -19,8 +19,24 @@
 
   </div>
 </div>
+
+
 <h2>Baby Data WOW</h2>
-<%= @csv.to_a.map {|row| row.to_hash } %>
-<%= @csv1.to_a.map {|row| row.to_hash } %>
-<%= @csv2.to_a.map {|row| row.to_hash } %>
-<%= @csv3.to_a.map {|row| row.to_hash } %>
+<% @data.each do |x|  %>
+<%= x[:"5th_percentile_length_in_centimeters"] %>
+<% end %>
+
+<% @data1.each do |x|  %>
+<%= x[:"5th_percentile_length_in_centimeters"] %>
+<% end %>
+
+
+<% @data2.each do |x|  %>
+<%= x[:"3rd_percentile_weight_in_kilograms"] %>
+<% end %>
+
+<% @data3.each do |x|  %>
+<%= x[:"3rd_percentile_weight_in_kilograms"] %>
+<% end %>
+
+
