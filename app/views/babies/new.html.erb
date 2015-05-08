@@ -5,6 +5,7 @@
 
   <%= bootstrap_form_for @baby do |f| %>
     <%= f.text_field :name, :placeholder =>"Baby's Name" %>
+    <%= f.text_field :gender, :placeholder =>"Baby's Gender" %>
     <%= f.text_field :birthday, :placeholder => "Enter a birthday (ex. 'March 22, 2014')" %>
     <%= f.submit "Create baby", :class => "btn btn-primary" %>
   <% end %>
