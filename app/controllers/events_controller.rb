@@ -4,23 +4,26 @@ class EventsController < ApplicationController
 
 
     def index
+      baby_id = (params[:baby_id]).to_i
 
-      if current_user.babies.ids.include?(current_baby)
+      if current_user.babies.ids.include?(baby_id)
         @baby = Baby.find(params[:baby_id])
         @events = Baby.find(params[:baby_id]).events
       else
         flash[:danger] = "You cannot view this page"
-        redirect_to root_path
+        # redirect_to root_path
       end
 
     end
 
 
     def show
+      baby_id = (params[:baby_id]).to_i
+
       # images
       @media = Event.find(params[:id]).media
 
-      if current_user.babies.ids.include?(current_baby)
+      if current_user.babies.ids.include?(baby_id)
         @baby = Baby.find(params[:baby_id])
         @event = Event.find(params[:id])
       else
@@ -32,8 +35,9 @@ class EventsController < ApplicationController
 
 
     def new
+      baby_id = (params[:baby_id]).to_i
 
-      if current_user.babies.ids.include?(current_baby)
+      if current_user.babies.ids.include?(baby_id)
         @event = Event.new
         @baby = Baby.find(params[:baby_id])
       else
@@ -46,14 +50,9 @@ class EventsController < ApplicationController
 
     def create
 
-      if current_user.babies.ids.include?(current_baby)
         @baby = Baby.find(params[:baby_id])
         @baby.events.create(event_params)
         redirect_to baby_events_path
-      else
-        flash[:danger] = "You cannot view this page"
-        redirect_to root_path
-      end
 
     end
 

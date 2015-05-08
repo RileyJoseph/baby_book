@@ -1,7 +1,9 @@
 class MediaController < ApplicationController
 
   def new
-    if current_user.babies.ids.include?(current_baby)
+    baby_id = (params[:baby_id]).to_i
+
+    if current_user.babies.ids.include?(baby_id)
       @baby = Baby.find(params[:baby_id])
       @event = Event.find(params[:event_id])
       @medium = Medium.new

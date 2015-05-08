@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :current_user
-
   # before_action :current_baby
 
   def is_authenticated?
@@ -23,14 +22,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
   # def current_baby
   #   @baby_id = (params[:id]).to_i
   # end
-
-  def current_baby
-    @baby_id = (params[:id]).to_i
-  end
 
 end
 
