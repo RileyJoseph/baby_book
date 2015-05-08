@@ -12,7 +12,9 @@ class User < ActiveRecord::Base
 
   validates :password,
     presence: true,
-    :on => :create
+    :on => :create,
+    # validates if not a facebook login
+    :if => lambda{ password_digest != "fb_login" }
 
   def self.authenticate email, password
     User.find_by_email(email).try(:authenticate, password)
