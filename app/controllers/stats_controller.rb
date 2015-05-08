@@ -10,6 +10,7 @@ class StatsController < ApplicationController
 
 
   def index
+    baby_id = (params[:baby_id]).to_i
 
     @csv = CSV.foreach(("male_length.csv"), :headers => true, :header_converters => :symbol)
     @csv1 = CSV.foreach(("female_length.csv"), :headers => true, :header_converters => :symbol)
@@ -19,7 +20,7 @@ class StatsController < ApplicationController
     @data1 = render_data @csv1
     @data2 = render_data @csv2
     @data3 = render_data @csv3
-    if current_user.babies.ids.include?(current_baby)
+    if current_user.babies.ids.include?(baby_id)
       @baby = Baby.find(params[:baby_id])
       @stats = Baby.find(params[:baby_id]).stats
     else
@@ -36,8 +37,9 @@ class StatsController < ApplicationController
 
 
   def new
+    baby_id = (params[:baby_id]).to_i
 
-    if current_user.babies.ids.include?(current_baby)
+    if current_user.babies.ids.include?(baby_id)
       @stat = Stat.new
       @baby = Baby.find(params[:baby_id])
     else
@@ -49,8 +51,9 @@ class StatsController < ApplicationController
 
 
   def show
+    baby_id = (params[:baby_id]).to_i
 
-    if current_user.babies.ids.include?(current_baby)
+    if current_user.babies.ids.include?(baby_id)
       @stat = Stat.find(params[:id])
     else
       flash[:danger] = "You cannot view this page"
@@ -62,15 +65,10 @@ class StatsController < ApplicationController
 
   def create
 
-    if current_user.babies.ids.include?(current_baby)
       @baby = Baby.find(params[:baby_id])
       @stat = Stat.create(stat_params)
       @baby.stats << @stat
       redirect_to baby_stats_path
-    else
-      flash[:danger] = "You cannot view this page"
-      redirect_to root_path
-    end
 
   end
 

@@ -14,8 +14,9 @@ class BabiesController < ApplicationController
 
 
   def show
+    baby_id = (params[:id]).to_i
 
-    if current_user.babies.ids.include?(current_baby)
+    if current_user.babies.ids.include?(baby_id)
       @baby = Baby.find(params[:id])
       @birthday = @baby.birthday.strftime("%A, %B %e, %Y")
     else
