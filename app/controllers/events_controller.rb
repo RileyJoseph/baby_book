@@ -18,6 +18,9 @@ class EventsController < ApplicationController
 
 
     def show
+      # images
+      @media = Event.find(params[:id]).media
+
       baby_id = (params[:baby_id]).to_i
 
       if current_user.babies.ids.include?(baby_id)

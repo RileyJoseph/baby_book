@@ -10,4 +10,18 @@
     <p> <%=@event.date.strftime("%A, %B %e, %Y")%> </p>
   </div>
 
+
+
+    <% @media.each do |image| %>
+      <div style="display: inline-block; width: 100px padding: 20px; margin: 20px; text-align: center;">
+        <%= cl_image_tag(
+          image.url,
+          :width => 90, :height => 98,
+          :crop => :fill, :gravity => :face)
+        %>
+        <br>
+
+      </div>
+    <% end%>
+
 </div>
