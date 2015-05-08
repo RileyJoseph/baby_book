@@ -169,16 +169,18 @@
 .vis.timeline .item {
   position: absolute;
   color: #1A1A1A;
-  border-color: #97B0F8;
+  border-color: #bfbfbf;
   border-width: 1px;
-  background-color: #D5DDF6;
+  background-color: #fff;
+  /*Alternative Background color: #D5DDF6*/
+  /*Alternative Border color #97B0F8;*/
   display: inline-block;
   padding: 5px;
 }
 
 .vis.timeline .item.selected {
-  border-color: #FFC200;
-  background-color: #FFF785;
+  border-color: #bfbfbf;
+  background-color: #fff;
 
   /* z-index must be higher than the z-index of custom time bar and current time bar */
   z-index: 2;
@@ -807,4 +809,3 @@ div.network-tooltip {
   border: 1px solid;
 
   box-shadow: 3px 3px 10px rgba(128, 128, 128, 0.5);
-}

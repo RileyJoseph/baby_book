@@ -1,3 +1,4 @@
+
 .welcome-title {
   background: url(baby.jpg);
   background-position: cover;
@@ -28,4 +29,40 @@
   margin: 5% auto;
   height: 30%;
   width: 90%;
+}
+
+#hidden {
+  font-weight: 200;
+  width: 90%;
+  height: 660px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  margin: 2% auto;
+  position: absolute;
+  top: 0;
+  left: 5%;
+  text-align: center;
+  font-size: 25px;
+/*  border: 1px solid black;*/
+  display: none;
+  z-index: 100;
+}
+
+#hidden-header {
+  margin-top: 0.4em;
+  margin-bottom: 0.5em;
+  font-size: 50px;
+}
+
+#off {
+  line-height: 36px;
+  position: absolute;
+  font-size: 16px;
+  top: 3px;
+  right: 3px;
+  height: 32px;
+  width: 60px;
+  color: #000;
+  cursor: pointer;
 }
