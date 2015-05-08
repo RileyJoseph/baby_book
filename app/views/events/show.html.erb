@@ -10,7 +10,7 @@
     <p> <%=@event.date.strftime("%A, %B %e, %Y")%> </p>
   </div>
 
-
+  <p><%= link_to "Add a photo for #{@event.topic}",new_baby_event_medium_path(@baby, @event), :class => "btn btn-info" %></p>
 
     <% @media.each do |image| %>
       <div style="display: inline-block; width: 100px padding: 20px; margin: 20px; text-align: center;">
