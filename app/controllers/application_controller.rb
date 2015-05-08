@@ -15,11 +15,18 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.find_by_id(session[:user_id])
+    # logic for standard auth vs. facebook auth
+    if User.find_by_id(session[:password_digest]) != "fb_login"
+      @current_user ||= User.find_by_id(session[:user_id])
+    else
+      @current_user ||= User.find_by_provider_id(session[:provider_id])
+    end
   end
+
 
   # def current_baby
   #   @baby_id = (params[:id]).to_i
   # end
 
 end
+
