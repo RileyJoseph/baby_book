@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :current_user
 
+  # before_action :current_baby
+
   def is_authenticated?
     unless current_user
       flash[:danger] = "You are not logged in"
@@ -15,5 +17,9 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
   end
+
+  # def current_baby
+  #   @baby_id = (params[:id]).to_i
+  # end
 
 end
