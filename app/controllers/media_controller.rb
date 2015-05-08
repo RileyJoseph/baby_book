@@ -1,9 +1,14 @@
 class MediaController < ApplicationController
 
   def new
-    @baby = Baby.find(params[:baby_id])
-    @event = Event.find(params[:event_id])
-    @medium = Medium.new
+    if current_user.babies.ids.include?(current_baby)
+      @baby = Baby.find(params[:baby_id])
+      @event = Event.find(params[:event_id])
+      @medium = Medium.new
+    else
+      flash[:danger] = "You cannot view this page"
+      redirect_to root_path
+    end
   end
 
   def create
