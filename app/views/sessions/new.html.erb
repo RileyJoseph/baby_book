@@ -3,8 +3,6 @@
 
 <h1 class="text-center">Login</h1>
 
-<%= render "layouts/flash" %>
-
 <%= bootstrap_form_for :user do |f| %>
   <%= f.text_field :email, placeholder: "Enter your email", icon: "user" %>
   <%= f.text_field :password, placeholder: "Enter your password", type: "password", icon: "lock" %>
