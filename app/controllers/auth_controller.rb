@@ -1,26 +1,27 @@
 class AuthController < ApplicationController
 
- def callback
+# Oauth login for Facebook
+
+  def callback
+    # get user_facebook info
     provider_user = request.env['omniauth.auth']
-    # render json: provider_user
-    # render json: params
-    #find or create user
-    @user = User.find_or_create_by(provider_id:provider_user['uid'],provider:params[:provider]) do |u|
+
+    # find or create user
+    user = User.find_or_create_by(provider_id:provider_user['uid'],provider:params[:provider]) do |u|
       u.provider_hash = provider_user['credentials']['token']
       u.name = provider_user['info']['name']
       u.email = provider_user['info']['email']
+      # for current_user logic
       u.password_digest = "fb_login"
       u.save
-      # ^ found in json version of user info
     end
-    render json: @user
+
     #start session
-    session[:user_id] = @user.id
-    session[:provider_id] = @user.provider_id
-    session[:password_digest] = @user.password_digest
-    #send them home
-    # render json: session
-    # redirect_to babies_path
+    session[:user_id] = user.id
+    session[:provider_id] = user.provider_id
+    session[:password_digest] = user.password_digest
+
+    redirect_to babies_path
   end
 
   def logout
