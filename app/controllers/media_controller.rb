@@ -7,23 +7,23 @@ class MediaController < ApplicationController
   end
 
   def create
-    # uploaded_file = params[:baby][:event].path
-    # cloudnary_file = Cloudinary::Uploader.upload(uploaded_file)
+    # render plain: params
+    uploaded_file = params[:medium][:url].path
+    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
 
-    # render json: cloudnary_file
+    # render json: cloudinary_file
 
-        # create cloudinary url with specific event_id through carrierwave
-    # @event = Event.find(params[:event_id])
-    # @event.media.create(medium_params)
-    # redirect_to baby_events_path(@baby)
+    @event = Event.find(params[:event_id])
+    # render json: @event
+    @event.media.create url: cloudinary_file['public_id']
 
-    cloudnary_file = Cloudinary::Uploader.upload(medium_params)
-    render json: cloudnary_file
+    # Medium.create url: cloudinary_file['public_id']
+    redirect_to baby_events_path
 
   end
 
   def medium_params
-    params.require(:medium).permit(:url.to_s)
+    params.require(:medium).permit(:url)
   end
 
 end
