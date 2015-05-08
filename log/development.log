@@ -12330,3 +12330,899 @@ Processing by SessionsController#new as HTML
   Rendered layouts/_flash.html.erb (0.1ms)
   Rendered sessions/new.html.erb within layouts/application (2.0ms)
 Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 13:02:31 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 23ms (Views: 17.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 13:02:32 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 13:02:32 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 13:02:32 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 13:02:32 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 13:02:32 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 13:02:32 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 13:02:32 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 13:02:34 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 13:02:34 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQAlM8_8VMHkBXAw6GmmOu2Uvy79AkVTLKI1b74PHlae01GCq267XK_8PzEVIZm0D5DStEQs6nELwuuAqLNadkzjsbdLV-Bo8dQwdprfKH_FS5bDOWqrLqMvg5qvZV7dcsahUSO7PwlOz4R-8x6lUs4SffwndK4E7he9fqh1rCD7K6nlh9EX_-9pUS8bKFK0fcgH_uMk3tFKuxfQ4DHm9Lrf-YmDDdA3BEkphFjos00FxtCyVTTYOwUv7lX6EtZGlwPp3IXg3C9E17vEuq880UeMmbWvliYe9xhpeJ6nwJ24-xguAPOBmq5peF4Tv_ItY5M&state=8ec1137793110a28bbc3f565396a3548d3f3ded9e00dd6de" for ::1 at 2015-05-08 13:02:34 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQAlM8_8VMHkBXAw6GmmOu2Uvy79AkVTLKI1b74PHlae01GCq267XK_8PzEVIZm0D5DStEQs6nELwuuAqLNadkzjsbdLV-Bo8dQwdprfKH_FS5bDOWqrLqMvg5qvZV7dcsahUSO7PwlOz4R-8x6lUs4SffwndK4E7he9fqh1rCD7K6nlh9EX_-9pUS8bKFK0fcgH_uMk3tFKuxfQ4DHm9Lrf-YmDDdA3BEkphFjos00FxtCyVTTYOwUv7lX6EtZGlwPp3IXg3C9E17vEuq880UeMmbWvliYe9xhpeJ6nwJ24-xguAPOBmq5peF4Tv_ItY5M", "state"=>"8ec1137793110a28bbc3f565396a3548d3f3ded9e00dd6de", "provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1[0m  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 13:03:32 -0700
+Processing by SiteController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 24ms (Views: 17.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 13:03:33 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 13:03:33 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 13:03:33 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 13:03:33 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 13:03:33 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 13:03:33 -0700
+
+
+Started GET "/" for ::1 at 2015-05-08 13:04:43 -0700
+Processing by SiteController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 22ms (Views: 16.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 13:04:43 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 13:04:43 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 13:04:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 13:04:43 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 13:04:43 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 13:04:43 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 13:04:44 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 13:04:44 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQCYoHtYAkkONxrvLC7IzNNrtzKEFAPoL3774RydguhtiOOjW3psW0AQbmuQEh7RDawRlfhU-Iv7Cebngqk0VPP3u5wXOcHmhJyM4ThePA0ND7HtwfT2_3zATY_SvgMgdwkcHkECRNEyQoDSrIViLOb_EI0d5Vt8A-N2YXlX3n6_jsD3ImYAhaqMdafvhvU6gw8eN0lXJV1p59G_cjoCSkQNKEz08Wzvg9po82XXG-XhzCEodgqs3Lzfg1fIoZ7U1Flu3nXL8vJ6UWUURlmaAJRkV5k5N4aLZ_V_PISqlf5inGekR6R5WxbUchf_2URfOQ8&state=e4b9421a255a70627deaa9dbee373cc857d447b5ed190420" for ::1 at 2015-05-08 13:04:44 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQCYoHtYAkkONxrvLC7IzNNrtzKEFAPoL3774RydguhtiOOjW3psW0AQbmuQEh7RDawRlfhU-Iv7Cebngqk0VPP3u5wXOcHmhJyM4ThePA0ND7HtwfT2_3zATY_SvgMgdwkcHkECRNEyQoDSrIViLOb_EI0d5Vt8A-N2YXlX3n6_jsD3ImYAhaqMdafvhvU6gw8eN0lXJV1p59G_cjoCSkQNKEz08Wzvg9po82XXG-XhzCEodgqs3Lzfg1fIoZ7U1Flu3nXL8vJ6UWUURlmaAJRkV5k5N4aLZ_V_PISqlf5inGekR6R5WxbUchf_2URfOQ8", "state"=>"e4b9421a255a70627deaa9dbee373cc857d447b5ed190420", "provider"=>"facebook"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Redirected to 
+Completed 500 Internal Server Error in 15ms (Views: 0.4ms | ActiveRecord: 2.9ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/auth_controller.rb:23:in `callback'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (9.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (80.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 13:04:53 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 13:04:53 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 13:04:53 -0700
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 13:04:53 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 13:04:53 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 13:04:53 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 13:04:53 -0700
+
+
+Started GET "/" for ::1 at 2015-05-08 13:06:41 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 13:06:41 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 13:06:41 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 13:06:41 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 13:06:41 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 13:06:41 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 13:06:41 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 13:06:43 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 13:06:43 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQCrwkWyMDZ7_8No_Mq_Nifbc0KOTJCvGHBw94rJsxN7eeQFvt2NTmLUs_Ood-cntmnixco3F7OEVzB44kfAu1ImnlYB_j_gXGbHcPQmynuqvwKrRSMbmDSRljX-5HrL0oCQpW6p1R_bLw6OuHoqaefze8s0LStLjR87nxyOXO5vHs6ff6QYKmCXEOR8_fcAapmIjrY9SpLJFX3sz0kshrLLi-og1RemhcHK1BHxVXVymUWxKRG3-9m0TPRW8mfGqlzbm4hgg4t9FK2hhPoBSbSY97FOAKM5FR7UhUsdEyz6oJnCqgb_ZHjl1yiZeKS2oe4&state=c89a0d5240b56efd943404da44e6013205cffbeb952a5e0e" for ::1 at 2015-05-08 13:06:43 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQCrwkWyMDZ7_8No_Mq_Nifbc0KOTJCvGHBw94rJsxN7eeQFvt2NTmLUs_Ood-cntmnixco3F7OEVzB44kfAu1ImnlYB_j_gXGbHcPQmynuqvwKrRSMbmDSRljX-5HrL0oCQpW6p1R_bLw6OuHoqaefze8s0LStLjR87nxyOXO5vHs6ff6QYKmCXEOR8_fcAapmIjrY9SpLJFX3sz0kshrLLi-og1RemhcHK1BHxVXVymUWxKRG3-9m0TPRW8mfGqlzbm4hgg4t9FK2hhPoBSbSY97FOAKM5FR7UhUsdEyz6oJnCqgb_ZHjl1yiZeKS2oe4", "state"=>"c89a0d5240b56efd943404da44e6013205cffbeb952a5e0e", "provider"=>"facebook"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1[0m  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 13:07:05 -0700
+Processing by SiteController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 25ms (Views: 19.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 13:07:05 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 13:07:05 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 13:07:05 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 13:07:05 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 13:07:05 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 13:07:05 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 13:07:06 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 13:07:06 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQCIIKj6L5_8DCXSXAhy2YHab7S6SEUmsOeTDcCuUk6VR5oVBHLKTDH_OYtaOOKLT5qIoBWMMRUXIPHrJOkeaw3BemM3NWgDXdrs-t2AdeuUPg_bU830Po6HvAlkbibq5agl4awE0zLoO-S9N9nq_N6E-D018MKtvpp4SVFMitkNWIgB6xS7CKQkMQX7sdzdXP3nwPR_GM6eTqBpoKzEPJUrPA5H-8DElQ8Ps-UNdZYvD62TWMqLNv3dpZbG_RLnCT85seQWtwjkekrc0ka94vqpExPrT_LeKqEgnx17ovKcy91EYFYGUb291IkAJI3bq-I&state=d0ae227a9037e90fd2b11608c1d11f2035469163fd284111" for ::1 at 2015-05-08 13:07:06 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQCIIKj6L5_8DCXSXAhy2YHab7S6SEUmsOeTDcCuUk6VR5oVBHLKTDH_OYtaOOKLT5qIoBWMMRUXIPHrJOkeaw3BemM3NWgDXdrs-t2AdeuUPg_bU830Po6HvAlkbibq5agl4awE0zLoO-S9N9nq_N6E-D018MKtvpp4SVFMitkNWIgB6xS7CKQkMQX7sdzdXP3nwPR_GM6eTqBpoKzEPJUrPA5H-8DElQ8Ps-UNdZYvD62TWMqLNv3dpZbG_RLnCT85seQWtwjkekrc0ka94vqpExPrT_LeKqEgnx17ovKcy91EYFYGUb291IkAJI3bq-I", "state"=>"d0ae227a9037e90fd2b11608c1d11f2035469163fd284111", "provider"=>"facebook"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 14:17:15 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 22ms (Views: 16.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 14:17:15 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 14:17:15 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 14:17:15 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 14:17:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 14:17:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 14:17:15 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:17:17 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:17:17 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQCpMwFh8bcP5KXwf5u5LAyQHVWzAbeE74AKJuzidpi1y7TGpGpv3HDEFQmgxmM1g8JEtLBaM7ggtkjby8O9odc1t2Ed6izQ6RpfDryCEG5QgOtd1BYeKu0dmHazZXqf0Skb4F44sGtoUEb3zBDn1rXjcay25zwJzsEfB-q1Z5nxU4GQDTbN9Hd9_gTzu3hxMf7Yeg86dhFTCzMtv06oHTtse_rXkw3yHXDgKBrwmtpQhw8Mbdl4nB3_qkQE0SoJKj_QX2vESXB5FNEbnYm1uvRFzllGk3-3QeSadOldP1XfnvW8agTbps2rYLxDuELIdhM&state=b9dbd2770213184816a9de79f9d621a113c69699b395d229" for ::1 at 2015-05-08 14:17:17 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQCpMwFh8bcP5KXwf5u5LAyQHVWzAbeE74AKJuzidpi1y7TGpGpv3HDEFQmgxmM1g8JEtLBaM7ggtkjby8O9odc1t2Ed6izQ6RpfDryCEG5QgOtd1BYeKu0dmHazZXqf0Skb4F44sGtoUEb3zBDn1rXjcay25zwJzsEfB-q1Z5nxU4GQDTbN9Hd9_gTzu3hxMf7Yeg86dhFTCzMtv06oHTtse_rXkw3yHXDgKBrwmtpQhw8Mbdl4nB3_qkQE0SoJKj_QX2vESXB5FNEbnYm1uvRFzllGk3-3QeSadOldP1XfnvW8agTbps2rYLxDuELIdhM", "state"=>"b9dbd2770213184816a9de79f9d621a113c69699b395d229", "provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1[0m  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/babies
+Completed 302 Found in 15ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/babies" for ::1 at 2015-05-08 14:17:18 -0700
+Processing by BabiesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "fb_login"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Filter chain halted as :is_authenticated? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2015-05-08 14:17:18 -0700
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 14:17:27 -0700
+Processing by SiteController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 23ms (Views: 16.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 14:17:27 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 14:17:27 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 14:17:27 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 14:17:27 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 14:17:27 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 14:17:27 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:17:28 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:17:28 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQCaDO_ijWx3_Dg0hqtRE551XjwUAt78jXmyy_JW-cx3XdWOnD_aNXktpg-rxZQF9_16doM5WWKlm_rkyGeIrrV6-YL_a4K9vJO7YGATbMdPn2y8C9KOWjOteO7rkWltHO9ErB0u3-JfkSlDCuA7KmZlto-VPKz50wgxoZ3fYj94UPgw-7qJxGH9WEik4rkdVjaEe-YL3UiDoKplZ9-jaN-J9UcdyqpCfFq3ySIko-aOQQqXfSq4P0ffD4XPrpz7yN7C95jVD0ZexBRqYjPgIfXtJIZm-hLS9a8nKImKsuIxsauaF0jg3LrDzCTU_Muumvw&state=6278466c679238dd5198d81a70a0684f901d4c1c202c470d" for ::1 at 2015-05-08 14:17:28 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQCaDO_ijWx3_Dg0hqtRE551XjwUAt78jXmyy_JW-cx3XdWOnD_aNXktpg-rxZQF9_16doM5WWKlm_rkyGeIrrV6-YL_a4K9vJO7YGATbMdPn2y8C9KOWjOteO7rkWltHO9ErB0u3-JfkSlDCuA7KmZlto-VPKz50wgxoZ3fYj94UPgw-7qJxGH9WEik4rkdVjaEe-YL3UiDoKplZ9-jaN-J9UcdyqpCfFq3ySIko-aOQQqXfSq4P0ffD4XPrpz7yN7C95jVD0ZexBRqYjPgIfXtJIZm-hLS9a8nKImKsuIxsauaF0jg3LrDzCTU_Muumvw", "state"=>"6278466c679238dd5198d81a70a0684f901d4c1c202c470d", "provider"=>"facebook"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Redirected to 
+Completed 500 Internal Server Error in 67ms (Views: 0.3ms | ActiveRecord: 2.7ms)
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/auth_controller.rb:23:in `callback'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (9.5ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (20.9ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 14:17:39 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 24ms (Views: 17.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 14:17:39 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 14:17:39 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 14:17:39 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 14:17:39 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 14:17:39 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 14:17:39 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:17:41 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:17:41 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQACOfZosQAoIekkZkkc582jYqGA-A63zR77CK_tiRZQ_KDi2aA22fylLnfyzQNm685h9AROhFuZ9U1WC-3K_XaSVp1KW5Oqz9m7gL5EBV56aNxVfMOZBpKqKAbzZW16orjrFa8Fg2ZVqF4sHDFr1P-i5H1yEipaZwXkz01qbi_fPrpwLcKgXj16sIlLVmZFiotiQxtZbwlPUzep8lgn9wePRSNAQrFUjonvJiMhUOguRHPm2P02z0TLovecOUe4HGLvUexp0zpBGZicPS6K_xARv-3YinR8FTwL84nYxEPA5-YKggsYUtqcKsdho8JKNO8&state=8edb24de200d3ad80035a0901fecffa88d7ee591ac53bc44" for ::1 at 2015-05-08 14:17:41 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQACOfZosQAoIekkZkkc582jYqGA-A63zR77CK_tiRZQ_KDi2aA22fylLnfyzQNm685h9AROhFuZ9U1WC-3K_XaSVp1KW5Oqz9m7gL5EBV56aNxVfMOZBpKqKAbzZW16orjrFa8Fg2ZVqF4sHDFr1P-i5H1yEipaZwXkz01qbi_fPrpwLcKgXj16sIlLVmZFiotiQxtZbwlPUzep8lgn9wePRSNAQrFUjonvJiMhUOguRHPm2P02z0TLovecOUe4HGLvUexp0zpBGZicPS6K_xARv-3YinR8FTwL84nYxEPA5-YKggsYUtqcKsdho8JKNO8", "state"=>"8edb24de200d3ad80035a0901fecffa88d7ee591ac53bc44", "provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1[0m  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/auth/facebook/callback?code=AQACOfZosQAoIekkZkkc582jYqGA-A63zR77CK_tiRZQ_KDi2aA22fylLnfyzQNm685h9AROhFuZ9U1WC-3K_XaSVp1KW5Oqz9m7gL5EBV56aNxVfMOZBpKqKAbzZW16orjrFa8Fg2ZVqF4sHDFr1P-i5H1yEipaZwXkz01qbi_fPrpwLcKgXj16sIlLVmZFiotiQxtZbwlPUzep8lgn9wePRSNAQrFUjonvJiMhUOguRHPm2P02z0TLovecOUe4HGLvUexp0zpBGZicPS6K_xARv-3YinR8FTwL84nYxEPA5-YKggsYUtqcKsdho8JKNO8&state=8edb24de200d3ad80035a0901fecffa88d7ee591ac53bc44" for ::1 at 2015-05-08 14:21:48 -0700
+
+OmniAuth::Strategies::OAuth2::CallbackError (csrf_detected | CSRF detected):
+  omniauth (1.2.2) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+  omniauth (1.2.2) lib/omniauth/failure_endpoint.rb:20:in `call'
+  omniauth (1.2.2) lib/omniauth/failure_endpoint.rb:12:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:475:in `fail!'
+  omniauth-oauth2 (1.3.0) lib/omniauth/strategies/oauth2.rb:71:in `callback_phase'
+  omniauth-facebook (2.0.1) lib/omniauth/strategies/facebook.rb:73:in `block in callback_phase'
+  omniauth-facebook (2.0.1) lib/omniauth/strategies/facebook.rb:136:in `with_authorization_code!'
+  omniauth-facebook (2.0.1) lib/omniauth/strategies/facebook.rb:72:in `callback_phase'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:227:in `callback_call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.6.1) lib/rack/etag.rb:24:in `call'
+  rack (1.6.1) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.1) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.1) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (13.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (11.3ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (21.8ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:21:53 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:21:53 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQCH_B0YKtIxPvT3wZzxo_fnLBSSDedDuERK33Kx_gA8g22dPs2eTp42vb_vPgvuh9Q-9aLUshSG5SZq0wtjXd9Jtn7fWB35p4KW-ITQ30Yq-v4VCG_WY5FdBzn4GtQNFXTVG6rDBysmb7JoUCF-FAIxCP4InAhwJrBkpUcC9sstzUnabGXKEo2ztZ0yR_MX_jQw-9Q6CMqRfTzExcRfUWwCKKp-nU98TXwPZHRQIU9atl-cI5x1YBgmIpt3pttYWY8gtGjxmRt3kKiEXybK4wotxZkNZlaW6ZdVubAxPhTC-L0kv3mwFL4B2LiMeUody7U&state=4cc47d2862f0d9680cd00c8f56544a6b9c947f57a2552406" for ::1 at 2015-05-08 14:21:53 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQCH_B0YKtIxPvT3wZzxo_fnLBSSDedDuERK33Kx_gA8g22dPs2eTp42vb_vPgvuh9Q-9aLUshSG5SZq0wtjXd9Jtn7fWB35p4KW-ITQ30Yq-v4VCG_WY5FdBzn4GtQNFXTVG6rDBysmb7JoUCF-FAIxCP4InAhwJrBkpUcC9sstzUnabGXKEo2ztZ0yR_MX_jQw-9Q6CMqRfTzExcRfUWwCKKp-nU98TXwPZHRQIU9atl-cI5x1YBgmIpt3pttYWY8gtGjxmRt3kKiEXybK4wotxZkNZlaW6ZdVubAxPhTC-L0kv3mwFL4B2LiMeUody7U", "state"=>"4cc47d2862f0d9680cd00c8f56544a6b9c947f57a2552406", "provider"=>"facebook"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 14:26:36 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 91ms (Views: 85.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 14:26:37 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 14:26:37 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 14:26:37 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 14:26:37 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 14:26:37 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 14:26:37 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:26:38 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:26:38 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQCey5QUI0MTuqlCGY3fMbs61-7E9WAMHfTSC_h7Um81IKRBZWIEOW_KFAiLU1t3yydslTaYDWUVW5dpbHS4Ao20YOn3O4GMgxU6igXnt0Trqxux9t5ovFq4LSNS1OSmGQL5d8_rrBs4jD31Q1lFouk64K_4eVZyJRKrFSuGMh3cDnHGFblt_M5YYbGNBfx3oEanjg8u8ieUqeRQw-2NMzOY-ML0GI8ibEvrCxvrCLLhAUfMjn1oVHq9Ni7QZqPBslq0THFWuwDSQaI1mrWN75Lf3YXr99RX65ytDwOK1g51ORGJ4EjH6JLIzN_G8r9B9Vk&state=53ed7dd478cea1f5ef405f023f2081855f84aac5e950a495" for ::1 at 2015-05-08 14:26:38 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQCey5QUI0MTuqlCGY3fMbs61-7E9WAMHfTSC_h7Um81IKRBZWIEOW_KFAiLU1t3yydslTaYDWUVW5dpbHS4Ao20YOn3O4GMgxU6igXnt0Trqxux9t5ovFq4LSNS1OSmGQL5d8_rrBs4jD31Q1lFouk64K_4eVZyJRKrFSuGMh3cDnHGFblt_M5YYbGNBfx3oEanjg8u8ieUqeRQw-2NMzOY-ML0GI8ibEvrCxvrCLLhAUfMjn1oVHq9Ni7QZqPBslq0THFWuwDSQaI1mrWN75Lf3YXr99RX65ytDwOK1g51ORGJ4EjH6JLIzN_G8r9B9Vk", "state"=>"53ed7dd478cea1f5ef405f023f2081855f84aac5e950a495", "provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1[0m  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('wizmire@yahoo.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("provider_id", "provider", "provider_hash", "name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["provider_id", "10106002589105235"], ["provider", "facebook"], ["provider_hash", "CAAKupuMY52sBAGTkih7cCiK3Bqe6OZCEGUohDZCLatrkTOQIk9B7NDu2iPNoAFZB0ODzraRtGcm2OwynJy1MDn7cW4ZCxjxceQkxxBsJJ4eH1dznZCXdNDSagDkCZAKUIPcq5ESdnZAZC0JDTnG1SwnwkdNjcgh3905ZCGYZCdQZAeulvdLNHwxjWF5dSuzDXRGwHbEJZAXT4DcPCZBSWsO943MAF"], ["name", "Greg Wyszynski"], ["email", "wizmire@yahoo.com"], ["password_digest", "fb_login"], ["created_at", "2015-05-08 21:26:38.881109"], ["updated_at", "2015-05-08 21:26:38.881109"]]
+  [1m[36m (67.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE (LOWER("users"."email") = LOWER('wizmire@yahoo.com') AND "users"."id" != 2) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Completed 200 OK in 83ms (Views: 0.2ms | ActiveRecord: 70.9ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 14:26:47 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/babies
+Completed 302 Found in 12ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/babies" for ::1 at 2015-05-08 14:26:47 -0700
+Processing by BabiesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "fb_login"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "fb_login"]]
+  [1m[36mBaby Load (0.4ms)[0m  [1mSELECT "babies".* FROM "babies" WHERE "babies"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered babies/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 84ms (Views: 77.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 14:26:47 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 14:26:47 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 14:26:47 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 14:26:47 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 14:26:47 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 14:26:47 -0700
+
+
+Started GET "/logout" for ::1 at 2015-05-08 14:26:50 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-05-08 14:26:50 -0700
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 14:26:53 -0700
+Processing by SiteController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:26:54 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:26:54 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQBhmJI94JUX9h9RkGhVshdCKl3l6df9Y0uvQAHFVujSFdWcC7k8sYaAeBczR_vw7hQ8g9hkoAljRe-GM4MehlJZoTPmM0u4VeukhArE--wFXLcekUeq2OXObbB13lfLrbf9xHUV4cKeqs4bjp_P5rGY5duzip4XA9L4vC3bixrMKBZkN-DQrqu_GMvWp633VZkpTYgcG58Ji0nVe1GZdHSXhk-i28MYl9t0D1Lorr5RTmDEtfAqxhau3Vwt8XunavSupy9zp6_n1E7QxgrKiu8YQzDC5l5Vl19Es1O9QunvwAB6XM6vo1Gl2WMDel2mSfM&state=b2ccff40a242b6aa6f1a213c5b4a27f870525562c6657d6c" for ::1 at 2015-05-08 14:26:55 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQBhmJI94JUX9h9RkGhVshdCKl3l6df9Y0uvQAHFVujSFdWcC7k8sYaAeBczR_vw7hQ8g9hkoAljRe-GM4MehlJZoTPmM0u4VeukhArE--wFXLcekUeq2OXObbB13lfLrbf9xHUV4cKeqs4bjp_P5rGY5duzip4XA9L4vC3bixrMKBZkN-DQrqu_GMvWp633VZkpTYgcG58Ji0nVe1GZdHSXhk-i28MYl9t0D1Lorr5RTmDEtfAqxhau3Vwt8XunavSupy9zp6_n1E7QxgrKiu8YQzDC5l5Vl19Es1O9QunvwAB6XM6vo1Gl2WMDel2mSfM", "state"=>"b2ccff40a242b6aa6f1a213c5b4a27f870525562c6657d6c", "provider"=>"facebook"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 14:27:07 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/babies
+Completed 302 Found in 74ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/babies" for ::1 at 2015-05-08 14:27:07 -0700
+Processing by BabiesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "fb_login"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "fb_login"]]
+  [1m[36mBaby Load (0.2ms)[0m  [1mSELECT "babies".* FROM "babies" WHERE "babies"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered babies/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 26ms (Views: 19.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/style.self-7983754b004970324c613dedd92bc5d3b94c90877bdf43a9f7ca3b670d25f691.css?body=1" for ::1 at 2015-05-08 14:27:07 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-05-08 14:27:07 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-08 14:27:07 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-05-08 14:27:07 -0700
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-08 14:27:07 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-05-08 14:27:07 -0700
+
+
+Started GET "/logout" for ::1 at 2015-05-08 14:27:10 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-05-08 14:27:10 -0700
+Processing by SessionsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 14:27:12 -0700
+Processing by SiteController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:27:13 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:27:13 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQBdc0gWENFiQF082WD6CcY5YNtR5PSYjdV5mjBGt9E2mD_mvwpc3xD3MoQ4WwEKerYdb0Y67uIY5818BeKDIQhcV9Z5sZfAcylMkRkCmgrh0nBCivlZuZfWEEHI3a3B806xPKhivQTQtho4OIQtHOKU9kQzIbsgbIzzUfaTxRSo4TYWoRH6dCHk-aUV50xSfkKlQT8Vh0qkkonY1iusElICX7RcAt-qKiqwdb3j8dfxNQen7JMTb4w-NrAHDIjQx9QMcjs1WlUb_s9y9esZnKNh7ak8LUaeVsVbruycn1bERFJpAV5nz0rtdBXWTDPxYEs&state=90ebba61b74906c4db1b7aa00f173ae9e23dd117df34d771" for ::1 at 2015-05-08 14:27:13 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQBdc0gWENFiQF082WD6CcY5YNtR5PSYjdV5mjBGt9E2mD_mvwpc3xD3MoQ4WwEKerYdb0Y67uIY5818BeKDIQhcV9Z5sZfAcylMkRkCmgrh0nBCivlZuZfWEEHI3a3B806xPKhivQTQtho4OIQtHOKU9kQzIbsgbIzzUfaTxRSo4TYWoRH6dCHk-aUV50xSfkKlQT8Vh0qkkonY1iusElICX7RcAt-qKiqwdb3j8dfxNQen7JMTb4w-NrAHDIjQx9QMcjs1WlUb_s9y9esZnKNh7ak8LUaeVsVbruycn1bERFJpAV5nz0rtdBXWTDPxYEs", "state"=>"90ebba61b74906c4db1b7aa00f173ae9e23dd117df34d771", "provider"=>"facebook"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2015-05-08 14:27:26 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for ::1 at 2015-05-08 14:27:34 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lcFCG2EEWYpGfGPz/m7UsGh8vpjBGZspDgeUXsBKJZ6HqR8LSRR0WVR8RvAYv9+FfEz68Fj+A9+9FEw5LDK/MA==", "user"=>{"email"=>"test@test.test", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "test@test.test"]]
+Redirected to http://localhost:3000/babies
+Completed 302 Found in 66ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/babies" for ::1 at 2015-05-08 14:27:34 -0700
+Processing by BabiesController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "$2a$10$5/VIZiDrmKCkQh0/g925e.KejjoEtDBeUmDjxsJsoiJTGzRiycD4q"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "$2a$10$5/VIZiDrmKCkQh0/g925e.KejjoEtDBeUmDjxsJsoiJTGzRiycD4q"]]
+  [1m[35mBaby Load (0.2ms)[0m  SELECT "babies".* FROM "babies" WHERE "babies"."user_id" = $1  [["user_id", 1]]
+  Rendered babies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-08 14:27:39 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for ::1 at 2015-05-08 14:27:39 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_flash.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for ::1 at 2015-05-08 14:27:41 -0700
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/signup" for ::1 at 2015-05-08 14:27:56 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dSqYgzcd7RF9yyLQNcA8/sfqqh2kgfDJ8SKCn+h4Xr9nQsWTHw3Awm/LB9PTETfL09rudT1maD9CMVr4BADEEQ==", "user"=>{"name"=>"test2", "email"=>"test2@test.test", "password"=>"[FILTERED]"}, "commit"=>"Create an Account"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('test2@test.test') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "test2"], ["email", "test2@test.test"], ["password_digest", "$2a$10$zgwa34yHe1tGO5KRwAMKd.3YGhLz7K3ixzm//wW7W6Y1huGUOZjpe"], ["created_at", "2015-05-08 21:27:56.571573"], ["updated_at", "2015-05-08 21:27:56.571573"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/login
+Completed 302 Found in 70ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/login" for ::1 at 2015-05-08 14:27:56 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for ::1 at 2015-05-08 14:28:02 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0wtg+7Vf3Gf4TKZY762sD1zXTp4VUcTR5sDI8/xP1Z3BYz3rnU/xtOpMg1sJfKc6SOcK9oy2XCdV0xCUEDdPMw==", "user"=>{"email"=>"test2@test.test", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "test2@test.test"]]
+Redirected to http://localhost:3000/babies
+Completed 302 Found in 65ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/babies" for ::1 at 2015-05-08 14:28:02 -0700
+Processing by BabiesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "$2a$10$zgwa34yHe1tGO5KRwAMKd.3YGhLz7K3ixzm//wW7W6Y1huGUOZjpe"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "$2a$10$zgwa34yHe1tGO5KRwAMKd.3YGhLz7K3ixzm//wW7W6Y1huGUOZjpe"]]
+  [1m[35mBaby Load (0.2ms)[0m  SELECT "babies".* FROM "babies" WHERE "babies"."user_id" = $1  [["user_id", 3]]
+  Rendered babies/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 78ms (Views: 21.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/logout" for ::1 at 2015-05-08 14:28:57 -0700
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 12ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/login" for ::1 at 2015-05-08 14:28:57 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered layouts/_flash.html.erb (0.1ms)
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-08 14:28:59 -0700
+Processing by SiteController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered site/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:29:00 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:29:00 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQAF0FKbx7JkLwySodmLYl_eY2xan2OiMAu0Y0GaoUcO5BElho2ABNGMhxcsv8qw6V4HnS1Se5qMwxX6tZCo_ZAfJLdtS66et7GHa3M3KpBjtWrjYlq4M7Deec0R9cNo6ML8qDk1AtFmZIj2NUw09OAMaGs5VoEHc96cQvf-ZGzR5Dzpq5jXTGcpHPtAW3MmLOIdJcPB3cW739mrLwweORiLlfkZWdu-RuKeKS7QSyPZPIFS3LhsOpUHL3DcU9vLQXFOx46n4_evCTMct0Djjoo3cZ4ZzffrCv4OVBD-nRHwuWZXImdKpQKg6JUTV4y60Hs&state=933e7139da1c8616ab9c204ecec1d36b105069bb87a92d18" for ::1 at 2015-05-08 14:29:00 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQAF0FKbx7JkLwySodmLYl_eY2xan2OiMAu0Y0GaoUcO5BElho2ABNGMhxcsv8qw6V4HnS1Se5qMwxX6tZCo_ZAfJLdtS66et7GHa3M3KpBjtWrjYlq4M7Deec0R9cNo6ML8qDk1AtFmZIj2NUw09OAMaGs5VoEHc96cQvf-ZGzR5Dzpq5jXTGcpHPtAW3MmLOIdJcPB3cW739mrLwweORiLlfkZWdu-RuKeKS7QSyPZPIFS3LhsOpUHL3DcU9vLQXFOx46n4_evCTMct0Djjoo3cZ4ZzffrCv4OVBD-nRHwuWZXImdKpQKg6JUTV4y60Hs", "state"=>"933e7139da1c8616ab9c204ecec1d36b105069bb87a92d18", "provider"=>"facebook"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1[0m  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:29:06 -0700
+
+
+Started GET "/auth/facebook" for ::1 at 2015-05-08 14:29:06 -0700
+
+
+Started GET "/auth/facebook/callback?code=AQAFLhEKXcJvV5sE-EUH9slTuCUcbYx5kYDqx3l1e8QVnqvOMY0fY0-uT2YKBryHIS8_jGuwcTAT2t-RiQHRoBTpVNayYlTx6AkSIOHon01CjkrGeH-o38axxlnxrQ36LX5M3nAbwSaev-KapP9ZOrqXTn6CNCDfjHKCBQ5eqSI3ZnSYa1pPHd5HM6_7IULW9mJYFHskDodSeFamwEsrfLn7Xbfd-eqf5i2Q3gMsg1kGDb4rKy4oPnnzJY88UHU6C6ziDq5_p1HVqZvdcj2V4B4hwLwjiCoXHQPbW4zfLmTs5K8qASXU7Wg07AWb0yvPYNw&state=8bf0016c6002c294ac26131ede8cc18d14b2558c375350ae" for ::1 at 2015-05-08 14:29:06 -0700
+Processing by AuthController#callback as HTML
+  Parameters: {"code"=>"AQAFLhEKXcJvV5sE-EUH9slTuCUcbYx5kYDqx3l1e8QVnqvOMY0fY0-uT2YKBryHIS8_jGuwcTAT2t-RiQHRoBTpVNayYlTx6AkSIOHon01CjkrGeH-o38axxlnxrQ36LX5M3nAbwSaev-KapP9ZOrqXTn6CNCDfjHKCBQ5eqSI3ZnSYa1pPHd5HM6_7IULW9mJYFHskDodSeFamwEsrfLn7Xbfd-eqf5i2Q3gMsg1kGDb4rKy4oPnnzJY88UHU6C6ziDq5_p1HVqZvdcj2V4B4hwLwjiCoXHQPbW4zfLmTs5K8qASXU7Wg07AWb0yvPYNw", "state"=>"8bf0016c6002c294ac26131ede8cc18d14b2558c375350ae", "provider"=>"facebook"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider_id" = $1 AND "users"."provider" = $2 LIMIT 1  [["provider_id", "10106002589105235"], ["provider", "facebook"]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)

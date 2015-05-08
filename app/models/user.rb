@@ -10,9 +10,15 @@ class User < ActiveRecord::Base
 
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
 
+  # validates :password,
+  #   presence: true,
+  #   :on => :create,
+  #   :if => lambda{ new_record? || !password.nil? }
+
   validates :password,
     presence: true,
-    :on => :create
+    :on => :create,
+    :if => lambda{ password_digest != "fb_login" }
 
   def self.authenticate email, password
     User.find_by_email(email).try(:authenticate, password)
