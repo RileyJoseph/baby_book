@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507181014) do
+ActiveRecord::Schema.define(version: 20150508182322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150507181014) do
     t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "testurl"
   end
 
   add_index "media", ["event_id"], name: "index_media_on_event_id", using: :btree
@@ -59,16 +60,40 @@ ActiveRecord::Schema.define(version: 20150507181014) do
 
   add_index "stats", ["baby_id"], name: "index_stats_on_baby_id", using: :btree
 
+  create_table "treatments", force: :cascade do |t|
+    t.datetime "date"
+    t.string   "doctor"
+    t.integer  "vaccination_id"
+    t.integer  "baby_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "treatments", ["baby_id"], name: "index_treatments_on_baby_id", using: :btree
+  add_index "treatments", ["vaccination_id"], name: "index_treatments_on_vaccination_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "provider"
+    t.string   "provider_id"
+    t.string   "provider_hash"
+  end
+
+  create_table "vaccinations", force: :cascade do |t|
+    t.string   "type"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "babies", "users"
   add_foreign_key "events", "babies"
   add_foreign_key "media", "events"
   add_foreign_key "stats", "babies"
+  add_foreign_key "treatments", "vaccinations"
 end

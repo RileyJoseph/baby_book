@@ -7,13 +7,19 @@ class ApplicationController < ActionController::Base
 
   def is_authenticated?
     unless current_user
+      # render json: current_user
       flash[:danger] = "You are not logged in"
       redirect_to login_path
     end
   end
 
   def current_user
-    @current_user ||= User.find_by_id(session[:user_id])
+    if User.find_by_id(session[:password_digest]) != "fb_login"
+      @current_user ||= User.find_by_id(session[:user_id])
+    else
+      @current_user ||= User.find_by_provider_id(session[:provider_id])
+    end
   end
 
 end
+# provider_id:provider_user['uid']
