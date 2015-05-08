@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20150508182322) do
     t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "testurl"
   end
 
   add_index "media", ["event_id"], name: "index_media_on_event_id", using: :btree
