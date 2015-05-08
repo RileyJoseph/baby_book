@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     get 'logout' => 'sessions#destroy'
 
     resources :babies do
-      resources :events
+      resources :events do
+        resources :media
+      end
       resources :stats
     end
   # Example of regular route:
