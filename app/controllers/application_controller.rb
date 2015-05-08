@@ -28,5 +28,9 @@ class ApplicationController < ActionController::Base
   #   @baby_id = (params[:id]).to_i
   # end
 
+  def current_baby
+    @baby_id = (params[:id]).to_i
+  end
+
 end
 
