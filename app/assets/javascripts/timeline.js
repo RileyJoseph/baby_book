@@ -2,14 +2,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var container = document.getElementById('visualization');
 
-  var trial = $('.temp_information').data('temp')
+  var babyInfo = $('.temp_information').data('temp')
 
   var baby = []
-  for (var i = 0; i < trial.length; i++) {
+  for (var i = 0; i < babyInfo.length; i++) {
     baby[i] = {}
     baby[i].id = i
-    baby[i].content =  "<p class='caption'>" + trial[i].body + "</p>"
-    baby[i].start = trial[i].date
+    baby[i].content =  "<p class='caption'>" + babyInfo[i].topic + "</p>"
+    baby[i].start = babyInfo[i].date
+    baby[i].body = babyInfo[i].body
   }
 
   // var baby = [
@@ -51,9 +52,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   $(function(){
     $('.item.box').on('click', function(){
+      text = $(this).text()
       $("#hidden").slideDown('slow').css("opacity","1")
       $("body").prepend("<div id='PopupMask' style='position:fixed;width:100%;height:100%;z-index:10;background-color:gray;'></div>");
       $("#PopupMask").css('opacity', 0.8);
+        for (var i = 0; i < babyInfo.length; i++) {
+          if (babyInfo[i].topic === text) {
+            $('.blurb').text(babyInfo[i].body)
+          }
+        }
       })
     $("#off").on('click', function() {
       $("#hidden").slideUp('slow');
