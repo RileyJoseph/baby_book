@@ -10,8 +10,8 @@
   <% @babies.each do |baby| %>
   <div class="babies">
     <ul class="baby-list"><strong><%= baby.name %></strong>
-      <li><%= link_to "Profile", baby_path(baby) %></li>
-      <li><%= link_to "Timeline", baby_events_path(baby) %></li>
+      <li><%= link_to "Profile", baby_path(baby), :class => "btn btn-info btn-sm btn-margins" %></li>
+      <li><%= link_to "Timeline", baby_events_path(baby), :class => "btn btn-info btn-sm btn-margins" %></li>
     </ul>
   </div>
   <% end %>

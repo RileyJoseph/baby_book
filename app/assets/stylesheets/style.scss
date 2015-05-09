@@ -16,7 +16,6 @@
 
 .babies {
   display: inline-block;
-  text-align: center;
   margin-top: 5px;
 }
 
@@ -51,19 +50,30 @@
 
 
 #hidden-header {
-  margin-top: 0.4em;
-  margin-bottom: 0.5em;
-  font-size: 50px;
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
+  font-size: 36px;
 }
 
 .item.box:hover {
   cursor: pointer;
 }
 
+.blurb {
+  font-size: 20px;
+}
+
+.timeline-img {
+  margin-top: 10px;
+  width: 300px;
+  height: auto;
+
+}
+
 #off {
   line-height: 36px;
   position: absolute;
-  font-size: 16px;
+  font-size: 14px;
   top: 3px;
   right: 3px;
   height: 32px;
