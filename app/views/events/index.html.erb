@@ -1,25 +1,28 @@
 <div class="row">
   <div class="col-md-8 col-offset-md-2">
 
-  <h2>Events Index Page</h2>
-
-  <%= link_to " Make an Event", new_baby_event_path, :class => "btn btn-success glyphicon glyphicon-hand-right" %>
-  <br>
-  <br>
-  <p><%= link_to "#{@baby.name}'s Profile", baby_path(@baby) %></p>
-
-  <% @events.each do |event| %>
-    <li><%= link_to event.topic, "/babies/#{@baby.id}/events/#{event.id}" %></li>
-  <% end %>
+  <h1><%= "#{@baby.name}'s Timeline" %></h1>
 
   </div>
 
 </div>
 
+<hr>
+
+<%= content_tag :div, class: "temp_information", data: {temp: @events} do %>
+<% end %>
+
 <div id="visualization"></div>
+
+<div class="btn-margins-large">
+  <%= link_to " Make an Event", new_baby_event_path, :class => "btn btn-success" %>
+  <%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info"  %>
+</div>
+
 
 <div id="hidden"><h1 id="hidden-header"></h1>
   <div id="off">Close</div>
   <p class="blurb">
   </p>
+  <img class="timeline-img">
 </div>

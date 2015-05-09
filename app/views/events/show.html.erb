@@ -2,16 +2,16 @@
   <div class="col-md-8 col-offset-md-2">
   <h2> <%=@event.topic%> </h2>
 
-  <p><%= link_to "#{@baby.name}'s Profile", baby_path(@baby) %></p>
-  <p><%= link_to "Back to Timeline", baby_events_path %></p>
-
   <div class="container">
-    <p> <%=@event.body%> </p>
-    <p> <%=@event.date.strftime("%A, %B %e, %Y")%> </p>
+    <p class="reduce-left-margin"> <%=@event.body%> </p>
+    <p class="reduce-left-margin"> <%=@event.date.strftime("%A, %B %e, %Y")%> </p>
   </div>
-
-  <p><%= link_to "Add a photo for #{@event.topic}",new_baby_event_medium_path(@baby, @event), :class => "btn btn-info" %></p>
-
+<hr>
+<div class="buttons-inline">
+<%= link_to "Add a photo for #{@event.topic}",new_baby_event_medium_path(@baby, @event), :class => "btn btn-info" %>
+<%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info" %>
+<%= link_to "Back to Timeline", baby_events_path, :class => "btn btn-info" %>
+</div>
     <% @media.each do |image| %>
       <div style="display: inline-block; width: 100px padding: 20px; margin: 20px; text-align: center;">
         <%= cl_image_tag(

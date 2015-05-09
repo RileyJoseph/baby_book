@@ -1,3 +1,10 @@
+li {
+  list-style-type: none;
+}
+
+.container {
+  margin-top: -5px;
+}
 
 .welcome-title {
   background: url(baby.jpg);
@@ -16,32 +23,75 @@
 
 .babies {
   display: inline-block;
-  text-align: center;
   margin-top: 5px;
+}
+
+.grey-text {
+  color: #666;
+}
+
+.buttons-inline {
+  display: inline-block;
+}
+
+.grey-text:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.reduce-left-margin {
+  margin-left: -15px
+}
+
+.reduce-top-margin {
+  margin-top: -10px
 }
 
 .baby-list {
-  margin-top: 5px;
+  margin-top: 0px;
   list-style: none;
+  margin-left: -40px;
 }
 
+.btn-margins {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+.btn-margins-large {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.btn-margins-top {
+  margin-top: 15px;
+  margin-bottom: -5px
+}
+
+.btn-margins-bottom {
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+
 #visualization {
-  margin: 5% 0;
+  margin: 3% 0;
   height: 30%;
   width: 90%;
 }
 
 #hidden {
   font-weight: 200;
-  width: 90%;
-  height: 660px;
+  width: 50%;
+  height: 400px;
   background-color: white;
   color: black;
   border-radius: 10px;
-  margin: 2% auto;
+  margin: 7% 25%;
   position: absolute;
   top: 0;
-  left: 5%;
+  left: 0%;
   text-align: center;
   font-size: 25px;
 /*  border: 1px solid black;*/
@@ -49,20 +99,40 @@
   z-index: 100;
 }
 
+
 #hidden-header {
-  margin-top: 0.4em;
-  margin-bottom: 0.5em;
-  font-size: 50px;
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
+  font-size: 36px;
+}
+
+.item.box:hover {
+  cursor: pointer;
+}
+
+.blurb {
+  font-size: 20px;
+}
+
+.timeline-img {
+  margin-top: 10px;
+  width: 300px;
+  height: auto;
+
 }
 
 #off {
   line-height: 36px;
   position: absolute;
-  font-size: 16px;
+  font-size: 14px;
   top: 3px;
   right: 3px;
   height: 32px;
   width: 60px;
   color: #000;
   cursor: pointer;
+}
+
+.profile-name {
+  margin-bottom: 10px;
 }

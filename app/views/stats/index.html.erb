@@ -2,7 +2,6 @@
   <div class="col-md-8 col-offset-md-2">
 
   <h2><%= "#{@baby.name}'s" %> Progress</h2>
-  <%= link_to "#{@baby.name}'s Profile", baby_path(@baby) %>
 
 <% @stats.each do |stat| %>
   <p><%= stat.date.strftime("%A, %B %e, %Y") %></p>
@@ -12,8 +11,8 @@
 <% end %>
 
 
-  <%= link_to "Create an Update", new_baby_stat_path, :class => "btn btn-success glyphicon glyphicon-hand-right" %>
-
+<%= link_to "Create an Update", new_baby_stat_path, :class => "btn btn-success btn-margins" %>
+<%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info btn-margins" %>
 
 
 
