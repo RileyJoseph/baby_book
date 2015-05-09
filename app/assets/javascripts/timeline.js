@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             $('#hidden-header').text(babyInfo[i].topic)
             $('.blurb').text(babyInfo[i].body)
             $('.timeline-img').attr('src', 'http://i.telegraph.co.uk/multimedia/archive/01778/baby_1778233b.jpg')
+           $('a').attr('href',"events/" + babyInfo[i].id)
           }
         }
       })
