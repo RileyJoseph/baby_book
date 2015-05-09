@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Configuration for the Timeline
   var options = {
     orientation: "bottom",
-    height: 350,
+    height: 250,
     min: "2013",
     max: "2018",
     start: "2013",

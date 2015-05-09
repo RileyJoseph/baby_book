@@ -5,7 +5,9 @@
 
   <h4><%= @baby.name %></h4>
   <p><strong>Birthday: </strong><%= @birthday %></p>
-  <p><%= link_to "Measurements", baby_stats_path(@baby) %></p>
-  <p><%= link_to "Timeline", baby_events_path(@baby) %></p>
+  <img class="timeline-img" src="http://blog.brainfacts.org/wp-content/uploads/happy-baby.jpg">
+  <div class="btn-margins-large">
+  <%= link_to "Measurements", baby_stats_path(@baby), :class => "btn btn-info"%>
+  <%= link_to "Timeline", baby_events_path(@baby), :class => "btn btn-info" %>
   </div>
 </div>
