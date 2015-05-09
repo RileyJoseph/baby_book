@@ -13,22 +13,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     baby[i].body = babyInfo[i].body
   }
 
-  // var baby = [
-  //   {id: 1, content: "<p class='caption'>Asa was born</p>", start: 'October 2, 2013'},
-  //   {id: 2, content: "<p class='caption'>Asa smiled for the first time</p>", start: 'November 20, 2013'},
-  //   {id: 3, content: "<p class='caption'>He sat up", start: 'March 12, 2014'},
-  //   {id: 4, content: "<p class='caption'>Standing up!</p>", start: 'June 19 2014'},
-  //   {id: 5, content: "<p class='caption'>Asa's first steps</p>", start: 'August 10, 2014'},
-  //   {id: 6, content: "<p class='caption'>First day at daycare</p>", start: 'September 13, 2014'}
 
-  // ]
   // Create a DataSet (allows two way data-binding)
   var items = new vis.DataSet(baby);
 
   // Configuration for the Timeline
   var options = {
     orientation: "bottom",
-    height: 350,
+    height: 250,
     min: "2013",
     max: "2018",
     start: "2013",
@@ -58,7 +50,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       $("#PopupMask").css('opacity', 0.8);
         for (var i = 0; i < babyInfo.length; i++) {
           if (babyInfo[i].topic === text) {
+            $('#hidden-header').text(babyInfo[i].topic)
             $('.blurb').text(babyInfo[i].body)
+            $('.timeline-img').attr('src', 'http://i.telegraph.co.uk/multimedia/archive/01778/baby_1778233b.jpg')
           }
         }
       })

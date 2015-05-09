@@ -3,18 +3,19 @@
 
   <h2>Babies Index Page</h2>
 
-  <div class="baby-maker">
-    <%= link_to " Make a Baby", new_baby_path, :class => "btn btn-success glyphicon glyphicon-hand-right" %>
-  </div>
 
   <% @babies.each do |baby| %>
   <div class="babies">
     <ul class="baby-list"><strong><%= baby.name %></strong>
-      <li><%= link_to "Profile", baby_path(baby) %></li>
-      <li><%= link_to "Timeline", baby_events_path(baby) %></li>
+      <li><%= link_to "Profile", baby_path(baby), :class => "grey-text" %></li>
+      <li><%= link_to "Timeline", baby_events_path(baby), :class => "grey-text" %></li>
     </ul>
   </div>
   <% end %>
+  <hr>
+  <div class="baby-maker">
+    <%= link_to " Make a Baby", new_baby_path, :class => "btn btn-success" %>
+  </div>
 
   </div>
 </div>
