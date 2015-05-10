@@ -1,14 +1,15 @@
-<div class="row">
-  <div class="col-md-8 col-offset-md-2">
-
-  <h2>Measure your baby!</h2>
-
-  <%= bootstrap_form_for [@baby, @stat] do |f| %>
-    <%= f.text_field :height, :placeholder =>"Enter your baby's height (cm)" %>
-    <%= f.text_field :weight, :placeholder => "Enter your baby's weight (kg)" %>
-    <%= f.text_field :date, :placeholder => "Date Recorded (ex. March 22, 2014)" %>
-    <%= f.submit "Update", :class => "btn btn-info" %>
-  <% end %>
-
-  </div>
+<%= bootstrap_form_for [@baby, @stat] do |f| %>
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title" id="myModalLabel">Measure your baby!</h4>
 </div>
+<div class="modal-body">
+    <%= f.text_field :weight, :placeholder => "Enter your baby's weight (kg)" %>
+    <%= f.text_field :height, :placeholder =>"Enter your baby's height (cm)" %>
+    <%= f.text_field :date, :placeholder => "Date Recorded (ex. March 22, 2014)" %>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <%= f.submit "Update", :class => "btn btn-info" %>
+</div>
+<% end %>
