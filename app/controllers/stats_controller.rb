@@ -42,6 +42,7 @@ class StatsController < ApplicationController
     if current_user.babies.ids.include?(baby_id)
       @stat = Stat.new
       @baby = Baby.find(params[:baby_id])
+      render layout: false
     else
       flash[:danger] = "You cannot view this page"
       redirect_to root_path
@@ -69,6 +70,7 @@ class StatsController < ApplicationController
       @stat = Stat.create(stat_params)
       @baby.stats << @stat
       redirect_to baby_stats_path
+      # render partial: 'stats'
 
   end
 

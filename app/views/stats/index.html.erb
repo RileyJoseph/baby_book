@@ -3,15 +3,19 @@
 
   <h2><%= "#{@baby.name}'s" %> Progress</h2>
 
-<% @stats.each do |stat| %>
+<div class="baby-stats">
+  <% @stats.each do |stat| %>
   <p><%= stat.date.strftime("%A, %B %e, %Y") %></p>
   <p><%= stat.weight %> kg</p>
   <p><%= stat.height %> cm</p>
   <hr>
 <% end %>
+</div>
 
 
-<%= link_to "Create an Update", new_baby_stat_path, :class => "btn btn-success btn-margins" %>
+
+<!-- Button trigger modal -->
+<%= link_to 'Create an Update'.html_safe, new_baby_stat_path, :class=>'btn btn-success btn-margins', :data=>{toggle:'modal',target:'#myModal'} %>
 <%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info btn-margins" %>
 
 
@@ -37,5 +41,13 @@
 <% @data3.each do |x|  %>
 <%= x[:"3rd_percentile_weight_in_kilograms"] %>
 <% end %>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
 
 

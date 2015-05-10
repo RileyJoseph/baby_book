@@ -1,0 +1,6 @@
+<% @stats.each do |stat| %>
+  <p><%= stat.date.strftime("%A, %B %e, %Y") %></p>
+  <p><%= stat.weight %> kg</p>
+  <p><%= stat.height %> cm</p>
+  <hr>
+<% end %>
