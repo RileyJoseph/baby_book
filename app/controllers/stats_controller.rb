@@ -69,8 +69,8 @@ class StatsController < ApplicationController
       @baby = Baby.find(params[:baby_id])
       @stat = Stat.create(stat_params)
       @baby.stats << @stat
-      # redirect_to baby_stats_path
-      render partial: 'stats'
+      redirect_to baby_stats_path
+      # render partial: 'stats'
 
   end
 
