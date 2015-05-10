@@ -1,11 +1,19 @@
 <div class="row">
   <div class="col-md-8 col-offset-md-2">
 
-  <h2>Media New Page</h2>
+    <h2>Media New Page</h2>
 
+    <!-- form for uploading images -->
     <%= bootstrap_form_for [@baby, @event, @medium] do |f| %>
 
-      <%= f.file_field :url %>
+      <!-- input field for hidden values -->
+      <%= f.file_field :url, {:multiple => true, :class => "hidden"} %>
+
+      <!-- link to open cloudinary widget for direct uploads -->
+      <a href="#" id="upload_widget_opener">Upload multiple images</a>
+
+      <!-- thumbnails displayed here -->
+      <div class="preview"></div>
 
       <%= f.submit %>
     <% end %>
