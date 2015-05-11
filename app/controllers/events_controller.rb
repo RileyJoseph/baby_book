@@ -40,6 +40,7 @@ class EventsController < ApplicationController
       if current_user.babies.ids.include?(baby_id)
         @event = Event.new
         @baby = Baby.find(params[:baby_id])
+        render layout: false
       else
         flash[:danger] = "You cannot view this page"
         redirect_to root_path
