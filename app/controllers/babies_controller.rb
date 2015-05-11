@@ -10,6 +10,7 @@ class BabiesController < ApplicationController
 
   def new
     @baby = Baby.new
+    render layout: false
   end
 
 
@@ -29,7 +30,8 @@ class BabiesController < ApplicationController
 
   def create
     @baby = current_user.babies.create(baby_params)
-    redirect_to @baby
+    @babies = current_user.babies
+    render partial: 'babies'
   end
 
 
