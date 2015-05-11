@@ -23,6 +23,7 @@ class StatsController < ApplicationController
     if current_user.babies.ids.include?(baby_id)
       @baby = Baby.find(params[:baby_id])
       @stats = Baby.find(params[:baby_id]).stats
+      @last_three = Baby.find(params[:baby_id]).stats.last(3).sort { |x,y| y<=>x }
     else
       flash[:danger] = "You cannot view this page"
       redirect_to root_path
