@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
     get 'logout' => 'sessions#destroy'
 
+    get 'babies/:baby_id/stats/all-modal' => 'stats#all_modal', as: 'baby_stat_modal'
+
     resources :babies do
       resources :events do
         resources :media

@@ -1,6 +1,7 @@
-<% @stats.each do |stat| %>
-  <p><%= stat.date.strftime("%A, %B %e, %Y") %></p>
-  <p><%= stat.weight %> kg</p>
-  <p><%= stat.height %> cm</p>
-  <hr>
+<% @last_three.each do |last| %>
+ <tr>
+   <td><strong><%= last.date.strftime("%A %B %e, %Y") %></strong></td>
+   <td><%= last.weight %> kg</td>
+   <td><%= last.height %> cm</td>
+ </tr>
 <% end %>
