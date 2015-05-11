@@ -3,24 +3,30 @@
 
   <h2><%= "#{@baby.name}'s" %> Progress</h2>
 
-<h3>Last Three Growth Measurments</h3>
-<% @last_three.each do |last| %>
-<div class="baby-stats">
-  <p><strong><%= last.date.strftime("%A %B %e, %Y") %></strong></p>
-  <p><%= last.weight %> kg</p>
-  <p><%= last.height %> cm</p>
-</div>
-<% end %>
-<br>
+<h3>Most Recent Growth Measurments</h3>
 
+<div class="baby-stats">
+  <div class="table-responsive">
+    <table class="table table-condensed baby-recent">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Weight</th>
+          <th>Height</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'stats' %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 
 <!-- Button trigger modal -->
-<%= link_to 'Create an Update'.html_safe, new_baby_stat_path, :class=>'btn btn-success btn-margins', :data=>{toggle:'modal',target:'#myModal'} %>
+<%= link_to 'Create an Update', new_baby_stat_path, :class=>'btn btn-success btn-margins', :data=>{toggle:'modal',target:'#myModal'} %>
 <!-- Button trigger stat-history modal -->
-<button type="button" class="btn btn-primary btn-margins" data-toggle="modal" data-target="#statModal">
-  See All Measurments
-</button>
+<%= link_to 'See All Measurements', baby_stat_modal_path, :class => 'btn btn-primary btn-margins', :data=>{toggle: 'modal', target: '#statModal' }  %>
 
 <%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info btn-margins" %>
 
@@ -49,8 +55,8 @@
 <% end %>
 
 <!-- New Stat Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
     </div>
   </div>
@@ -60,33 +66,6 @@
 <div class="modal fade" id="statModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><%= "#{@baby.name}'s Measurements" %></h4>
-      </div>
-      <div class="modal-body">
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Weight</th>
-                  <th>Height</th>
-                </tr>
-              </thead>
-              <% @stats.each do |stat| %>
-              <tbody>
-                <td><strong><%= stat.date.strftime("%B %e, %Y") %></strong></td>
-                <td><%= stat.weight %> kg</td>
-                <td><%= stat.height %> cm</td>
-              </tbody>
-              <% end %>
-            </table>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
     </div>
   </div>
 </div>

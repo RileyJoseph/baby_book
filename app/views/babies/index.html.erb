@@ -5,7 +5,8 @@
 
 
   <% @babies.each do |baby| %>
-  <div class="babies">
+  <div class="babies col-md-10 col-md-offset-1">
+    <img class="baby-profile" src="http://i.imgur.com/jwI4Xa0.jpg">
     <ul class="baby-list"><strong><%= baby.name %></strong>
       <li><%= link_to "Profile", baby_path(baby), :class => "grey-text" %></li>
       <li><%= link_to "Timeline", baby_events_path(baby), :class => "grey-text" %></li>

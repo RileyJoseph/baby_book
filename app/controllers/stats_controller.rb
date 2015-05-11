@@ -22,8 +22,8 @@ class StatsController < ApplicationController
     @data3 = render_data @csv3
     if current_user.babies.ids.include?(baby_id)
       @baby = Baby.find(params[:baby_id])
-      @stats = Baby.find(params[:baby_id]).stats
-      @last_three = Baby.find(params[:baby_id]).stats.last(3).sort { |x,y| y<=>x }
+      @stats = @baby.stats
+      @last_three = @baby.stats.order(date: 'desc').limit(3)
     else
       flash[:danger] = "You cannot view this page"
       redirect_to root_path
@@ -70,11 +70,18 @@ class StatsController < ApplicationController
       @baby = Baby.find(params[:baby_id])
       @stat = Stat.create(stat_params)
       @baby.stats << @stat
-      redirect_to baby_stats_path
-      # render partial: 'stats'
+      @last_three = @baby.stats.order(date: 'desc').limit(3)
+      @stats = @baby.stats.order(date: 'asc')
+      # redirect_to baby_stats_path
+      render partial: 'stats'
 
   end
 
+  def all_modal
+    @baby = Baby.find(params[:baby_id])
+    @stats = @baby.stats.order(date: 'asc')
+    render layout: false
+  end
 
   private
 
