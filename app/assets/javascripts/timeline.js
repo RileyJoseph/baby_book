@@ -1,4 +1,12 @@
+
 document.addEventListener("DOMContentLoaded", function(event) {
+
+  $('#adjust').on('click', function() {
+    options.moveable = false
+  })
+
+  var m = moment();
+  console.log(m)
 
   var container = document.getElementById('visualization');
 
@@ -27,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     max: "2018",
     start: "2013",
     end: "2015",
-    // moveable: false,
+   // moveable: false,
     showCurrentTime: true,
     editable: {
       add: true,         // add new items by double tapping
