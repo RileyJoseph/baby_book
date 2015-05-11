@@ -17,35 +17,23 @@ class MediaController < ApplicationController
     @baby = Baby.find(params[:baby_id])
     @event = Event.find(params[:event_id])
 
-    # params[:url] is an array of the image urls
+    # render json: params[:url]
     preloaded_array = params[:url]
 
-    p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preloaded_array"
-    p preloaded_array
-    puts "Images: " + preloaded_array.length.to_s
-
-    # render json: params
-
     p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BABY"
-    p @baby
+    p @baby[:name]
     p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ EVENT"
-
-    if preloaded_array.present?
-
-    p @event
+    p @event[:topic]
+    p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preloaded_array"
+    puts "Images: " + preloaded_array.length.to_s
     p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SAVING TO MEDIUM MODEL NOW"
 
-      preloaded_array.each do |image|
-        # create json object of image's data
-        cloudinary_file = Cloudinary::PreloadedFile.new(image)
-
-        p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMAGE INSTANCE BEING STORED"
-        p cloudinary_file
-
-        # add image to media model
-        @event.media.find_or_create_by(url: cloudinary_file.public_id)
-      end
+    preloaded_array.each do |public_id|
+      # add image to media model
+      @event.media.find_or_create_by(url: public_id)
+      p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMAGE INSTANCE SAVED"
     end
+
     redirect_to baby_event_path(@baby,@event)
   end
 
