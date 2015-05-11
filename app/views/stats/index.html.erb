@@ -26,7 +26,7 @@
 <!-- Button trigger modal -->
 <%= link_to 'Create an Update', new_baby_stat_path, :class=>'btn btn-success btn-margins', :data=>{toggle:'modal',target:'#myModal'} %>
 <!-- Button trigger stat-history modal -->
-<%= link_to 'See All Measurements', baby_stat_modal_path, :class => 'btn btn-primary btn-margins', :data=>{toggle: 'modal', target: '#statModal' }  %>
+<%= link_to 'See All Measurements', baby_stat_modal_path, :class => 'btn btn-primary btn-margins', :data=>{toggle: 'modal', target: '#myModal' }  %>
 
 <%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info btn-margins" %>
 
@@ -57,14 +57,6 @@
 <!-- New Stat Modal -->
 <div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-    </div>
-  </div>
-</div>
-
-<!-- Stat History Modal -->
-<div class="modal fade" id="statModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
     <div class="modal-content">
     </div>
   </div>

@@ -1,12 +1,33 @@
 $(function(){
 
-  // Clear New modal once modal closes
-  $('#myModal').on('hidden.bs.modal', function(){
+  // BABIES INDEX AJAX CALLS
+
+  // Clear baby Modal once Modal Closes
+  $('#babyModal').on('hidden.bs.modal',function(){
     $(this).removeData('bs.modal');
   });
 
-  // Clear stat modal once modal closes
-  $('#statModal').on('hidden.bs.modal', function(){
+  // AJAX data create for babies
+  $('#babyModal').on('submit','form',function(event){
+    event.preventDefault();
+    var form = $(this);
+    $.ajax({
+      url:form.attr('action'),
+      method:form.attr('method'),
+      data:form.serialize()
+    }).done(function(data){
+      $('.babies-row').html(data);
+      $('#babyModal').modal('hide');
+    }).error(function(err){
+      alert('Something Broke');
+      console.log(err);
+    });
+  });
+
+  // STATISTICS PAGE AJAX CALLS
+
+  // Clear New modal once modal closes
+  $('#myModal').on('hidden.bs.modal', function(){
     $(this).removeData('bs.modal');
   });
 
