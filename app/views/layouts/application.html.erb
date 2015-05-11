@@ -3,16 +3,22 @@
 <head>
   <title>BabyBook</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="//code.jquery.com/jquery.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <script src="//code.jquery.com/jquery.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <!-- include cloudinary widget -->
+  <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<!-- set up cloudinary widget -->
+<%= cloudinary_js_config %>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
