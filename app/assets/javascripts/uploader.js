@@ -1,7 +1,7 @@
 $(function() {
 
 // globally set cloudName
-cloudinary.setCloudName('gregorywyz');
+cloudinary.setCloudName('hfi2i1sfv');
 
 
   // Open coudinary widget
@@ -11,13 +11,13 @@ cloudinary.setCloudName('gregorywyz');
       e.preventDefault();
       cloudinary.openUploadWidget({
         // widget options
-        upload_preset: 'testtest',
-        folder: 'widgetTest',
+        upload_preset: 'testing',
+        folder: 'BabyBookTest',
         form: '#new_medium',
         field_name: 'url[]',
         thumbnails: '.preview',
-        theme: 'white',
-        keep_widget_open: true
+        // keep_widget_open: true,
+        theme: 'white'
       }, function(error, result) {
         console.log(error, result)
       });
