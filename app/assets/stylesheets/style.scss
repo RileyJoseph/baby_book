@@ -95,9 +95,11 @@ li {
   left: 0%;
   text-align: center;
   font-size: 25px;
-/*  border: 1px solid black;*/
   display: none;
   z-index: 100;
+  -webkit-box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.4);
+  box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.4);
 }
 
 
@@ -113,8 +115,9 @@ li {
 
 .blurb {
   font-size: 16px;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-top: 1%;
+  margin-left: 6%;
+  margin-right: 6%;
 }
 
 .timeline-img {
@@ -131,6 +134,8 @@ li {
 #off {
   line-height: 36px;
   position: absolute;
+  top: 3px;
+  right: 3px;
   font-size: 14px;
   top: 3px;
   right: 3px;
