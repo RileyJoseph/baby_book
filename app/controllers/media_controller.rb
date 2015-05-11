@@ -34,7 +34,7 @@ class MediaController < ApplicationController
       p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMAGE INSTANCE SAVED"
     end
 
-    redirect_to baby_event_path(@baby,@event)
+    redirect_to baby_events_path(@baby)
   end
 
   def medium_params
