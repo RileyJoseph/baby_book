@@ -1,17 +1,14 @@
-<div class="row">
-  <div class="col-md-8 col-offset-md-2">
-  <h2> <%=@event.topic%> </h2>
-
-  <div class="container">
-    <p class="reduce-left-margin"> <%=@event.body%> </p>
-    <p class="reduce-left-margin"> <%=@event.date.strftime("%A, %B %e, %Y")%> </p>
+<div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h3 class="modal-title" id="myModalLabel"> <%=@event.topic%> </h3>
   </div>
-<hr>
-<div class="buttons-inline">
-<%= link_to "Add a photo for #{@event.topic}",new_baby_event_medium_path(@baby, @event), :class => "btn btn-info" %>
-<%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info" %>
-<%= link_to "Back to Timeline", baby_events_path, :class => "btn btn-info" %>
-</div>
+  <div class="modal-body">
+
+
+
+    <p> <%=@event.body%> </p>
+    <p> <%=@event.date.strftime("%A, %B %e, %Y")%> </p>
+
     <% @media.each do |image| %>
       <div style="display: inline-block; width: 100px padding: 20px; margin: 20px; text-align: center;">
         <%= cl_image_tag(
@@ -19,9 +16,15 @@
           :width => 90, :height => 98,
           :crop => :fill, :gravity => :face)
         %>
-        <br>
 
       </div>
     <% end%>
+  </div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <%= link_to "Add a photo",new_baby_event_medium_path(@baby, @event), :class => "btn btn-info" %>
+    <%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info" %>
+    <%= link_to "Back to Timeline", baby_events_path, :class => "btn btn-info" %>
 
 </div>

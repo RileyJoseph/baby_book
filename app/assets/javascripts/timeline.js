@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   for (var i = 0; i < babyInfo.length; i++) {
     baby[i] = {}
     baby[i].id = i
-    baby[i].content =  "<p class='caption'>" + babyInfo[i].topic + "</p>"
+    var showId = babyInfo[i].id
+    baby[i].content =  "<p class='caption' data-toggle='modal' data-target='#myModal' href= events/" + showId + ">" +
+                        babyInfo[i].topic + "</p>"
     baby[i].start = babyInfo[i].date
     baby[i].body = babyInfo[i].body
   }
@@ -42,28 +44,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     options
     );
 
-  $(function(){
-    $('.item.box').on('click', function(){
-      text = $(this).text()
-      $("#hidden").slideDown('slow').css("opacity","1")
-      $("body").prepend("<div id='PopupMask' style='position:fixed;width:100%;height:100%;z-index:10;background-color:gray;'></div>");
-      $("#PopupMask").css('opacity', 0.8);
-        for (var i = 0; i < babyInfo.length; i++) {
-          if (babyInfo[i].topic === text) {
-            $('#hidden-header').text(babyInfo[i].topic)
-            $('.blurb').text(babyInfo[i].body)
-            $('.timeline-img').attr('src', 'http://i.telegraph.co.uk/multimedia/archive/01778/baby_1778233b.jpg')
-            $('#photo-add').attr('href',"events/" + babyInfo[i].id + "/media/new")
-            }
-          }
-      })
-    $("#off").on('click', function() {
 
-      $('#hidden').removeData();
-      $("#hidden").slideUp('slow');
-      setTimeout(function() {$('#PopupMask').fadeOut()}, 300);
 
-    });
+  $('#myModal').on('hidden.bs.modal', function(){
+    $(this).removeData('bs.modal');
   });
+
 
 });
