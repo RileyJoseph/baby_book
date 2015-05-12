@@ -9,6 +9,7 @@ class EventsController < ApplicationController
       if current_user.babies.ids.include?(baby_id)
         @baby = Baby.find(params[:baby_id])
         @events = Baby.find(params[:baby_id]).events
+        gon.baby = Baby.find(params[:baby_id])
       else
         flash[:danger] = "You cannot view this page"
         # redirect_to root_path

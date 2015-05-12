@@ -4,7 +4,7 @@ var dataObject = {
         "headline":"Sh*t People Say",
         "type":"default",
     "text":"People say stuff",
-    "startDate":"2012,1,26",
+    "startDate":gon.baby_events.birthday,
         "date": [
             {
                 "startDate":"2011,12,12",
@@ -260,7 +260,7 @@ var dataObject = {
 };
 
 
-
+console.log(gon.baby_events.birthday)
 
 $(document).ready(function() {
     createStoryJS({
