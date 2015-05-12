@@ -8,6 +8,7 @@
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="//bootswatch.com/lumen/bootstrap.min.css">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <!-- include cloudinary widget -->
@@ -32,7 +33,7 @@
     <% if @current_user %>
       <a class="navbar-brand" href="/">Hello, <%= @current_user.name %></a>
     <% else %>
-      <a class="navbar-brand" href="/">BabyBook</a>
+      <a class="navbar-brand" href="/">binky</a>
     <% end %>
     </div>
 
@@ -44,8 +45,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <!-- Nave links can go here for right side -->
-      <li><%= link_to "Home", babies_path %></li>
       <% if @current_user %>
+        <li><%= link_to "Home", babies_path %></li>
         <li><%= link_to "Log Out", logout_path %></li>
       <% else %>
         <li><%= link_to "Sign Up", signup_path %></li>

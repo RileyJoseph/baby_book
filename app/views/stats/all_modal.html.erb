@@ -8,16 +8,16 @@
         <thead>
           <tr>
             <th>Date</th>
-            <th>Weight</th>
-            <th>Height</th>
+            <th>Weight (kg)</th>
+            <th>Height (cm)</th>
           </tr>
         </thead>
         <% @stats.each do |stat| %>
         <tbody>
           <tr>
-            <td><strong><%= stat.date.strftime("%B %e, %Y") %></strong></td>
-            <td><%= stat.weight %> kg</td>
-            <td><%= stat.height %> cm</td>
+            <td><strong><%= stat.date.strftime("%m/%d/%Y") %></strong></td>
+            <td><%= stat.weight %></td>
+            <td><%= stat.height %></td>
           </tr>
         </tbody>
         <% end %>
