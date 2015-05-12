@@ -15,6 +15,7 @@
 
   <% @media.each do |image| %>
     <div class="slider-box">
+      <a href="<%= cl_image_path(image.url) %>">
         <%= cl_image_tag( image.url,
           :width => 400,
           :height => 300,
@@ -22,6 +23,8 @@
           :gravity => :face,
           :class => "slider-img"
         ) %>
+      </a>
+
     </div>
   <% end %>
 </div>
