@@ -12,24 +12,14 @@
 <%= content_tag :div, class: "temp_information", data: {temp: @events} do %>
 <% end %>
 
-<div id="visualization"></div>
+<div id="visualization" class="change"></div>
 
 <div class="btn-margins-large">
     <%= link_to " Make an Event", new_baby_event_path, :class => "btn btn-success", :data => {toggle: "modal", target: "#myModal"} %>
     <%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info"  %>
 
 </div>
-
-
-
-<div id="hidden">
-    <h1 id="hidden-header"></h1>
-    <div id="off">Close</div>
-    <p class="blurb">
-    </p>
-    <img class="timeline-img">
-    <div class="modal-button"><a id="photo-add" class="btn btn-info" href="" >Add a Photo</a></div>
-</div>
+<!-- <button id="adjust" class="btn btn-info">Adjust</button> -->
 
 
 <!-- Modal -->

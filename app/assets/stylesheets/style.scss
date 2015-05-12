@@ -104,6 +104,15 @@ li {
   width: 90%;
 }
 
+.caption {
+  height: 100%;
+  width: 100%;
+}
+
+.caption:hover {
+  cursor: pointer;
+}
+
 #hidden {
   font-weight: 200;
   width: 50%;
@@ -132,9 +141,6 @@ li {
   font-size: 36px;
 }
 
-.item.box:hover {
-  cursor: pointer;
-}
 
 .blurb {
   font-size: 16px;
@@ -165,7 +171,7 @@ li {
   height: 32px;
   width: 60px;
   color: #000;
-  cursor: pointer;
+
 }
 
 .profile-name {
