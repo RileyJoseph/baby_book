@@ -17,7 +17,7 @@
 <body>
 
 <!-- set up cloudinary widget -->
-<%= cloudinary_js_config %>
+<% #= cloudinary_js_config %>
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
       </button>
     <% if @current_user %>
-      <a class="navbar-brand" href="#">Hello, <%= @current_user.name %></a>
+      <a class="navbar-brand" href="/">Hello, <%= @current_user.name %></a>
     <% else %>
       <a class="navbar-brand" href="/">BabyBook</a>
     <% end %>
