@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var babyInfo = $('.temp_information').data('temp')
 
-
 // Find baby birthdate, current time, adjust timeline scale accordingly
   var temp = moment()._d
   for(var i = 0; i < babyInfo.length; i++ ) {
@@ -13,9 +12,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
       }
 
-    var birth = moment(temp).subtract(90,"days")._d
+    var birth = moment(temp).subtract(180,"days")._d
     var present = moment()._d
-    var end = moment(temp).add(6,"years")._d
+    var end = moment(present).add(90,"days")._d
     if (moment().subtract(3, "years")._d > birth) {
       var start = moment().subtract(3,"years")._d
     } else {
@@ -49,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     start: start,
     end: present,
     moveable: false,
+    zoomMin: 2629746000 * 3,
     showCurrentTime: false,
     editable: {
       updateTime: true,  // drag items horizontally
@@ -63,43 +63,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
     options
     );
 
-
-// Second fixed timeline, activated by user button click
-  var container2 = document.getElementById('visualization2');
-
-    var options2 = {
-    orientation: "bottom",
-    height: 250,
-    min: birth,
-    max: end,
-    start: start,
-    end: present,
-    moveable: true,
-    showCurrentTime: false,
-    editable: {
-      updateTime: true,  // drag items horizontally
-      updateGroup: true
-    }
-  };
-
-  var timeline = new vis.Timeline(
-    container2,
-    items,
-    options2
-    );
+  console.log(timeline)
 
 
-// User button click to turn off zooming/scrolling
-  $('#adjust').on('click', function() {
-    if ($('#visualization2').hasClass('selected')) {
-      $('#visualization').show()
-      $('#visualization2').hide().removeClass('selected')
-      $('#adjust').text("Turn on Scrolling").removeClass('btn-science').addClass('btn-default')
-    } else {
-      $('#visualization').hide()
-      $('#visualization2').show().addClass('selected')
-      $('#adjust').text("Turn off Scrolling").removeClass('btn-default').addClass('btn-science')
-    }
-  });
+$('#scroll-on').on('click', function(){
+   timeline.setOptions(options = {
+    moveable: true
+   });
+   $('#scroll-on').hide()
+   $('#scroll-off').show()
+})
+
+$('#scroll-off').on('click', function() {
+  timeline.setOptions(options = {
+    moveable: false
+   });
+    $('#scroll-off').hide()
+   $('#scroll-on').show()
+})
+
+
+
+
+
 
 });
