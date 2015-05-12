@@ -16,7 +16,8 @@
 <div id="visualization2"></div>
 
 <div class="btn-margins-large">
-    <button id="adjust" class="btn btn-default">Turn on Scrolling</button>
+    <button id="scroll-on" class="btn btn-default">Turn on Scrolling</button>
+    <button id="scroll-off" class="btn btn-science">Turn off Scrolling</button>
     <div class="float-right">
       <%= link_to " Make an Event", new_baby_event_path, :class => "btn btn-success", :data => {toggle: "modal", target: "#myModal"} %>
       <%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info"  %>
