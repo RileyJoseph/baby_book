@@ -1,14 +1,15 @@
 $(function(){
 
-  // Clear modal once modal closes
-  $('#myModal').on('hidden.bs.modal', function(){
-    $(this).removeData('bs.modal');
-  });
 
   // BABIES INDEX AJAX CALLS
 
+  // Clear baby modal once modal closes
+  $('#babyModal').on('hidden.bs.modal', function(){
+    $(this).removeData('bs.modal');
+  });
+
   // AJAX data create for babies
-  $('#myModal').on('submit','form',function(event){
+  $('#babyModal').on('submit','form',function(event){
     event.preventDefault();
     var form = $(this);
     $.ajax({
@@ -17,7 +18,7 @@ $(function(){
       data:form.serialize()
     }).done(function(data){
       $('.babies-row').html(data);
-      $('#myModal').modal('hide');
+      $('#babyModal').modal('hide');
     }).error(function(err){
       alert('Something Broke');
       console.log(err);
@@ -25,6 +26,11 @@ $(function(){
   });
 
   // STATISTICS PAGE AJAX CALLS
+
+  // Clear Stats modal once modal closes
+  $('#myModal').on('hidden.bs.modal', function(){
+    $(this).removeData('bs.modal');
+  });
 
   // AJAX data create for stats
   $('#myModal').on('submit', 'form', function(event){
