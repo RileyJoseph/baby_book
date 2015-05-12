@@ -1,11 +1,11 @@
 $(function(){
 
-  // BABIES INDEX AJAX CALLS
-
-  // Clear baby Modal once Modal Closes
-  $('#babyModal').on('hidden.bs.modal',function(){
+  // Clear modal once modal closes
+  $('#myModal').on('hidden.bs.modal', function(){
     $(this).removeData('bs.modal');
   });
+
+  // BABIES INDEX AJAX CALLS
 
   // AJAX data create for babies
   $('#babyModal').on('submit','form',function(event){
@@ -25,11 +25,6 @@ $(function(){
   });
 
   // STATISTICS PAGE AJAX CALLS
-
-  // Clear New modal once modal closes
-  $('#myModal').on('hidden.bs.modal', function(){
-    $(this).removeData('bs.modal');
-  });
 
   // AJAX data create for stats
   $('#myModal').on('submit', 'form', function(event){

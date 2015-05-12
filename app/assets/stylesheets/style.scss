@@ -62,10 +62,18 @@ li {
   display: inline-block;
 }
 
+.profile-img {
+  border-radius: 100%;
+}
+
 .baby-list {
   margin-top: 0px;
   list-style: none;
   margin-left: -40px;
+}
+
+.time-button {
+  margin-top: 2px;
 }
 
 .baby-maker {

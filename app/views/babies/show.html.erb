@@ -1,13 +1,18 @@
-<div class="row">
-  <div class="col-md-8 col-offset-md-2">
-
-  <h2>My baby</h2>
-
-  <h4><%= @baby.name %></h4>
-  <p><strong>Birthday: </strong><%= @birthday %></p>
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title" id="myModalLabel"><%= @baby.name %></h4>
+</div>
+<div class="modal-body text-center">
+  <p><strong>Born on:<br>
+  </strong><%= @birthday %></p>
+  <% @last_stat.each do |stat| %>
+  <p>As of <strong><%= stat.date.strftime("%B %e, %Y") %></strong>,<br>
+  I am <%= stat.weight %>kg, <%= stat.height %>cm</p>
+  <% end %>
   <img class="timeline-img" src="http://blog.brainfacts.org/wp-content/uploads/happy-baby.jpg">
-  <div class="btn-margins-large">
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
   <%= link_to "Measurements", baby_stats_path(@baby), :class => "btn btn-info"%>
   <%= link_to "Timeline", baby_events_path(@baby), :class => "btn btn-info" %>
-  </div>
 </div>
