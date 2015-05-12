@@ -15,6 +15,7 @@
 
   <% @media.each do |image| %>
     <div class="slider-box">
+      <a href="<%= cl_image_path(image.url) %>" target="_blank">
         <%= cl_image_tag( image.url,
           :width => 400,
           :height => 300,
@@ -22,6 +23,8 @@
           :gravity => :face,
           :class => "slider-img"
         ) %>
+      </a>
+
     </div>
   <% end %>
 </div>
@@ -44,8 +47,8 @@
         animateType   : false,
         autoPlaySpeed : 5000,
         btnsText      : {
-          next      : "Next",
-          prev      : "Prev",
+          next      : '<span class="side-nav glyphicon glyphicon-chevron-right" aria-hidden="true"></span>',
+          prev      : '<span class="side-nav glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
           play      : "Play",
           pause     : "Pause"
         },
