@@ -80,6 +80,11 @@ li {
   text-align: center;
 }
 
+.float-right {
+  float: right;
+  margin-right: 10%;
+}
+
 .baby-form {
   padding-left: 15%;
   padding-right: 15%;
@@ -110,6 +115,13 @@ li {
   margin: 3% 0;
   height: 30%;
   width: 90%;
+}
+
+#visualization2 {
+  margin: 3% 0;
+  height: 30%;
+  width: 90%;
+  display: none;
 }
 
 .caption {
@@ -191,3 +203,4 @@ li {
   text-align: center;
   margin: 10px;
 }
+

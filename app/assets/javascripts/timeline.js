@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           temp = moment( babyInfo[0].date)._d
         }
       }
+
     var start = moment(temp).subtract(90,"days")._d
     var present = moment()._d
     var end = moment(temp).add(5,"years")._d
@@ -39,10 +40,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     max: end,
     start: start,
     end: present,
-    moveable: true,
-    showCurrentTime: true,
+    moveable: false,
+    showCurrentTime: false,
     editable: {
-      add: true,         // add new items by double tapping
       updateTime: true,  // drag items horizontally
       updateGroup: true
 
@@ -56,33 +56,43 @@ document.addEventListener("DOMContentLoaded", function(event) {
     options
     );
 
-// $('#adjust').on('click', function() {
 
-//   var options = {
-//     orientation: "bottom",
-//     height: 250,
-//     min: start,
-//     max: end,
-//     start: start,
-//     end: present,
-//    moveable: true,
-//     showCurrentTime: true,
-//     editable: {
-//       add: true,         // add new items by double tapping
-//       updateTime: true,  // drag items horizontally
-//       updateGroup: true
-//       moveable: true,// drag items from one group to another
-//    // delete an item by tapping the delete button top right
-//     }
-//   };
-// })
+// Second fixed timeline, activated by user button click
+  var container2 = document.getElementById('visualization2');
 
+    var options2 = {
+    orientation: "bottom",
+    height: 250,
+    min: start,
+    max: end,
+    start: start,
+    end: present,
+    moveable: true,
+    showCurrentTime: false,
+    editable: {
+      updateTime: true,  // drag items horizontally
+      updateGroup: true
 
+    }
+  };
 
+  var timeline = new vis.Timeline(
+    container2,
+    items,
+    options2
+    );
 
-  // $('#myModal').on('hidden.bs.modal', function(){
-  //   $(this).removeData('bs.modal');
-  // });
-
+// User button click to turn off zooming/scrolling
+  $('#adjust').on('click', function() {
+    if ($('#visualization2').hasClass('selected')) {
+      $('#visualization').show()
+      $('#visualization2').hide().removeClass('selected')
+      $('#adjust').text("Turn on Scrolling").removeClass('btn-danger').addClass('btn-default')
+    } else {
+      $('#visualization').hide()
+      $('#visualization2').show().addClass('selected')
+      $('#adjust').text("Turn off Scrolling").removeClass('btn-default').addClass('btn-science')
+    }
+  });
 
 });
