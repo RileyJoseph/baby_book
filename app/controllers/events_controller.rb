@@ -52,13 +52,33 @@ class EventsController < ApplicationController
 
 
     def create
-
         @baby = Baby.find(params[:baby_id])
         @baby.events.create(event_params)
         redirect_to baby_events_path
-
     end
 
+    def edit
+        @baby = Baby.find(params[:baby_id])
+        @event = @baby.events.find(params[:id])
+    end
+
+
+    def update
+      @event = Event.find(params[:id])
+      @event.update(event_params)
+      redirect_to baby_events_path
+    end
+
+
+    def destroy
+       @event = Event.find(params[:id])
+       @media = Event.find(params[:id]).media
+       p @media
+       @media.destroy_all
+       @event.destroy
+
+       redirect_to baby_events_path
+  end
 
 
   private

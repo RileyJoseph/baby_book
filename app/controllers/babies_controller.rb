@@ -37,6 +37,29 @@ class BabiesController < ApplicationController
   end
 
 
+  def edit
+    @baby = Baby.find(params[:id])
+  end
+
+
+  def update
+    @baby = Baby.find(params[:id])
+    @baby.update(baby_params)
+    redirect_to babies_path
+  end
+
+
+  # def destroy
+  #    @event = Event.find(params[:id])
+  #    @media = Event.find(params[:id]).media
+  #    p @media
+  #    @media.destroy_all
+  #    @event.destroy
+
+  #    redirect_to baby_events_path
+  # end
+
+
   private
 
   def baby_params

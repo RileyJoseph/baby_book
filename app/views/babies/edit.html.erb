@@ -1,0 +1,22 @@
+<%= bootstrap_form_for @baby do |f| %>
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title" id="myModalLabel">Edits</h4>
+  </div>
+  <div class="modal-body">
+
+  <h2 class="text-center">Edit your baby's information</h2>
+
+  <div class="baby-form">
+    <%= f.text_field :name, :placeholder =>"Baby's Name" %>
+    <%= f.select :gender, options_for_select([['Boy', "boy"], ['Girl', 'girl']], 2) %>
+    <%= f.text_field :birthday, :placeholder => "Enter a birthday (ex. 'March 22, 2014')" %>
+  </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <%= f.submit "Edit baby", :class => "btn btn-info" %>
+  </div>
+<% end %>
