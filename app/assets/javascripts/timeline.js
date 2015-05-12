@@ -5,18 +5,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var babyInfo = $('.temp_information').data('temp')
 
 
+// Find baby birthdate, current time, adjust timeline scale accordingly
+  var temp = moment()._d
   for(var i = 0; i < babyInfo.length; i++ ) {
-    var temp = moment()._d
-        if (moment( babyInfo[0].date)._d < temp) {
-          temp = moment( babyInfo[0].date)._d
+        if (moment(babyInfo[i].date)._d < temp) {
+          temp = moment(babyInfo[i].date)._d
         }
       }
 
-    var start = moment(temp).subtract(90,"days")._d
+    var birth = moment(temp).subtract(90,"days")._d
     var present = moment()._d
-    var end = moment(temp).add(5,"years")._d
+    var end = moment(temp).add(6,"years")._d
+    if (moment().subtract(3, "years")._d > birth) {
+      var start = moment().subtract(3,"years")._d
+    } else {
+      var start = birth;
+    }
 
 
+// Create baby events JSON for timeline
   var baby = []
   for (var i = 0; i < babyInfo.length; i++) {
     baby[i] = {}
@@ -32,11 +39,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // Create a DataSet (allows two way data-binding)
   var items = new vis.DataSet(baby);
 
+
   // Configuration for the Timeline
   var options = {
     orientation: "bottom",
     height: 250,
-    min: start,
+    min: birth,
     max: end,
     start: start,
     end: present,
@@ -45,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     editable: {
       updateTime: true,  // drag items horizontally
       updateGroup: true
-
     }
   };
 
@@ -63,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var options2 = {
     orientation: "bottom",
     height: 250,
-    min: start,
+    min: birth,
     max: end,
     start: start,
     end: present,
@@ -72,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     editable: {
       updateTime: true,  // drag items horizontally
       updateGroup: true
-
     }
   };
 
@@ -82,12 +88,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     options2
     );
 
+
 // User button click to turn off zooming/scrolling
   $('#adjust').on('click', function() {
     if ($('#visualization2').hasClass('selected')) {
       $('#visualization').show()
       $('#visualization2').hide().removeClass('selected')
-      $('#adjust').text("Turn on Scrolling").removeClass('btn-danger').addClass('btn-default')
+      $('#adjust').text("Turn on Scrolling").removeClass('btn-science').addClass('btn-default')
     } else {
       $('#visualization').hide()
       $('#visualization2').show().addClass('selected')
