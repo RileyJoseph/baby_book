@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var zoomLevelSmall = 2629746000 * 4
 
-  var zoomLevelBig = 68373396000
+  var zoomLevelBig = 94670780166
 
 // Find baby birthdate, current time, adjust timeline scale accordingly
   var temp = moment()._d
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 var zoomOut = function() {
   $('#zoom-out').on('click', function() {
   console.log("working")
-  if (zoomLevelBig < 68373396000) {
+  if (zoomLevelBig < 94670780166) {
     zoomLevelBig = zoomLevelBig + (zoomLevelSmall * 2)
       timeline.setOptions(options = {
         min: birth,
