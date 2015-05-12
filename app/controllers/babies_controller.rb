@@ -20,6 +20,8 @@ class BabiesController < ApplicationController
     if current_user.babies.ids.include?(baby_id)
       @baby = Baby.find(params[:id])
       @birthday = @baby.birthday.strftime("%A, %B %e, %Y")
+      @last_stat = @baby.stats.order(date: 'desc').limit(1)
+      render layout: false
     else
       flash[:danger] = "You cannot view this page"
       redirect_to root_path
