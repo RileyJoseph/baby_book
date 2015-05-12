@@ -8,7 +8,7 @@ $(function(){
   // BABIES INDEX AJAX CALLS
 
   // AJAX data create for babies
-  $('#babyModal').on('submit','form',function(event){
+  $('#myModal').on('submit','form',function(event){
     event.preventDefault();
     var form = $(this);
     $.ajax({
@@ -17,7 +17,7 @@ $(function(){
       data:form.serialize()
     }).done(function(data){
       $('.babies-row').html(data);
-      $('#babyModal').modal('hide');
+      $('#myModal').modal('hide');
     }).error(function(err){
       alert('Something Broke');
       console.log(err);
