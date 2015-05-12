@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   var babyInfo = $('.temp_information').data('temp')
 
+  var zoomLevelSmall = 2629746000 * 4
+
+  var zoomLevelBig = 68373396000
+
 // Find baby birthdate, current time, adjust timeline scale accordingly
   var temp = moment()._d
   for(var i = 0; i < babyInfo.length; i++ ) {
@@ -48,7 +52,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     start: start,
     end: present,
     moveable: false,
-    zoomMin: 2629746000 * 3,
+    zoomMin: zoomLevelSmall,
+    zoomMax: zoomLevelBig,
     showCurrentTime: false,
     editable: {
       updateTime: true,  // drag items horizontally
@@ -66,23 +71,65 @@ document.addEventListener("DOMContentLoaded", function(event) {
   console.log(timeline)
 
 
+
+var zoomOut = function() {
+  $('#zoom-out').on('click', function() {
+  console.log("working")
+  if (zoomLevelBig < 68373396000) {
+    zoomLevelBig = zoomLevelBig + (zoomLevelSmall * 2)
+      timeline.setOptions(options = {
+        min: birth,
+        max: end,
+        start: start,
+        end: present,
+        zoomMax: zoomLevelBig
+      })
+    }
+  })
+}
+
+zoomOut()
+
+var zoomIn = function() {
+  $('#zoom-in').on('click', function() {
+  console.log("working")
+  if (zoomLevelBig > 2629746000 * 4) {
+    zoomLevelBig = zoomLevelBig - (2629746000 * 2)
+    console.log(zoomLevelBig)
+      timeline.setOptions(options = {
+        min: birth,
+        max: end,
+        start: start,
+        end: present,
+        zoomMax: zoomLevelBig
+      })
+    }
+  })
+}
+
+zoomIn()
+
 $('#scroll-on').on('click', function(){
    timeline.setOptions(options = {
     moveable: true
    });
+   zoomIn()
+   zoomOut()
    $('#scroll-on').hide()
    $('#scroll-off').show()
+
 })
+
 
 $('#scroll-off').on('click', function() {
   timeline.setOptions(options = {
     moveable: false
    });
-    $('#scroll-off').hide()
+   zoomIn()
+   zoomOut()
+   $('#scroll-off').hide()
    $('#scroll-on').show()
 })
-
-
 
 
 
