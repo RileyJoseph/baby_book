@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>binky</title>
-  <%= include_gon %>
+  <%= Gon::Base.render_data({}) %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <script src="//code.jquery.com/jquery.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
