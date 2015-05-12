@@ -37,8 +37,20 @@ class MediaController < ApplicationController
     redirect_to baby_events_path(@baby)
   end
 
+ def destroy
+      @event = Event.find(params[:event_id])
+      p @event
+       @media = Event.find(params[:event_id]).media
+       p @media
+       @medium = @media.find(params[:id])
+       @medium.destroy
+       redirect_to baby_events_path
+  end
+
+  private
+
   def medium_params
-    params.require(:medium).permit(:url)
+    params.require(:medium).permit(:url, :event_id)
   end
 
 end
