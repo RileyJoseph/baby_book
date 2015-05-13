@@ -3,7 +3,14 @@
 </body>
 
 
+
 <div class="btn-margins-large">
+
+<div class="share-btn">
+
+  <%= social_share_button_tag("Binky") %>
+
+</div>
 
   <div class="float-right">
     <%= link_to "Make an Event", new_baby_event_path, :class => "btn btn-success", :data => {toggle: "modal", target: "#eventModal"} %>
