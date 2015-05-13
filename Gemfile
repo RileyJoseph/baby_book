@@ -37,7 +37,7 @@ gem 'omniauth-facebook'
 
 gem 'cloudinary'
 
-
+gem 'social-share-button', '~> 0.1.6'
 
 group :production do
 
