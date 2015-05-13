@@ -11,7 +11,7 @@
       <%= f.text_field :name, :placeholder =>"Baby's Name" %>
       <%= f.select :gender, options_for_select([['Boy', "boy"], ['Girl', 'girl']], 2) %>
       <%= f.date_field :birthday %>
-      <div class="preview"></div>
+      <a href="#" id="profile_widget_opener">Add Profile Photo</a>
     </div>
   </div>
 
@@ -22,7 +22,6 @@
 
 <% end %>
 
-<a href="#" id="profile_widget_opener">Add Profile Photo</a>
 
 <script type="text/javascript">
   $('#profile_widget_opener').cloudinary_upload_widget({
@@ -32,8 +31,7 @@
         // form: '#new_baby',
         // field_name: 'profile_pic',
         folder: 'profile_pic',
-        thumbnails: '.preview',
-        button_class: 'add-pic-btn btn btn-success btn-lg',
+        button_class: ' btn btn-success btn-lg',
         button_caption: '+ Profile Photo',
         theme: 'minimal'
     }, function(error, result) {
