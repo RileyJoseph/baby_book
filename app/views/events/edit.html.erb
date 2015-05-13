@@ -4,9 +4,9 @@
     <h4 class="modal-title" id="myModalLabel">Edit Event</h4>
   </div>
   <div class="modal-body">
-    <%= f.text_field :date, :placeholder =>"Enter a date (ex. March 30, 2015)" %>
+    <%= f.date_field :date, :placeholder =>"Enter a date (ex. March 30, 2015)" %>
     <%= f.text_field :topic, :placeholder => "Enter a topic" %>
-    <%= f.text_field :body, :placeholder => "Enter the details" %>
+    <%= f.text_area :body, :placeholder => "Enter the details" %>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
