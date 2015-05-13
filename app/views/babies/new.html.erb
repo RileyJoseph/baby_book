@@ -10,7 +10,7 @@
   <div class="baby-form">
     <%= f.text_field :name, :placeholder =>"Baby's Name" %>
     <%= f.select :gender, options_for_select([['Boy', "boy"], ['Girl', 'girl']], 2) %>
-    <%= f.text_field :birthday, :placeholder => "Enter a birthday (ex. 'March 22, 2014')" %>
+    <%= f.date_field :birthday %>
   </div>
 
 

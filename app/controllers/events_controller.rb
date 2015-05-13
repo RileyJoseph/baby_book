@@ -13,7 +13,7 @@ class EventsController < ApplicationController
         gon.birthday = @baby.birthday.strftime("%A, %B %e, %Y")
         gon.bornDate = @baby.birthday.strftime("%Y,%m,%e")
         gon.events = @events
-        # gon.date = Baby.find(params[:baby_id]).events.find(params[:id]).date.strftime("%Y,%m,%e")
+        # gon.date = @events.find_by_id(params[:id]).date.strftime("%Y,%m,%e")
       else
         flash[:danger] = "You cannot view this page"
         # redirect_to root_path

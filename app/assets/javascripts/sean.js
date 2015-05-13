@@ -49,4 +49,10 @@ $(function(){
     });
   });
 
+  // EVENTS PAGE AJAX CALLS
+  // Clear Stats modal once modal closes
+  $('#eventModal').on('hidden.bs.modal', function(){
+    $(this).removeData('bs.modal');
+  });
+
 });
