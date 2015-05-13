@@ -14,7 +14,9 @@
   </div>
 <% else %>
   <!-- image slider -->
-  <div class="slider-wrapper">
+
+   <div class="slider-wrapper">
+
     <% @media.each do |image| %>
       <div class="slider-box">
         <a href="<%= cl_image_path(image.url) %>" target="_blank">
@@ -29,6 +31,7 @@
       </div>
     <% end %>
   </div>
+
 <% end %>
 
   </div>

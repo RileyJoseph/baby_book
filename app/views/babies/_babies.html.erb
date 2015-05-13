@@ -1,21 +1,33 @@
 <% @babies.each do |baby| %>
 
   <div class="my-babies">
-
+  <h2 class="baby-name"><%= baby.name %></h2>
+  <hr>
     <%= cl_image_tag( baby.profile_pic,
       :class => "baby-profile",
-      :height => 200,
-      :width => 200,
+      :height => 220,
+      :width => 220,
       :gravity => "face",
       :crop => "fill",
       :radius => "max"
     ) %>
-
-    <ul class="baby-list"><h4 class="baby-name"><%= baby.name %></h4>
-      <li><%= link_to "Profile", baby_path(baby), :class => "btn btn-info btn-xs", :data => { toggle: 'modal', target: '#babyModal' } %></li>
-      <li class="time-button"><%= link_to "Timeline", baby_events_path(baby), :class => "btn btn-success btn-xs" %></li>
-    </ul>
-
-  </div>
-
+<hr>
+  <div class="baby-info">
+  <p><strong>Born on:<br>
+    </strong><%= @birthday %></p>
+    <% @last_stat.each do |stat| %>
+    <% if stat.date %>
+        <p>As of <strong><%= stat.date.strftime("%B %e, %Y") %></strong>,<br>
+        I am <%= stat.weight %>kg, <%= stat.height %>cm</p>
+    <% end %>
+   <% end %>
+   </div>
+<hr>
+<!--   </div> -->
+  <ul class="horizontal-class">
+      <li><%= link_to "Timeline", baby_events_path(baby), :class => "btn btn-info btn-sm" %></li>
+      <li><%= link_to "Measurements", baby_stats_path(baby), :class => "btn btn-info btn-sm"%></li>
+      <li><%= link_to "Edit", edit_baby_path(baby), :class => "btn btn-info btn-sm" %></li>
+</ul>
+</div>
 <% end %>

@@ -2,9 +2,18 @@
   height: 380px;
   margin: 30px auto 0px;
   position: relative;
+  background-color: rgba(170,216,241, .3);
+  border-radius: 15px;
+}
+
+/*.slider-wrapper-girl {
+  height: 380px;
+  margin: 30px auto 0px;
+  position: relative;
   background-color: rgba(150,05,50,.3);
   border-radius: 15px;
 }
+*/
 
 .slider-content {
   height: 380px;
@@ -13,7 +22,7 @@
 .slider-box {
   background-repeat: no-repeat;
   float: left;
-  /*height: 380px;*/
+  height: 380px;
 }
 
 .slider-img {
