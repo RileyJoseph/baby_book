@@ -1,32 +1,28 @@
 <%= bootstrap_form_for @baby do |f| %>
+
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <h4 class="modal-title" id="myModalLabel">Make a Baby</h4>
   </div>
+
   <div class="modal-body">
-
-  <h2 class="text-center">Congratulations!!!</h2>
-
-
-  <div class="baby-form">
-    <%= f.text_field :name, :placeholder =>"Baby's Name" %>
-    <%= f.select :gender, options_for_select([['Boy', "boy"], ['Girl', 'girl']], 2) %>
-    <%= f.date_field :birthday %>
+    <h2 class="text-center">Congratulations!!!</h2>
+    <div class="baby-form">
+      <%= f.text_field :name, :placeholder =>"Baby's Name" %>
+      <%= f.select :gender, options_for_select([['Boy', "boy"], ['Girl', 'girl']], 2) %>
+      <%= f.date_field :birthday %>
+      <div class="preview"></div>
+    </div>
   </div>
 
-
-  </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     <%= f.submit "Create baby", :class => "btn btn-info" %>
   </div>
+
 <% end %>
 
-<hr>
-<hr>
-<hr>
 <a href="#" id="profile_widget_opener">Add Profile Photo</a>
-
 
 <script type="text/javascript">
   $('#profile_widget_opener').cloudinary_upload_widget({
@@ -36,7 +32,8 @@
         // form: '#new_baby',
         // field_name: 'profile_pic',
         folder: 'profile_pic',
-        button_class: 'btn btn-success btn-lg',
+        thumbnails: '.preview',
+        button_class: 'add-pic-btn btn btn-success btn-lg',
         button_caption: '+ Profile Photo',
         theme: 'minimal'
     }, function(error, result) {
