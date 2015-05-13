@@ -9,6 +9,11 @@ class EventsController < ApplicationController
       if current_user.babies.ids.include?(baby_id)
         @baby = Baby.find(params[:baby_id])
         @events = Baby.find(params[:baby_id]).events
+        gon.baby = @baby
+        gon.birthday = @baby.birthday.strftime("%A, %B %e, %Y")
+        gon.bornDate = @baby.birthday.strftime("%Y,%m,%e")
+        gon.events = @events
+        # gon.date = @events.find_by_id(params[:id]).date.strftime("%Y,%m,%e")
       else
         flash[:danger] = "You cannot view this page"
         # redirect_to root_path

@@ -1,35 +1,19 @@
-<div class="row">
-  <div class="col-md-8 col-offset-md-2">
+<body>
+  <div id="my-timeline"></div>
+</body>
 
-  <h1><%= "#{@baby.name}'s Timeline" %></h1>
 
+<div class="btn-margins-large">
+
+  <div class="float-right">
+    <%= link_to "Make an Event", new_baby_event_path, :class => "btn btn-success", :data => {toggle: "modal", target: "#eventModal"} %>
   </div>
 
 </div>
 
-<hr>
-
-<%= content_tag :div, class: "temp_information", data: {temp: @events} do %>
-<% end %>
-
-<div id="visualization"></div>
-<div id="visualization2"></div>
-
-
-<div class="btn-margins-large">
-    <button id="scroll-on" class="btn btn-default">Turn on Scrolling</button>
-    <button id="scroll-off" class="btn btn-science">Turn off Scrolling</button>
-    <button id="zoom-in" class="btn btn-default">Zoom In</button>
-    <button id="zoom-out" class="btn btn-default">Zoom Out</button>
-    <div class="float-right">
-      <%= link_to " Make an Event", new_baby_event_path, :class => "btn btn-success", :data => {toggle: "modal", target: "#myModal"} %>
-      <%= link_to "#{@baby.name}'s Profile", baby_path(@baby), :class => "btn btn-info"  %>
-    </div>
-</div>
-
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
     </div>
