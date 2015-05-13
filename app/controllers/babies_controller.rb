@@ -43,6 +43,7 @@ class BabiesController < ApplicationController
 
   def edit
     @baby = Baby.find(params[:id])
+    render layout: false
   end
 
 
