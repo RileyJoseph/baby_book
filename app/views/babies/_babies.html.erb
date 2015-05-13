@@ -1,6 +1,8 @@
 <% @babies.each do |baby| %>
 <div class="my-babies">
-  <img class="baby-profile" src="http://www.saintthomashealth.com/media/uploads/images/hr_baby.jpg">
+
+  <%= cl_image_tag( baby.profile_pic, :class => "baby-profile" ) %>
+
   <ul class="baby-list"><strong><%= baby.name %></strong>
     <li><%= link_to "Profile", baby_path(baby), :class => "btn btn-info btn-xs", :data => { toggle: 'modal', target: '#babyModal' } %></li>
     <li class="time-button"><%= link_to "Timeline", baby_events_path(baby), :class => "btn btn-success btn-xs" %></li>
