@@ -1,5 +1,10 @@
 class MediaController < ApplicationController
 
+  def index
+    @event = Event.find(params[:event_id])
+    @media = Event.find(params[:event_id]).media
+  end
+
   def new
     baby_id = (params[:baby_id]).to_i
 

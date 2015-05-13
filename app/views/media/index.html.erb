@@ -1,0 +1,13 @@
+<h1>Photos from <%= @event.topic%></h1>
+
+<% @media.each do |photo| %>
+<div class="imgWrapper">
+  <%= cl_image_tag(photo.url,
+      :width => 100,
+      :height => 80,
+      :crop => :fill,
+      :gravity => :face
+        ) %>
+ <p class="imgDescription">Remove Image?</p>
+</div>
+<% end %>

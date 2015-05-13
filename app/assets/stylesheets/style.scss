@@ -189,7 +189,7 @@ li {
   margin-bottom: 20px
 }
 
-#off {
+.off {
   line-height: 36px;
   position: absolute;
   top: 3px;
@@ -200,6 +200,7 @@ li {
   height: 32px;
   width: 60px;
   color: #000;
+  z-index: 1000;
 }
 
 
@@ -211,5 +212,31 @@ li {
   display: inline-block;
   text-align: center;
   margin: 10px;
+}
+
+
+.imgWrapper {
+  display: inline-block;
+  position: relative;
+  height: 90px;
+  width: 100px;
+}
+
+.imgDescription {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,65,54, 0.32);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+.imgWrapper:hover .imgDescription {
+  visibility: visible;
+  opacity: 1;
 }
 

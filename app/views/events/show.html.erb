@@ -24,9 +24,6 @@
           :class => "slider-img"
         ) %>
       </a>
-      <% if @current_user %>
-        <%= link_to "X",baby_event_medium_path(@baby, @event, image.id), :method => :delete, :class => " btn-circle close" %>
-      <% end %>
     </div>
   <% end %>
 </div>
@@ -37,10 +34,12 @@
   </div>
 
 <div class="modal-footer">
-  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-  <%= link_to "Add a Photo for this Event",new_baby_event_medium_path(@baby, @event), :class => "btn btn-info" %>
+  <%= link_to "Add a Photo",new_baby_event_medium_path(@baby, @event), :class => "btn btn-info" %>
+  <%= link_to "See Photos", baby_event_media_path(@baby, @event), :class => "btn btn-info" %>
+<% if @current_user %>
+  <%= link_to "Edit Event", edit_baby_event_path(@baby, @event), :class => " btn btn-info", :data=>{toggle: 'modal', target: '#myModal' } %>
   <%= link_to "Delete Event",baby_event_path(@baby, @event), :method => :delete, :class => " btn btn-danger" %>
-  <%= link_to "Edit Event", edit_baby_event_path(@baby, @event), :class => " btn btn-info" %>
+<% end %>
 </div>
 </div>
 
