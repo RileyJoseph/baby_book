@@ -26,10 +26,10 @@
    </div>
 <hr>
 <!--   </div> -->
-  <ul class="horizontal-class">
+  <div class="horizontal-class">
       <li><%= link_to "Timeline", baby_events_path(baby), :class => "btn btn-info btn-sm" %></li>
       <li><%= link_to "Measurements", baby_stats_path(baby), :class => "btn btn-info btn-sm"%></li>
       <li><%= link_to "Edit", edit_baby_path(baby), :class => "btn btn-info btn-sm", :data => {toggle: 'modal', target: '#editModal'} %></li>
-</ul>
+</div>
 </div>
 <% end %>

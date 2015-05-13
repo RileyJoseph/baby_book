@@ -50,13 +50,9 @@ li {
   margin-bottom: 20px;
 }
 
-body > div.container > div.col-md-12.container > div > div > ul {
-  margin-left: -40px;
-}
 
-
-body > div.container > div.col-md-12.container > div > div > ul > li {
-    display: inline-block;
+body > div.container > div.col-md-12.container > div > div > div.horizontal-class > li {
+  display: inline-block;
 }
 
 .float-right {
@@ -108,6 +104,7 @@ body > div.container > div.col-md-12.container > div > div > ul > li {
 
 .my-babies {
   display: inline-block;
+  margin: 0 5%;
 }
 
 .profile-img {
