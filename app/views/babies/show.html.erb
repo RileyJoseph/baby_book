@@ -9,7 +9,14 @@
   <p>As of <strong><%= stat.date.strftime("%B %e, %Y") %></strong>,<br>
   I am <%= stat.weight %>kg, <%= stat.height %>cm</p>
   <% end %>
-  <img class="timeline-img" src="http://blog.brainfacts.org/wp-content/uploads/happy-baby.jpg">
+  <%= cl_image_tag( @baby.profile_pic,
+    :class => "modal-profile-img",
+    :height => 300,
+    :width => 290,
+    :gravity => "face",
+    :crop => "fill",
+    :radius => "max"
+  ) %>
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
