@@ -4,32 +4,32 @@
   </div>
   <div class="modal-body">
 
+  <p> <strong><%=@event.date.strftime("%A, %B %e, %Y")%></strong> </p>
     <p> <%=@event.body%> </p>
-    <p> <%=@event.date.strftime("%A, %B %e, %Y")%> </p>
 
 
-    <!-- image slider -->
-
-
-<div class="slider-wrapper">
-
-  <% @media.each do |image| %>
-    <div class="slider-box">
-      <a href="<%= cl_image_path(image.url) %>" target="_blank">
-        <%= cl_image_tag( image.url,
-          :width => 400,
-          :height => 300,
-          :crop => :fill,
-          :gravity => :face,
-          :class => "slider-img"
-        ) %>
-      </a>
-    </div>
-  <% end %>
-</div>
-
-
-
+<% if @media == [] %>
+  <div class="no-images text-center">
+    <strong>Add photos to create a slide show for this event</strong>
+  </div>
+<% else %>
+  <!-- image slider -->
+  <div class="slider-wrapper">
+    <% @media.each do |image| %>
+      <div class="slider-box">
+        <a href="<%= cl_image_path(image.url) %>" target="_blank">
+          <%= cl_image_tag( image.url,
+            :width => 400,
+            :height => 300,
+            :crop => :fill,
+            :gravity => :face,
+            :class => "slider-img"
+          ) %>
+        </a>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
   </div>
 

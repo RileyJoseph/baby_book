@@ -13,7 +13,6 @@ class EventsController < ApplicationController
         gon.birthday = @baby.birthday.strftime("%A, %B %e, %Y")
         gon.bornDate = @baby.birthday.strftime("%Y,%m,%e")
         gon.events = @events
-        # gon.date = @events.find_by_id(params[:id]).date.strftime("%Y,%m,%e")
       else
         flash[:danger] = "You cannot view this page"
         # redirect_to root_path
@@ -24,9 +23,6 @@ class EventsController < ApplicationController
 
     def show
       baby_id = (params[:baby_id]).to_i
-
-      # images
-      @media = Event.find(params[:id]).media
 
       if current_user.babies.ids.include?(baby_id)
         @baby = Baby.find(params[:baby_id])
@@ -65,6 +61,7 @@ class EventsController < ApplicationController
     def edit
         @baby = Baby.find(params[:baby_id])
         @event = @baby.events.find(params[:id])
+        render layout: false
     end
 
 
