@@ -25,6 +25,7 @@ li {
   margin-top: 20%;
 }
 
+/****** STYLE FOR PROFILE PIC **************
 .baby-profile {
   border-radius: 100%;
   height: 200px;
@@ -32,6 +33,7 @@ li {
   max-height: 200px;
   max-width: 200px;
 }
+*******************************************/
 
 .babies {
   margin-left: 0 auto;
@@ -39,6 +41,12 @@ li {
   text-align: center;
   display: inline-block;
   margin-top: 5px;
+}
+
+.add-pic-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
 }
 
 .grey-text {
@@ -74,6 +82,9 @@ li {
   margin-top: 10px;
   list-style: none;
   margin-left: -40px;
+}
+.baby-list li {
+  display: inline;
 }
 
 ul > h4.baby-name {

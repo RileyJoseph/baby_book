@@ -1,22 +1,44 @@
 <%= bootstrap_form_for @baby do |f| %>
+
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <h4 class="modal-title" id="myModalLabel">Edits</h4>
   </div>
+
   <div class="modal-body">
-
-  <h2 class="text-center">Edit your baby's information</h2>
-
-  <div class="baby-form">
-    <%= f.text_field :name, :placeholder =>"Baby's Name" %>
-    <%= f.select :gender, options_for_select([['Boy', "boy"], ['Girl', 'girl']], 2) %>
-    <%= f.date_field :birthday, :placeholder => "Enter a birthday (ex. 'March 22, 2014')" %>
-  </div>
-
+    <h2 class="text-center">Edit your baby's information</h2>
+    <div class="baby-form">
+      <%= f.text_field :name, :placeholder =>"Baby's Name" %>
+      <%= f.select :gender, options_for_select([['Boy', "boy"], ['Girl', 'girl']], 2) %>
+      <%= f.text_field :birthday, :placeholder => "Enter a birthday (ex. 'March 22, 2014')" %>
+      <a href="#" id="profile_edit_widget_opener">New Profile Photo</a>
+    </div>
 
   </div>
+
   <div class="modal-footer">
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     <%= f.submit "Edit baby", :class => "btn btn-info" %>
   </div>
+
 <% end %>
+
+
+
+<script type="text/javascript">
+  $('#profile_edit_widget_opener').cloudinary_upload_widget({
+        cloud_name: 'hfi2i1sfv',
+        upload_preset: 'testing',
+        cropping: 'server',
+        // form: '#new_baby',
+        // field_name: 'profile_pic',
+        folder: 'profile_pic',
+        button_class: 'edit-pic-btn btn btn-success btn-lg',
+        button_caption: '+ New Photo',
+        theme: 'minimal'
+    }, function(error, result) {
+      console.log(error, result)
+      var public_id = result[0].public_id;
+      $('.edit_baby').prepend('<input type="hidden" name="baby[profile_pic]" value="' + public_id + '">');
+  });
+</script>
