@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
       if current_user.babies.ids.include?(baby_id)
         @baby = Baby.find(params[:baby_id])
+        @profile = Cloudinary::Utils.cloudinary_url @baby.profile_pic+".jpg", width: 410, height: 232, crop: :fill, gravity: :face
         @events = @baby.events
         # map through the events array to get media related to each event
         @media = @events.map do |event|
@@ -27,6 +28,7 @@ class EventsController < ApplicationController
         gon.bornDate = @baby.birthday.strftime("%Y,%m,%e")
         gon.events = @events
         gon.media = @media
+        gon.profile = @profile
       else
         flash[:danger] = "You cannot view this page"
         # redirect_to root_path

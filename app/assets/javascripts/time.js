@@ -2,16 +2,16 @@
 var eventObject = {
     "timeline":
     {
-        "headline":gon.baby.name+"'s binkline",
+        "headline":gon.baby.name+"'s bnkybk",
         "type":"default",
         "text":"Born on "+gon.birthday,
         // Date format is YYY,DD,MM (strftime("%Y,%m,%e"))
         "startDate":gon.bornDate,
             "asset": {
             // This will be the baby's profile picture
-            "media":"http://i.stack.imgur.com/xdkXE.jpg",
+            "media":gon.profile,
             "credit":"",
-            "caption":"Isn't it adorable?"
+            "caption":""
             },
             "date":[]
     }
@@ -42,9 +42,10 @@ for (var key in gon.events) {
 $(document).ready(function() {
     createStoryJS({
         type:       'timeline',
-        width:      '1140',
+        width:      '100%',
         height:     '525',
         source:     eventObject,
-        embed_id:   'my-timeline'
+        embed_id:   'my-timeline',
+        font:       'Rancho-Gudea'
     });
 });
