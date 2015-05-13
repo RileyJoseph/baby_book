@@ -45,11 +45,11 @@ class MediaController < ApplicationController
  def destroy
       @event = Event.find(params[:event_id])
       p @event
-       @media = Event.find(params[:event_id]).media
-       p @media
-       @medium = @media.find(params[:id])
-       @medium.destroy
-       redirect_to baby_events_path
+      @media = Event.find(params[:event_id]).media
+      p @media
+      @medium = @media.find(params[:id])
+      @medium.destroy
+      redirect_to baby_events_path
   end
 
   private

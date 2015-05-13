@@ -15,3 +15,4 @@ $(function() {
   })
 })
 
+$('.prettySocial').prettySocial();
