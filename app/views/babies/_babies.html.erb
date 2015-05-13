@@ -15,11 +15,13 @@
   <div class="baby-info">
   <p><strong>Born on:<br>
     </strong><%= @birthday %></p>
+    <% if @last_stat %>
     <% @last_stat.each do |stat| %>
     <% if stat.date %>
         <p>As of <strong><%= stat.date.strftime("%B %e, %Y") %></strong>,<br>
         I am <%= stat.weight %>kg, <%= stat.height %>cm</p>
     <% end %>
+   <% end %>
    <% end %>
    </div>
 <hr>
