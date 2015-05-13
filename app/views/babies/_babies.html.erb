@@ -1,18 +1,21 @@
 <% @babies.each do |baby| %>
-<div class="my-babies">
 
-  <%= cl_image_tag( baby.profile_pic,
-    :class => "baby-profile",
-    :height => 200,
-    :widht => 200,
-    :gravity => "face",
-    :crop => "fill",
-    :radius => "max"
-  ) %>
+  <div class="my-babies">
 
-  <ul class="baby-list"><h4 class="baby-name"><%= baby.name %></h4>
-    <li><%= link_to "Profile", baby_path(baby), :class => "btn btn-info btn-xs", :data => { toggle: 'modal', target: '#babyModal' } %></li>
-    <li class="time-button"><%= link_to "Timeline", baby_events_path(baby), :class => "btn btn-success btn-xs" %></li>
-  </ul>
-</div>
+    <%= cl_image_tag( baby.profile_pic,
+      :class => "baby-profile",
+      :height => 200,
+      :width => 200,
+      :gravity => "face",
+      :crop => "fill",
+      :radius => "max"
+    ) %>
+
+    <ul class="baby-list"><h4 class="baby-name"><%= baby.name %></h4>
+      <li><%= link_to "Profile", baby_path(baby), :class => "btn btn-info btn-xs", :data => { toggle: 'modal', target: '#babyModal' } %></li>
+      <li class="time-button"><%= link_to "Timeline", baby_events_path(baby), :class => "btn btn-success btn-xs" %></li>
+    </ul>
+
+  </div>
+
 <% end %>
