@@ -28,7 +28,14 @@
 <!-- Button trigger stat-history modal -->
 
 <%= link_to 'See All Measurements', baby_stat_modal_path, :class => 'btn btn-primary btn-margins', :data=>{toggle: 'modal', target: '#myModal' }  %>
-
+<%= link_to('Share on Facebook', 'https://www.facebook.com/dialog/feed?
+                                  link=https://developers.facebook.com/docs/reference/dialogs/&
+                                  picture=http://fbrell.com/f8.jpg&
+                                  name=Facebook%20Dialogs&
+                                  caption=Reference%20Documentation&
+                                  description=Using%20Dialogs%20to%20interact%20with%20users.&
+                                  redirect_uri=https://baby-book.herokuapp.com/',
+                                  :target => :blank) %>
 
 
   </div>
