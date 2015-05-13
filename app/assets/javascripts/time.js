@@ -29,9 +29,9 @@ for (var key in gon.events) {
                         "asset":
                         {
                             // This will be the cover photo for the event, however we determine that.
-                            "media":"http://i.stack.imgur.com/xdkXE.jpg",
+                            "media":gon.media[key].media,
                             // This will be a cropped version of the cover photo.
-                            "thumbnail":"http://i.stack.imgur.com/xdkXE.jpg",
+                            "thumbnail":gon.media[key].thumb,
                             "credit":"",
                             "caption":""
                         }
