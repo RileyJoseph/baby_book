@@ -6,8 +6,10 @@
   <p><strong>Born on:<br>
   </strong><%= @birthday %></p>
   <% @last_stat.each do |stat| %>
-  <p>As of <strong><%= stat.date.strftime("%B %e, %Y") %></strong>,<br>
-  I am <%= stat.weight %>kg, <%= stat.height %>cm</p>
+  <% if stat.date %>
+      <p>As of <strong><%= stat.date.strftime("%B %e, %Y") %></strong>,<br>
+      I am <%= stat.weight %>kg, <%= stat.height %>cm</p>
+  <% end %>
   <% end %>
   <%= cl_image_tag( @baby.profile_pic,
     :class => "modal-profile-img",

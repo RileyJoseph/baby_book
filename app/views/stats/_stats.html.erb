@@ -1,7 +1,9 @@
 <% @last_three.each do |last| %>
  <tr>
+  <% if last.date %>
    <td><strong><%= last.date.strftime("%A %B %e, %Y") %></strong></td>
    <td><%= last.weight %> kg</td>
    <td><%= last.height %> cm</td>
+  <% end %>
  </tr>
 <% end %>

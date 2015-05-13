@@ -3,7 +3,7 @@
 
   <%= cl_image_tag( baby.profile_pic, :class => "baby-profile" ) %>
 
-  <ul class="baby-list"><strong><%= baby.name %></strong>
+  <ul class="baby-list"><h4 class="baby-name"><%= baby.name %></h4>
     <li><%= link_to "Profile", baby_path(baby), :class => "btn btn-info btn-xs", :data => { toggle: 'modal', target: '#babyModal' } %></li>
     <li class="time-button"><%= link_to "Timeline", baby_events_path(baby), :class => "btn btn-success btn-xs" %></li>
   </ul>

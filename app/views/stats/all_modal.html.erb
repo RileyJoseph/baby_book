@@ -15,9 +15,11 @@
         <% @stats.each do |stat| %>
         <tbody>
           <tr>
+          <% if stat.date %>
             <td><strong><%= stat.date.strftime("%m/%d/%Y") %></strong></td>
             <td><%= stat.weight %></td>
             <td><%= stat.height %></td>
+          <% end %>
           </tr>
         </tbody>
         <% end %>
