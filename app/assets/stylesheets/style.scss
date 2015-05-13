@@ -71,9 +71,13 @@ li {
 }
 
 .baby-list {
-  margin-top: 0px;
+  margin-top: 10px;
   list-style: none;
   margin-left: -40px;
+}
+
+ul > h4.baby-name {
+  margin-bottom: 5px;
 }
 
 .time-button {
@@ -81,6 +85,7 @@ li {
 }
 
 .baby-maker {
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -242,8 +247,8 @@ li {
   display: inline;
   margin-top: 0px;
   width: 100px;
-
 }
+
 
 
 
