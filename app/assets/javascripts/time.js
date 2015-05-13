@@ -15,7 +15,7 @@ for (var key in gon.events) {
     eventObject.timeline.date.push({
                         "startDate":moment.utc(obj.date).format("YYYY,MM,DD").toString(),
                         "headline":obj.topic,
-                        "text":obj.body,
+                        "text":obj.body + "<br><a href='#'>See more Photos</a><br><a href='/babies/" + obj.baby_id + "/events/" + obj.id + "/edit'>Edit</a>",
                         "asset":
                         {
                             "media":"http://i.stack.imgur.com/xdkXE.jpg",
