@@ -3,18 +3,17 @@
 
     <h2>Media New Page</h2>
 
-      <!-- link to open cloudinary widget for direct uploads -->
-      <a href="#" id="upload_widget_opener">Upload multiple images</a>
+    <!-- link to open cloudinary widget for direct uploads -->
+    <a href="#" id="upload_widget_opener">Upload multiple images</a>
 
     <!-- form for uploading images -->
     <%= bootstrap_form_for [@baby, @event, @medium] do |f| %>
-
-
 
       <!-- thumbnails displayed here -->
       <div class="preview"></div>
 
       <%= f.submit %>
+
     <% end %>
 
   </div>

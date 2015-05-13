@@ -20,3 +20,28 @@
     <%= f.submit "Edit baby", :class => "btn btn-info" %>
   </div>
 <% end %>
+
+
+<hr>
+<hr>
+<hr>
+<a href="#" id="profile_edit_widget_opener">New Profile Photo</a>
+
+
+<script type="text/javascript">
+  $('#profile_edit_widget_opener').cloudinary_upload_widget({
+        cloud_name: 'hfi2i1sfv',
+        upload_preset: 'testing',
+        cropping: 'server',
+        // form: '#new_baby',
+        // field_name: 'profile_pic',
+        folder: 'profile_pic',
+        button_class: 'btn btn-success btn-lg',
+        button_caption: '+ New Photo',
+        theme: 'minimal'
+    }, function(error, result) {
+      console.log(error, result)
+      var public_id = result[0].public_id;
+      $('.edit_baby').prepend('<input type="hidden" name="baby[profile_pic]" value="' + public_id + '">');
+  });
+</script>
