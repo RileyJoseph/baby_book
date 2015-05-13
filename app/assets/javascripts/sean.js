@@ -8,6 +8,11 @@ $(function(){
     $(this).removeData('bs.modal');
   });
 
+  // Clear edit modal once modal closes
+  $('#editModal').on('hidden.bs.modal', function(){
+    $(this).removeData('bs.modal');
+  });
+
   // AJAX data create for babies
   $('#babyModal').on('submit','form',function(event){
     event.preventDefault();
