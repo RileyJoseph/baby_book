@@ -53,6 +53,7 @@
       <ul class="nav navbar-nav navbar-right">
       <!-- Nave links can go here for right side -->
       <% if @current_user %>
+        <li><%= link_to "Add a Child", new_baby_path, :data => {toggle: 'modal', target: '#babyModal'} %></li>
         <li><%= link_to "Home", babies_path %></li>
         <li><%= link_to "Log Out", logout_path %></li>
       <% else %>
@@ -71,6 +72,14 @@
     <%= yield %>
 
   </div>
+
+  <!-- New Baby Modal -->
+<div class="modal fade bs-modal-sm" id="babyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
