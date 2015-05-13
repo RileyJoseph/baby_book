@@ -7,6 +7,7 @@
 
   <h2 class="text-center">Congratulations!!!</h2>
 
+
   <div class="baby-form">
     <%= f.text_field :name, :placeholder =>"Baby's Name" %>
     <%= f.select :gender, options_for_select([['Boy', "boy"], ['Girl', 'girl']], 2) %>
@@ -24,8 +25,8 @@
 <hr>
 <hr>
 <hr>
-
 <a href="#" id="profile_widget_opener">Upload multiple images</a>
+
 
 <script type="text/javascript">
   $('#profile_widget_opener').cloudinary_upload_widget({
@@ -41,6 +42,6 @@
     }, function(error, result) {
       console.log(error, result)
       var public_id = result[0].public_id;
-      $('#new_baby').prepend('<input type="hidden" name="profile_pic" value="' + public_id + '" class="cloudinary-hidden-field" data-cloudinary-public-id="' + public_id + '">');
+      $('#new_baby').prepend('<input type="hidden" name="baby[profile_pic]" value="' + public_id + '">');
   });
 </script>

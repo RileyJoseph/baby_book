@@ -63,7 +63,7 @@ class BabiesController < ApplicationController
   private
 
   def baby_params
-    params.require(:baby).permit(:name,:birthday,:gender)
+    params.require(:baby).permit(:name,:birthday,:gender,:profile_pic)
   end
 
 end
