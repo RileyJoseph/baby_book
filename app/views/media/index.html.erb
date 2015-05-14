@@ -1,4 +1,4 @@
-<h1>Photos from <%= @event.topic%></h1>
+<h1>Photos from "<%= @event.topic%>"</h1>
 
 <% @media.each do |photo| %>
 <div class="imgWrapper">
@@ -8,10 +8,10 @@
       :crop => :fill,
       :gravity => :face
         ) %>
-<% @media.each do |idx| %>
- <p class="imgDescription"><%= link_to "Delete Photo?", baby_event_medium_path(@baby,@event,idx.id), :method => :delete %></p>
 
-<% end %>
+ <p class="imgDescription"><%= link_to "Delete Photo?", baby_event_medium_path(@baby,@event,photo.id), :method => :delete %></p>
+
+
 </div>
 <% end %>
 <div class="btn-margins-medium">
