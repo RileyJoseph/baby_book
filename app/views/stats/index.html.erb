@@ -32,36 +32,23 @@
   <!-- Button to baby's timeline page -->
   <%= link_to "#{@baby.name}'s Timeline", baby_events_path, :class => 'btn btn-info' %>
 
+  <!-- <div style="block"> -->
+<select id="stat-charts" class="btn btn-default">
+  <option value="">Compare Height or Weight</option>
+  <option value="height">Height</option>
+  <option value="weight">Weight</option>
+</select>
+<!-- </div>
+ -->
 
 
 </div>
 
-<% if @gender == "boy" %>
-  <!-- canvas for boy stats graphs-->
-    <div class="col-md-6" style="width:40%">
-      <h3><%= "#{@baby.name}" %> and National Weight Averages</h3>
-        <canvas id="canvas" width="400" height="400"></canvas>
-    </div>
-
-    <div style="width:40%">
-        <h3><%= "#{@baby.name}" %> and National Length Averages</h3>
-        <canvas id="canvas2" width="400" height="400"></canvas>
-    </div>
-
-<% else %>
-
-  <!-- canvas for boy stats graphs-->
-    <div class="col-md-6" style="width:40%">
-      <h3><%= "#{@baby.name}" %> and National Length Averages</h3>
-      <canvas id="canvas3" width="400" height="400"></canvas>
-    </div>
-
-    <div style="width:40%">
-        <h3><%= "#{@baby.name}" %> and National Weight Averages</h3>
-        <canvas id="canvas4" width="400" height="400"></canvas>
-    </div>
-
-<% end %>
+<!-- canvas for stats graphs-->
+  <div class="col-md-6" style="width:60%">
+    <h3 id="chart-header"></h3>
+      <canvas id="canvas" width="400" height="400"></canvas>
+  </div>
 
 <!-- Calling data for js -->
 <%= content_tag :div, class: "stat_information", data: {temp: @stats} do %>
