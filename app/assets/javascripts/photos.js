@@ -16,7 +16,6 @@
 // })
 
 window.addEventListener("load", function() {
-  console.log("JS function working!")
   if (gon.baby) {
     if (gon.baby.gender === "boy") {
       console.log("its a boy")
