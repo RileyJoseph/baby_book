@@ -1,3 +1,13 @@
+<% if @events == [] %>
+
+<div class="text-center">
+  <h1>Add an event to create a timeline for <%= @baby.name %></h1>
+
+  <%= link_to "Make an Event", new_baby_event_path, :class => "btn btn-success", :data => {toggle: "modal", target: "#eventModal"} %>
+</div>
+
+<% else %>
+
 <body>
   <div id="my-timeline"></div>
 </body>
@@ -29,6 +39,7 @@
     </div>
 
 </div>
+<% end %>
 
     <script type="text/javascript">
       $('.prettySocial').prettySocial();

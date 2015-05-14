@@ -8,7 +8,11 @@ class EventsController < ApplicationController
 
       if current_user.babies.ids.include?(baby_id)
         @baby = Baby.find(params[:baby_id])
-        @profile = Cloudinary::Utils.cloudinary_url @baby.profile_pic+".jpg", width: 410, height: 232, crop: :fill, gravity: :face
+        if @baby.profile_pic != nil
+          @profile = Cloudinary::Utils.cloudinary_url @baby.profile_pic+".jpg", width: 410, height: 232, crop: :fill, gravity: :face
+        else
+          @profile = ""
+        end
         @events = @baby.events
         # map through the events array to get media related to each event
         @media = @events.map do |event|
