@@ -40,7 +40,6 @@
   <%= link_to "Add a Photo",new_baby_event_medium_path(@baby, @event), :class => "btn btn-info" %>
   <%= link_to "See Photos", baby_event_media_path(@baby, @event), :class => "btn btn-info" %>
 <% if @current_user %>
-  <%= link_to "Edit Event", edit_baby_event_path(@baby, @event), :class => " btn btn-info", :data=>{toggle: 'modal', target: '#myModal' } %>
   <%= link_to "Delete Event",baby_event_path(@baby, @event), :method => :delete, :class => " btn btn-danger" %>
 <% end %>
 </div>
