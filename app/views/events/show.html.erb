@@ -7,37 +7,42 @@
     <p> <strong><%=@event.date.strftime("%A, %B %e, %Y")%></strong> </p>
     <p> <%=@event.body%> </p>
 
+<!-- gallery slideshow -->
+<div id="baby-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#baby-carousel" data-slide-to="0" class="active"></li>
+        <% @media.each do |image, idx| %>
+        <li data-target="#baby-carousel" data-slide-to="<%= idx %>" class=""></li>
+        <% end %>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img id="stock-photo" src="http://cliparts.co/cliparts/di4/oky/di4okygLT.jpg">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1><%= @baby.name %></h1>
+                </div>
+            </div>
+        </div>
+        <% @media.each do |image| %>
+        <div class="item">
+          <a href="<%= cl_image_path(image.url) %>" target="_blank">
+            <%= cl_image_tag( image.url,
+              :class => "slider-img-2",
+              :width => 400,
+              :height => 300,
+              :crop => :fill,
+              :gravity => :face
+            ) %>
+          </a>
+        </div>
+        <% end %>
+    </div>
 
-<% if @media == [] %>
-  <div class="no-images text-center">
-    <strong>Add photos to create a slide show for this event</strong>
-  </div>
-<% else %>
-  <!-- image slider -->
+    <a class="left carousel-control" href="#baby-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#baby-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
 
-<% if @baby.gender == "boy" %>
-   <div class="slider-wrapper boy">
-<% else %>
-  <div class="slider-wrapper girl">
-<% end %>
-    <% @media.each do |image| %>
-      <div class="slider-box">
-        <a href="<%= cl_image_path(image.url) %>" target="_blank">
-          <%= cl_image_tag( image.url,
-            :width => 400,
-            :height => 300,
-            :crop => :fill,
-            :gravity => :face,
-            :class => "slider-img"
-          ) %>
-        </a>
-      </div>
-    <% end %>
-  </div>
-
-<% end %>
-
-  </div>
 
 <div class="modal-footer">
   <%= link_to "Add a Photo",new_baby_event_medium_path(@baby, @event), :class => "btn btn-info" %>
