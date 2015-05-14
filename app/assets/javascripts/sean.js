@@ -74,7 +74,21 @@ $(function(){
         responsive    : true,
         width         : "500px"
       });
-  })
+
+      // toggle button colors on slider
+        if (gon.baby) {
+          if (gon.baby.gender === "boy") {
+          console.log("its a boy")
+            $('.slider-btns').css('background-color','#AAD8F1')
+            $('.slider-play-toggle').css('background-color','#AAD8F1')
+          } else {
+            console.log("its a girl")
+            $('.slider-btns').css('background-color','#FDADBA')
+            $('.slider-play-toggle').css('background-color','#FDADBA')
+          }
+        }
+  });
+
 
   // EVENTS PAGE AJAX CALLS
   // Clear Stats modal once modal closes

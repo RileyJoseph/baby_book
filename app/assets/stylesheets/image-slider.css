@@ -20,7 +20,7 @@
 }
 
 .girl {
-  background-color: rgba(150,05,50,.3);
+  background-color: rgba(253,173,186,.3);
 }
 
 
@@ -68,6 +68,7 @@
   -o-user-select: none;
   user-select: none;
 }
+
 
 .slider-prev {
   background-position: 0px -50px;
@@ -133,6 +134,15 @@
   right: 5px;
   z-index: 1;
 }
+
+.boy-btns {
+  background-color: #AAD8F1;
+}
+
+.girl-btns {
+  background-color: #FDADBA;
+}
+
 
 .slider-play-toggle.stop,
 .slider-play-toggle.pause {
