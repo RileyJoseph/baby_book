@@ -26,7 +26,7 @@ $(document).ready(function() {
         eventObject.timeline.date.push({
                             "startDate":moment.utc(obj.date).format("YYYY,MM,DD").toString(),
                             "headline":obj.topic,
-                            "text":obj.body + "<br><a data-toggle='modal' data-target='#eventModal' href='/babies/" + obj.baby_id + "/events/" + obj.id + "'>See more</a><br><a data-toggle='modal' data-target='#eventModal' href='/babies/" + obj.baby_id + "/events/" + obj.id + "/edit'>Edit</a>",
+                            "text":obj.body + "<br><a data-toggle='modal' data-target='#eventModal' href='/babies/" + obj.baby_id + "/events/" + obj.id + "'>See Details and Add Pictures</a><br><a data-toggle='modal' data-target='#eventModal' href='/babies/" + obj.baby_id + "/events/" + obj.id + "/edit'>Edit</a>",
                             "classname":"this-is-a-class-name",
                             "asset":
                             {
