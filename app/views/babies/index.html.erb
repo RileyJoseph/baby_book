@@ -7,7 +7,9 @@
       <%= render partial: 'babies' %>
     </div>
 
-
+    <% if @current_user.babies == [] %>
+      <%= render partial: 'newUser' %>
+    <% end %>
 
   </div>
 
