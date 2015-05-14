@@ -5,6 +5,9 @@ class BabiesController < ApplicationController
 
   def index
     @babies = current_user.babies
+    @babies.each do |baby|
+      @last_stat = baby.stats.last
+    end
   end
 
 

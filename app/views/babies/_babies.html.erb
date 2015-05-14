@@ -1,8 +1,5 @@
 <% @babies.each do |baby| %>
 
-  <% @birthday = baby.birthday.strftime("%A, %B %e, %Y") %>
-  <% @last_stat = baby.stats.order(date: 'desc').limit(1) %>
-
   <div class="my-babies">
   <h2 class="baby-name"><%= baby.name %></h2>
   <div class="float-right"><%= link_to "", edit_baby_path(baby), :class => "fa fa-gears edit-link", :data => {toggle: 'modal', target: '#editModal'} %></div>
@@ -23,19 +20,17 @@
       :radius => "max"
     ) %>
 
+  <% end %>
 <hr>
   <div class="baby-info">
   <p><strong>Born on:<br>
-
     </strong><%= baby.birthday.strftime("%A, %B %e, %Y") %></p>
     <% if @last_stat %>
         <p>As of <strong><%= baby.stats.last.date.strftime("%B %e, %Y") %></strong>,<br>
         I am <%= baby.stats.last.weight %>kg, <%= baby.stats.last.height %>cm</p>
     <% end %>
-
    </div>
 <hr>
-<% end %>
 <!--   </div> -->
   <div class="horizontal-class">
       <li><%= link_to "Timeline", baby_events_path(baby), :class => "btn btn-info btn-sm" %></li>
