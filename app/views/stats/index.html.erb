@@ -26,9 +26,12 @@
 
 <!-- Button trigger modal -->
 <%= link_to 'Create an Update', new_baby_stat_path, :class=>'btn btn-success', :data=>{toggle:'modal',target:'#myModal'} %>
-<!-- Button trigger stat-history modal -->
 
+<!-- Button trigger stat-history modal -->
 <%= link_to 'See All Measurements', baby_stat_modal_path, :class => 'btn btn-primary', :data=>{toggle: 'modal', target: '#myModal' }  %>
+
+<!-- Button to baby's timeline page -->
+<%= link_to "#{@baby.name}'s Timeline", baby_events_path, :class => 'btn btn-info' %>
 
 
 
