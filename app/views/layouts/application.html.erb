@@ -3,7 +3,6 @@
 <head>
   <title>binky</title>
   <%= Gon::Base.render_data({}) %>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <script src="//code.jquery.com/jquery.js"></script>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -12,7 +11,8 @@
 
   <!-- TimelineJS CSS -->
   <link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
-
+  <!-- Self Stylesheets -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <!-- TimlineJS CDN -->

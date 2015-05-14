@@ -33,6 +33,55 @@ li {
   margin-top: -10px
 }
 
+.add-pic-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+
+.grey-text {
+  color: #666;
+}
+
+.buttons-inline {
+  display: inline-block;
+}
+
+.grey-text:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.reduce-left-margin {
+  margin-left: -15px
+}
+
+.reduce-top-margin {
+  margin-top: -10px
+}
+
+a.edit-link {
+  color: gray;
+}
+
+.add-profile {
+  height: 220px;
+  width: 220px;
+}
+
+.add {
+  padding-top: 45%;
+}
+
+.my-babies {
+  display: inline-block;
+  margin: 0 5%;
+}
+
+.profile-img {
+  border-radius: 100%;
+}
+
 
 /****** BUTTON STYLES *******/
 
@@ -192,6 +241,56 @@ body > div.container > div.col-md-12.container > div > div > div.horizontal-clas
   display: inline-block;
   margin-top: 5px;
 }
+
+.add-pic-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+
+.grey-text {
+  color: #666;
+}
+
+.buttons-inline {
+  display: inline-block;
+}
+
+.grey-text:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.reduce-left-margin {
+  margin-left: -15px
+}
+
+.reduce-top-margin {
+  margin-top: -10px
+}
+
+a.edit-link {
+  color: gray;
+}
+
+.add-profile {
+  height: 220px;
+  width: 220px;
+}
+
+.add {
+  padding-top: 45%;
+}
+
+.my-babies {
+  display: inline-block;
+  margin: 0 5%;
+}
+
+.profile-img {
+  border-radius: 100%;
+}
+
 
 .baby-list {
   margin-top: 10px;

@@ -2,8 +2,15 @@
 
   <div class="my-babies">
   <h2 class="baby-name"><%= baby.name %></h2>
-  <div class="float-right"><%= link_to "", edit_baby_path(baby), :class => "fa fa-gears", :data => {toggle: 'modal', target: '#editModal'} %></div>
+  <div class="float-right"><%= link_to "", edit_baby_path(baby), :class => "fa fa-gears edit-link", :data => {toggle: 'modal', target: '#editModal'} %></div>
   <hr>
+  <% if baby.profile_pic == nil %>
+
+  <div class="add-profile">
+    <h3 class="add">Add a photo for <%= baby.name %></h3>
+  </div>
+
+  <% else %>
     <%= cl_image_tag( baby.profile_pic,
       :class => "baby-profile",
       :height => 220,
@@ -12,6 +19,8 @@
       :crop => "fill",
       :radius => "max"
     ) %>
+
+  <% end %>
 <hr>
   <div class="baby-info">
   <p><strong>Born on:<br>
