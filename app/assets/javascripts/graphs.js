@@ -195,6 +195,60 @@ $(function(){
   // console.log(weightMonth)
 
 
+
+
+  var maleWeight = function(){
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx).Line(MaleWeight, {
+      responsive: true
+    });
+  };
+
+  var maleHeight = function(){
+    var ctx2 = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx2).Line(MaleLength, {
+      responsive: true
+    });
+  };
+
+  var femaleHeight = function(){
+    var ctx3 = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx3).Line(FemaleLength, {
+      responsive: true
+    });
+  };
+
+  var femaleWeight = function(){
+    var ctx4 = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx4).Line(FemaleWeight, {
+      responsive: true
+    });
+  };
+
+
+
+  $('#stat-charts').on('change', function() {
+    var selection = $(this).val()
+      if (selection === "weight") {
+        $("#chart-header").text("Your baby and national weight averages")
+        if (gon.gender === "boy") {
+          maleWeight()
+        } else {
+          femaleWeight()
+        }
+      }
+      else if (selection === "height") {
+        console.log(selection)
+        $("#chart-header").text("Your baby and national height averages")
+          if (gon.gender === "boy") {
+            console.log("male")
+            maleHeight()
+          } else {
+          femaleHeight()
+        }
+      }
+  })
+
   // canvas 1 (male weight)
   for (var i = 0; i < stat.length; i++){
     var monthsOld = parseInt(moment(stat[i].date).diff(moment(babyInfo.birthday),'months',true));
@@ -223,37 +277,5 @@ $(function(){
     FemaleWeight.datasets[3].data[monthsOld4-1] = stat[l].weight;
   }
 
-  window.onload = function(){
-    if(gon.gender === "boy"){
-      var ctx = document.getElementById("canvas").getContext("2d");
-      window.myLine = new Chart(ctx).Line(MaleWeight, {
-        responsive: true
-      // document.getElementById("legendDiv").innerHTML = myLineChart.generateLegend();
-      });
-      var ctx2 = document.getElementById("canvas2").getContext("2d");
-      window.myLine = new Chart(ctx2).Line(MaleLength, {
-        responsive: true
-      });
-    } else {
-      var ctx3 = document.getElementById("canvas3").getContext("2d");
-      window.myLine = new Chart(ctx3).Line(FemaleLength, {
-        responsive: true
-      });
-      var ctx4 = document.getElementById("canvas4").getContext("2d");
-      window.myLine = new Chart(ctx4).Line(FemaleWeight, {
-        responsive: true
-      });
-    }
-  };
-
-  //  window.onload = function(){
-  //   });
-  // }
-  // window.onload = function(){
-    // var ctx = document.getElementById("canvas2").getContext("2d");
-    // window.myLine = new Chart(ctx).Line(MaleLength, {
-  //     responsive: true
-  //   });
-  // }
 
 });
