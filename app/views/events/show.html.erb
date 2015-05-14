@@ -15,8 +15,11 @@
 <% else %>
   <!-- image slider -->
 
-   <div class="slider-wrapper">
-
+<% if @baby.gender == "boy" %>
+   <div class="slider-wrapper boy">
+<% else %>
+  <div class="slider-wrapper girl">
+<% end %>
     <% @media.each do |image| %>
       <div class="slider-box">
         <a href="<%= cl_image_path(image.url) %>" target="_blank">

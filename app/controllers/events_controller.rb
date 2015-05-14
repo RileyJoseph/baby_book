@@ -91,7 +91,6 @@ class EventsController < ApplicationController
     def destroy
        @event = Event.find(params[:id])
        @media = Event.find(params[:id]).media
-       p @media
        @media.destroy_all
        @event.destroy
 

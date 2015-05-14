@@ -2,18 +2,27 @@
   height: 380px;
   margin: 30px auto 0px;
   position: relative;
-  background-color: rgba(170,216,241, .3);
+/*  background-color: rgba(170,216,241, .3);*/
   border-radius: 15px;
 }
 
-/*.slider-wrapper-girl {
+
+.slider-wrapper {
   height: 380px;
   margin: 30px auto 0px;
   position: relative;
-  background-color: rgba(150,05,50,.3);
+/*  background-color: rgba(150,05,50,.3);*/
   border-radius: 15px;
 }
-*/
+
+.boy {
+  background-color: rgba(170,216,241, .3);
+}
+
+.girl {
+  background-color: rgba(150,05,50,.3);
+}
+
 
 .slider-content {
   height: 380px;
@@ -42,7 +51,7 @@
 .slider-btns {
   /*background-image: url('../images/network/rightArrow.png');*/
   /*background-repeat: no-repeat;*/
-  background-color: purple;
+  background-color: #AAD8F1;
   color: white;
   cursor: pointer;
   display: block;
@@ -111,8 +120,8 @@
   /*background-position: 0px -20px;*/
   /*background-repeat: no-repeat;*/
   border-radius: 50%;
-  background: pink;
-  color: purple;
+  background: #AAD8F1;
+  color: white;
   text-align: center;
   bottom: 5px;
   cursor: pointer;

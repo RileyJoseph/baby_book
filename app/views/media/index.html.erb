@@ -8,6 +8,10 @@
       :crop => :fill,
       :gravity => :face
         ) %>
- <p class="imgDescription">Remove Image?</p>
+<% @media.each do |idx| %>
+ <p class="imgDescription"><%= link_to "Delete Photo?", baby_event_medium_path(@baby,@event,idx.id), :method => :delete %></p>
+
+<% end %>
 </div>
 <% end %>
+
