@@ -13,6 +13,8 @@ class StatsController < ApplicationController
       @baby = Baby.find(params[:baby_id])
       @stats = @baby.stats
       @last_three = @baby.stats.order(date: 'desc').limit(3)
+      @gender = @baby.gender
+      gon.gender = @gender
     else
       flash[:danger] = "You cannot view this page"
       redirect_to root_path
