@@ -1,5 +1,10 @@
 /****** GENERAL SITE STYLES *******/
 
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .navbar-default {
   color: #CCFFFF;
 }
@@ -82,6 +87,7 @@ a.edit-link {
   border-radius: 100%;
 }
 
+
 /****** HOME PAGE STYLES *******/
 
 .first-time-user {
@@ -99,6 +105,12 @@ a.edit-link {
 }
 
 /***********************/
+
+.navbar-default .navbar-nav>li>a {
+  color: #000000;
+}
+
+
 
 /****** BUTTON STYLES *******/
 
@@ -185,14 +197,15 @@ body > div > div.btn-margins-large > div.social-container > div > div > a.pretty
 
 /**** SPLASH PAGE ****/
 .welcome-title {
-  background: image-url("baby.jpg");
+  background-image: url(image-path('baby.jpg'));
   background-position: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 89vh;
   width: 110%;
-  overflow-x: hidden;
+  left: -5%;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .welcome-message {
