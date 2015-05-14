@@ -26,7 +26,13 @@
 <hr>
   <div class="baby-info">
   <p><strong>Born on:<br>
-    </strong><%= @birthday %></p>
+
+    </strong><%= baby.birthday.strftime("%A, %B %e, %Y") %></p>
+    <% if @last_stat %>
+        <p>As of <strong><%= baby.stats.last.date.strftime("%B %e, %Y") %></strong>,<br>
+        I am <%= baby.stats.last.weight %>kg, <%= baby.stats.last.height %>cm</p>
+    <% end %>
+
    </div>
 <hr>
 <% end %>

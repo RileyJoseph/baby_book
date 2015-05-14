@@ -3,21 +3,22 @@
 <head>
   <title>binky</title>
   <%= Gon::Base.render_data({}) %>
-  <script src="//code.jquery.com/jquery.js"></script>
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="//bootswatch.com/lumen/bootstrap.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="//bootswatch.com/lumen/bootstrap.min.css"> -->
 
   <!-- TimelineJS CSS -->
   <link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
   <!-- Self Stylesheets -->
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script src="//code.jquery.com/jquery.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <!-- TimlineJS CDN -->
   <script type="text/javascript" src="//cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>
   <!-- include cloudinary widget -->
   <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+  <script type="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
