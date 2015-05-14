@@ -3,6 +3,7 @@ class MediaController < ApplicationController
   def index
     @event = Event.find(params[:event_id])
     @media = Event.find(params[:event_id]).media
+    @baby = Baby.find(params[:baby_id])
   end
 
   def new
@@ -44,9 +45,7 @@ class MediaController < ApplicationController
 
  def destroy
       @event = Event.find(params[:event_id])
-      p @event
       @media = Event.find(params[:event_id]).media
-      p @media
       @medium = @media.find(params[:id])
       @medium.destroy
       redirect_to baby_events_path
@@ -55,7 +54,7 @@ class MediaController < ApplicationController
   private
 
   def medium_params
-    params.require(:medium).permit(:url, :event_id)
+    params.require(:medium).permit(:url, :event_id, :id)
   end
 
 end
