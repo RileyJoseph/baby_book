@@ -6,8 +6,7 @@ class BabiesController < ApplicationController
   def index
     @babies = current_user.babies
     @babies.each do |baby|
-      @birthday = baby.birthday.strftime("%A, %B %e, %Y")
-      @last_stat = baby.stats.order(date: 'desc').limit(1)
+      @last_stat = baby.stats.last
     end
   end
 
