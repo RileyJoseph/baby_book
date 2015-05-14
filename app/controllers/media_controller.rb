@@ -48,7 +48,7 @@ class MediaController < ApplicationController
       @media = Event.find(params[:event_id]).media
       @medium = @media.find(params[:id])
       @medium.destroy
-      redirect_to baby_events_path
+      redirect_to baby_event_media_path
   end
 
   private
