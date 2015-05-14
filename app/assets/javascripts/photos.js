@@ -15,4 +15,19 @@
 //   })
 // })
 
+window.addEventListener("load", function() {
+  console.log("JS function working!")
+  if (gon.baby) {
+    if (gon.baby.gender === "boy") {
+      console.log("its a boy")
+      $('.slider-btns').css('background-color','black')
+      $('.slider-play-toggle').css('background-color','black')
+    } else {
+      console.log("its a girl")
+      $('.slider-btns').css('background-color','black')
+      $('.slider-play-toggle').addClass('.girl-btns')
+    }
+  }
+});
+
 $('.prettySocial').prettySocial();
