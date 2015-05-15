@@ -111,9 +111,28 @@ a.edit-link {
 }
 
 /******* ABOUT **************/
-.small-width {
-  width: 25%;
-  float: left;
+.about-pic .top {
+  z-index: 99;
+  position: absolute;
+  margin-left: 25%;
+  border-radius: 100%;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.about-pic .top:hover {
+  opacity: 0;
+}
+
+.about-pic .bottom {
+  z-index: 1;
+  position: absolute;
+  margin-left: 25%;
+  border-radius: 100%;
+}
+
+.about-body {
+  margin-top: 183px;
 }
 /***********************/
 
