@@ -22,7 +22,7 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-  <%= link_to "Measurements", baby_stats_path(@baby), :class => "btn btn-info"%>
+  <%= link_to "Measurements", baby_stats_path(@baby), :id=>"Measurements-btn" :class => "btn btn-info"%>
   <%= link_to "Timeline", baby_events_path(@baby), :class => "btn btn-info" %>
   <%= link_to "Edit", edit_baby_path(@baby), :class => "btn btn-info" %>
 </div>
