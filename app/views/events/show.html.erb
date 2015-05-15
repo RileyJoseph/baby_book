@@ -17,10 +17,10 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <img id="stock-photo" src="http://cliparts.co/cliparts/di4/oky/di4okygLT.jpg">
+            <%= image_tag("elephant.png", id: "stock-photo") %>
             <div class="container">
                 <div class="carousel-caption">
-                    <h1><%= @baby.name %></h1>
+                    <h1 class="carousel-name"><%= @baby.name %></h1>
                 </div>
             </div>
         </div>
@@ -29,8 +29,8 @@
           <a href="<%= cl_image_path(image.url) %>" target="_blank">
             <%= cl_image_tag( image.url,
               :class => "slider-img-2",
-              :width => 400,
-              :height => 300,
+              :width => 500,
+              :height => 400,
               :crop => :fill,
               :gravity => :face
             ) %>
