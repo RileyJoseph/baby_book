@@ -195,8 +195,6 @@ $(function(){
   // console.log(weightMonth)
 
 
-
-
   var maleWeight = function(){
     var ctx = document.getElementById("canvas").getContext("2d");
     window.myLine = new Chart(ctx).Line(MaleWeight, {
@@ -208,7 +206,8 @@ $(function(){
   var maleHeight = function(){
     var ctx = document.getElementById("canvas").getContext("2d");
     window.myLine = new Chart(ctx).Line(MaleLength, {
-      responsive: true
+      responsive: true,
+      scaleOverride: true, scaleStartValue: 0, scaleStepWidth: 10, scaleSteps: 12
     });
 
   };
@@ -216,7 +215,8 @@ $(function(){
   var femaleHeight = function(){
     var ctx = document.getElementById("canvas").getContext("2d");
     window.myLine = new Chart(ctx).Line(FemaleLength, {
-      responsive: true
+      responsive: true,
+      scaleOverride: true, scaleStartValue: 0, scaleStepWidth: 10, scaleSteps: 12
     });
   };
 
@@ -224,7 +224,7 @@ $(function(){
     var ctx = document.getElementById("canvas").getContext("2d");
     window.myLine = new Chart(ctx).Line(FemaleWeight, {
       responsive: true
-    });
+      });
   };
 
 
