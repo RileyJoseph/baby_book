@@ -3,7 +3,7 @@
 <div class="text-center">
   <h1>Add an event to create a timeline for <%= @baby.name %></h1>
 
-  <%= link_to "Make an Event", new_baby_event_path, :class => "btn btn-success", :data => {toggle: "modal", target: "#eventModal"} %>
+  <%= link_to "Make an Event", new_baby_event_path, :class => "btn btn-success", :id => "eventBtn", :data => {toggle: "modal", target: "#eventModal"} %>
 </div>
 
 <% else %>
