@@ -38,7 +38,7 @@ $(document).ready(function() {
                                 "caption":""
                             }
                         });
-    }
+    };
 
 // DOM Loads timeline. JSON is loaded before timeline is rendered.
     createStoryJS({

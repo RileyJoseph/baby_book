@@ -184,24 +184,16 @@ $(function(){
   //stop here if there is no .stat_information item
   if($('.stat_information').length < 1) return;
 
-
-  // console.log(MaleWeight.datasets[3].data[3])
   var stat = $('.stat_information').data('temp');
-  // console.log(stat)
   var babyInfo = $('.baby_information').data('temp');
-  // console.log(babyInfo)
-  // var weightMonth = moment(weightDate).month()
-  // console.log(weightDate)
-  // console.log(weightMonth)
 
-
+  // FUNCTIONS FOR RENDERING GRAPHS
   var maleWeight = function(){
     var ctx = document.getElementById("canvas").getContext("2d");
     window.myLine = new Chart(ctx).Line(MaleWeight, {
       responsive: true
     });
-
-    }
+  };
 
   var maleHeight = function(){
     var ctx = document.getElementById("canvas").getContext("2d");
@@ -209,7 +201,6 @@ $(function(){
       responsive: true,
       scaleOverride: true, scaleStartValue: 0, scaleStepWidth: 10, scaleSteps: 12
     });
-
   };
 
   var femaleHeight = function(){
@@ -224,63 +215,59 @@ $(function(){
     var ctx = document.getElementById("canvas").getContext("2d");
     window.myLine = new Chart(ctx).Line(FemaleWeight, {
       responsive: true
-      });
+    });
   };
 
-
-
+  // graphs dropdown menu
   $('#stat-charts').on('change', function() {
 
     $("#canvas-container").html("<canvas id='canvas'>")
 
     var selection = $(this).val()
 
-      if (selection === "weight") {
-        $("#chart-header").text("National weight averages (97th, 50th, and 3rd Percentile)")
+    if (selection === "weight") {
+      $("#chart-header").text("National weight averages (97th, 50th, and 3rd Percentile)")
+      if (gon.gender === "boy") {
+        maleWeight()
+      } else {
+        femaleWeight()
+      };
+    } else if (selection === "height") {
+      $("#chart-header").text("National height averages (97th, 50th, and 3rd Percentile)")
         if (gon.gender === "boy") {
-          maleWeight()
+          maleHeight()
         } else {
-          femaleWeight()
-        }
-      }
-      else if (selection === "height") {
-        console.log(selection)
-        $("#chart-header").text("National height averages (97th, 50th, and 3rd Percentile)")
-          if (gon.gender === "boy") {
-            console.log("male")
-            maleHeight()
-          } else {
-          femaleHeight()
-        }
-      }
-  })
+        femaleHeight()
+      };
+    };
+  });
 
-  // canvas 1 (male weight)
+  // graph 1 (male weight)
   for (var i = 0; i < stat.length; i++){
     var monthsOld = parseInt(moment(stat[i].date).diff(moment(babyInfo.birthday),'months',true));
-    // console.log(monthsOld)
     if(monthsOld < 0 || monthsOld > 36) continue;
     MaleWeight.datasets[3].data[monthsOld-1] = stat[i].weight;
-  }
+  };
 
-  // canvas 2 (male length)
+  // graph 2 (male length)
   for (var j = 0; j < stat.length; j++){
     var monthsOld2 = parseInt(moment(stat[j].date).diff(moment(babyInfo.birthday),'months',true));
     if(monthsOld2 < 0 || monthsOld2 > 36) continue;
     MaleLength.datasets[3].data[monthsOld2-1] = stat[j].height;
-  }
+  };
 
-  // canvas 3 (female length)
+  // graph 3 (female length)
   for (var k = 0; k < stat.length; k++){
     var monthsOld3 = parseInt(moment(stat[k].date).diff(moment(babyInfo.birthday),'months',true));
     if(monthsOld3 < 0 || monthsOld3 > 36) continue;
     FemaleLength.datasets[3].data[monthsOld3-1] = stat[k].height;
-  }
-  // canvas 4 (female weight)
+  };
+
+  // graph 4 (female weight)
   for (var l = 0; l < stat.length; l++){
     var monthsOld4 = parseInt(moment(stat[l].date).diff(moment(babyInfo.birthday),'months',true));
     if(monthsOld4 < 0 || monthsOld4 > 36) continue;
     FemaleWeight.datasets[3].data[monthsOld4-1] = stat[l].weight;
-  }
+  };
 
 });
