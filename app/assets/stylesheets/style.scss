@@ -147,8 +147,20 @@ a.edit-link {
 
 /******* ABOUT **************/
 .about-page {
-  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
   height: 100%;
+}
+
+.dev-column {
+  margin-right: 5px;
+  width: 280px;
+}
+
+.bio {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .about-pic .top {
