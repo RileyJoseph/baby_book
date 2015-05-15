@@ -47,7 +47,6 @@ $(document).ready(function() {
         height:     '525',
         source:     eventObject,
         embed_id:   'my-timeline',
-        start_at_end: true,
         font:       'Rancho-Gudea'
     });
 });
