@@ -3,6 +3,7 @@
 body {
   max-width: 100%;
   overflow-x: hidden;
+  background-color: rgba(251,255,216,.5);
 }
 
 .navbar-default {
@@ -94,10 +95,7 @@ a.edit-link {
   padding-top: 45%;
 }
 
-.my-babies {
-  display: inline-block;
-  margin: 0 5%;
-}
+
 
 .profile-img {
   border-radius: 100%;
@@ -182,6 +180,12 @@ a.edit-link {
   margin-top: -5px;
   margin-bottom: 15px;
 }
+
+.btn-sm{
+  margin-bottom:5px;
+  border-radius: 80px;
+}
+
 /***********************/
 
 
@@ -277,6 +281,27 @@ body > div > div.btn-margins-large > div.social-container > div > div > a.pretty
   margin: 0 5%;
 }
 
+
+.my-babies {
+  display: inline-block;
+  background-color:#cf9cf3;
+  border-radius: 20px;
+  border: 5px solid #9f21f6;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  margin-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.my-babies {
+  display: inline-block;
+  margin: 0 5%;
+  margin-bottom: 30px;
+}
+
 .baby-profile {
   margin-top: 2%;
 }
@@ -356,10 +381,7 @@ a.edit-link {
   padding-top: 45%;
 }
 
-.my-babies {
-  display: inline-block;
-  margin: 0 5%;
-}
+
 
 .profile-img {
   border-radius: 100%;
