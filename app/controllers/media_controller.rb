@@ -26,18 +26,14 @@ class MediaController < ApplicationController
     # render json: params[:url]
     preloaded_array = params[:url]
 
-    p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ BABY"
-    p @baby[:name]
-    p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ EVENT"
-    p @event[:topic]
-    p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ preloaded_array"
-    puts "Images: " + preloaded_array.length.to_s
-    p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ SAVING TO MEDIUM MODEL NOW"
+    if preloaded_array = []
+      flash[:danger] = "Please add photos next time"
+      new_baby_event_medium_path(@baby, @event)
+    end
 
     preloaded_array.each do |public_id|
       # add image to media model
       @event.media.find_or_create_by(url: public_id)
-      p "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IMAGE INSTANCE SAVED"
     end
 
     redirect_to baby_events_path(@baby)

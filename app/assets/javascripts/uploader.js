@@ -13,7 +13,7 @@ $(function() {
                   // form: '#new_medium',
                   // field_name: 'url[]',
                   thumbnails: '.preview',
-                  button_class: 'btn btn-success btn-lg',
+                  button_class: 'btn btn-success btn-md add-media-btn',
                   button_caption: '+ Pictures',
                   // keep_widget_open: true,
                   theme: 'minimal'
