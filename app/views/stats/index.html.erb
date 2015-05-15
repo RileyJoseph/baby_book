@@ -1,9 +1,9 @@
 <meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
-<div class="col-md-6">
+<div class="col-md-8">
 
   <h2><%= "#{@baby.name}'s" %> Progress</h2>
 
-  <h3>Most Recent Growth Measurments</h3>
+  <h4>Most Recent Growth Measurments</h4>
 
   <div class="baby-stats">
     <div class="table-responsive">
@@ -35,29 +35,26 @@
 
 
   <!-- <div style="block"> -->
+<div>
 <select id="stat-charts" class="btn btn-default btn-margins-medium">
   <option value="">Compare Height or Weight</option>
   <option value="height">Height</option>
   <option value="weight">Weight</option>
 </select>
-<!-- </div>
- -->
+</div>
 
+<hr>
 
 </div>
 
 <!-- canvas for stats graphs-->
-  <div class="col-md-6" style="width:60%">
+  <div class="col-md-8" style="width: 98%">
     <h3 id="chart-header"></h3>
     <div id="canvas-container">
       <canvas id="canvas"></canvas>
     </div>
   </div>
 
-  <div class="col-md-6" style="width:60%">
-    <h3 id="chart-header"></h3>
-      <canvas id="canvas2" width="400" height="400"></canvas>
-  </div>
 
 <!-- Calling data for js -->
 <%= content_tag :div, class: "stat_information", data: {temp: @stats} do %>
