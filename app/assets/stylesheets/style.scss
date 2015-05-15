@@ -21,7 +21,7 @@ a#eventBtn {
 }
 
 .navbar-brand {
-  padding-top: 0;
+  padding-top: 5px;
 }
 
 .circle {
@@ -134,6 +134,12 @@ a.edit-link {
 /***********************/
 
 .navbar-default .navbar-nav>li>a {
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #f6e976;
+  margin-left: 10px;
+  margin-top: 6px;
+  margin-bottom: 3px;
   color: #000000;
 }
 
@@ -630,6 +636,7 @@ ul.social-buttons li a:active {
 
 .navbar-default {
     background-image: url("http://images2.layoutsparks.com/1/215352/fun-stripes-different-image-31000.jpg");
+    margin-bottom: 50px;
 }
 
 /******** CANVAS!!!! *******/
