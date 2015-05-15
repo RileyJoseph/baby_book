@@ -3,7 +3,7 @@ var MaleWeight = {
   datasets: [
   {
     label: "3rd Percentile",
-    fillColor: "rgba(0,0,128, 0.7)",
+    fillColor: "rgba(0,0,128, 0.5)",
     strokeColor: "rgba(220,220,220,1)",
     pointColor: "rgba(220,220,220,1)",
     pointStrokeColor: "#fff",
@@ -23,7 +23,7 @@ var MaleWeight = {
   },
   {
     label: "97th Percentile",
-    fillColor: "rgba(0,255,255,0.2)",
+    fillColor: "rgba(0,255,255,0.3)",
     strokeColor: "rgba(151,187,205,1)",
     pointColor: "rgba(151,187,205,1)",
     pointStrokeColor: "#fff",
@@ -49,7 +49,7 @@ var MaleLength = {
   datasets: [
   {
     label: "3rd Percentile",
-    fillColor: "rgba(0,0,128, 0.7)",
+    fillColor: "rgba(0,0,128, 0.5)",
     strokeColor: "rgba(220,220,220,1)",
     pointColor: "rgba(220,220,220,1)",
     pointStrokeColor: "#fff",
@@ -69,7 +69,7 @@ var MaleLength = {
   },
   {
     label: "97th Percentile",
-    fillColor: "rgba(0,255,255,0.2)",
+    fillColor: "rgba(0,255,255,0.3)",
     strokeColor: "rgba(151,187,205,1)",
     pointColor: "rgba(151,187,205,1)",
     pointStrokeColor: "#fff",
@@ -95,8 +95,8 @@ var FemaleLength = {
   {
     label: "3rd Percentile",
     fillColor: "rgba(255,20,147,0.5)",
-    strokeColor: "rgba(220,220,220,1)",
-    pointColor: "rgba(215, 44, 182, 1)",
+    strokeColor: "rgba(216,164,164,1)",
+    pointColor: "rgba(216,164,164, 1)",
     pointStrokeColor: "#fff",
     pointHighlightFill: "#fff",
     pointHighlightStroke: "rgba(220,220,220,1)",
@@ -105,8 +105,8 @@ var FemaleLength = {
   {
     label: "50th Percentile",
     fillColor: "rgba(255,105,180,0.4)",
-    strokeColor: "rgba(151,187,205,1)",
-    pointColor: "rgba(32, 55, 182,1)",
+    strokeColor: "rgba(216,164,164,1)",
+    pointColor: "rgba(216,164,164,1)",
     pointStrokeColor: "#fff",
     pointHighlightFill: "#fff",
     pointHighlightStroke: "rgba(151,187,205,1)",
@@ -114,9 +114,9 @@ var FemaleLength = {
   },
   {
     label: "97th Percentile",
-    fillColor: "rgba(255,182,193,0.2)",
-    strokeColor: "rgba(151,187,205,1)",
-    pointColor: "rgba(151,187,205,1)",
+    fillColor: "rgba(255,182,193,0.3)",
+    strokeColor: "rgba(216,164,164,1)",
+    pointColor: "rgba(216,164,164,1)",
     pointStrokeColor: "#fff",
     pointHighlightFill: "#fff",
     pointHighlightStroke: "rgba(151,187,205,1)",
@@ -139,8 +139,8 @@ var FemaleWeight = {
   {
     label: "3rd Percentile",
     fillColor: "rgba(255,20,147,0.5)",
-    strokeColor: "rgba(220,220,220,1)",
-    pointColor: "rgba(220,220,220,1)",
+    strokeColor: "rgba(216,164,164,1)",
+    pointColor: "rgba(216,164,164,1)",
     pointStrokeColor: "#fff",
     pointHighlightFill: "#fff",
     pointHighlightStroke: "rgba(220,220,220,1)",
@@ -149,8 +149,8 @@ var FemaleWeight = {
   {
     label: "50th Percentile",
     fillColor: "rgba(255,105,180,0.4)",
-    strokeColor: "rgba(151,187,205,1)",
-    pointColor: "rgba(151,187,205,1)",
+    strokeColor: "rgba(216,164,164,1)",
+    pointColor: "rgba(216,164,164,1)",
     pointStrokeColor: "#fff",
     pointHighlightFill: "#fff",
     pointHighlightStroke: "rgba(151,187,205,1)",
@@ -158,9 +158,9 @@ var FemaleWeight = {
   },
   {
     label: "97th Percentile",
-    fillColor: "rgba(255,182,193,0.2)",
-    strokeColor: "rgba(151,187,205,1)",
-    pointColor: "rgba(151,187,205,1)",
+    fillColor: "rgba(255,182,193,0.3)",
+    strokeColor: "rgba(216,164,164,1)",
+    pointColor: "rgba(216,164,164,1)",
     pointStrokeColor: "#fff",
     pointHighlightFill: "#fff",
     pointHighlightStroke: "rgba(151,187,205,1)",
