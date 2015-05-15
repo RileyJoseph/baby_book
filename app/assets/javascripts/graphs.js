@@ -283,5 +283,4 @@ $(function(){
     FemaleWeight.datasets[3].data[monthsOld4-1] = stat[l].weight;
   }
 
-
 });
