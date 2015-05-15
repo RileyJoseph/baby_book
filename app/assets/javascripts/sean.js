@@ -23,6 +23,7 @@ $(function(){
     }).done(function(data){
       $('.babies-row').html(data);
       $('#babyModal').modal('hide');
+      $('.first-time-user').remove();
     }).error(function(err){
       alert('Something Broke');
       console.log(err);
