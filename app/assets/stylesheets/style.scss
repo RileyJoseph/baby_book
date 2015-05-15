@@ -1,10 +1,16 @@
 /****** GENERAL SITE STYLES *******/
 
 body {
+  min-height: 100%;
   max-width: 100%;
   overflow-x: hidden;
   background-color: rgba(251,255,216,.5);
 }
+
+a#eventBtn {
+  margin-bottom: 290px;
+}
+
 
 .navbar-default {
   color: #CCFFFF;

@@ -236,7 +236,7 @@ $(function(){
     var selection = $(this).val()
 
       if (selection === "weight") {
-        $("#chart-header").text("Your baby and national weight averages")
+        $("#chart-header").text("National weight averages (97th, 50th, and 3rd Percentile)")
         if (gon.gender === "boy") {
           maleWeight()
         } else {
@@ -245,7 +245,7 @@ $(function(){
       }
       else if (selection === "height") {
         console.log(selection)
-        $("#chart-header").text("Your baby and national height averages")
+        $("#chart-header").text("National height averages (97th, 50th, and 3rd Percentile)")
           if (gon.gender === "boy") {
             console.log("male")
             maleHeight()
