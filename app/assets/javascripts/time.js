@@ -4,7 +4,7 @@ $(document).ready(function() {
     var eventObject = {
         "timeline":
         {
-            "headline":gon.baby.name+"'s bnkybk",
+            "headline":gon.baby.name,
             "type":"default",
             "text":"Born on "+gon.birthday,
             // Date format is YYY,DD,MM (strftime("%Y,%m,%e"))
@@ -47,6 +47,7 @@ $(document).ready(function() {
         height:     '525',
         source:     eventObject,
         embed_id:   'my-timeline',
+        start_at_end: true,
         font:       'Rancho-Gudea'
     });
 });
