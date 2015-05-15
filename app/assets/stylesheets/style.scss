@@ -7,7 +7,22 @@ body {
 
 .navbar-default {
   color: #CCFFFF;
+  border: none;
 }
+
+.navbar-brand {
+  padding-top: 0;
+}
+
+.circle {
+  background: white;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  padding-top: 10px;
+  padding-left: 4px;
+}
+
 
 li {
   list-style-type: none;

@@ -6,8 +6,14 @@ class UsersController < ApplicationController
 
   # create new user (POST)
   def create
-    User.create(user_params)
-    redirect_to login_path
+    @user = User.create(user_params)
+
+    # auto login
+    session[:user_id] = @user.id
+    session[:password_digest] = @user.password_digest
+    # render json: session
+    flash[:success] = "Welcome new member!"
+    redirect_to babies_path
   end
 
   private
