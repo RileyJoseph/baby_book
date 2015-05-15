@@ -6,12 +6,11 @@ class AuthController < ApplicationController
     # get user_facebook info
     provider_user = request.env['omniauth.auth']
 
-    # find or create user
     user = User.find_or_create_by(provider_id:provider_user['uid'],provider:params[:provider]) do |u|
       u.provider_hash = provider_user['credentials']['token']
       u.name = provider_user['info']['name']
       u.email = provider_user['info']['email']
-      # for current_user logic
+      # setting password for current_user logic
       u.password_digest = "fb_login"
       u.save
     end
@@ -31,7 +30,7 @@ class AuthController < ApplicationController
 
   def failure
     #todo, display error page
+
     render plain: "this aint right!?"
   end
-
 end

@@ -8,7 +8,6 @@ class BabiesController < ApplicationController
     @babies.each do |baby|
       @last_stat = baby.stats.last
     end
-
   end
 
 
@@ -30,9 +29,7 @@ class BabiesController < ApplicationController
       flash[:danger] = "You cannot view this page"
       redirect_to root_path
     end
-
   end
-
 
   def create
     @baby = current_user.babies.create(baby_params)
@@ -53,6 +50,7 @@ class BabiesController < ApplicationController
     redirect_to babies_path
   end
 
+  # todo, add baby destroy
 
   # def destroy
   #    @event = Event.find(params[:id])
@@ -70,5 +68,4 @@ class BabiesController < ApplicationController
   def baby_params
     params.require(:baby).permit(:name,:birthday,:gender,:profile_pic)
   end
-
 end

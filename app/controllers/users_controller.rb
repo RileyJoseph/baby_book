@@ -8,10 +8,9 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
 
-    # auto login
+    # auto login after create user
     session[:user_id] = @user.id
     session[:password_digest] = @user.password_digest
-    # render json: session
     flash[:success] = "Welcome new member!"
     redirect_to babies_path
   end
@@ -21,6 +20,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name,:email,:password)
   end
-
-
 end

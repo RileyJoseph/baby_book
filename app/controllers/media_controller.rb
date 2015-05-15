@@ -23,7 +23,7 @@ class MediaController < ApplicationController
     @baby = Baby.find(params[:baby_id])
     @event = Event.find(params[:event_id])
 
-    # render json: params[:url]
+    # array of cloudinary public id for images
     preloaded_array = params[:url]
 
     if preloaded_array == []
@@ -32,19 +32,18 @@ class MediaController < ApplicationController
     end
 
     preloaded_array.each do |public_id|
-      # add image to media model
       @event.media.find_or_create_by(url: public_id)
     end
 
     redirect_to baby_events_path(@baby)
   end
 
- def destroy
-      @event = Event.find(params[:event_id])
-      @media = Event.find(params[:event_id]).media
-      @medium = @media.find(params[:id])
-      @medium.destroy
-      redirect_to baby_event_media_path
+  def destroy
+    @event = Event.find(params[:event_id])
+    @media = Event.find(params[:event_id]).media
+    @medium = @media.find(params[:id])
+    @medium.destroy
+    redirect_to baby_event_media_path
   end
 
   private
