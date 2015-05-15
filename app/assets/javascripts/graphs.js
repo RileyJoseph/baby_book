@@ -202,25 +202,27 @@ $(function(){
     window.myLine = new Chart(ctx).Line(MaleWeight, {
       responsive: true
     });
-  };
+
+    }
 
   var maleHeight = function(){
-    var ctx2 = document.getElementById("canvas").getContext("2d");
-    window.myLine = new Chart(ctx2).Line(MaleLength, {
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx).Line(MaleLength, {
       responsive: true
     });
+
   };
 
   var femaleHeight = function(){
-    var ctx3 = document.getElementById("canvas").getContext("2d");
-    window.myLine = new Chart(ctx3).Line(FemaleLength, {
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx).Line(FemaleLength, {
       responsive: true
     });
   };
 
   var femaleWeight = function(){
-    var ctx4 = document.getElementById("canvas").getContext("2d");
-    window.myLine = new Chart(ctx4).Line(FemaleWeight, {
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx).Line(FemaleWeight, {
       responsive: true
     });
   };
@@ -228,7 +230,11 @@ $(function(){
 
 
   $('#stat-charts').on('change', function() {
+
+    $("#canvas-container").html("<canvas id='canvas'>")
+
     var selection = $(this).val()
+
       if (selection === "weight") {
         $("#chart-header").text("Your baby and national weight averages")
         if (gon.gender === "boy") {
@@ -276,6 +282,5 @@ $(function(){
     if(monthsOld4 < 0 || monthsOld4 > 36) continue;
     FemaleWeight.datasets[3].data[monthsOld4-1] = stat[l].weight;
   }
-
 
 });
