@@ -1,6 +1,5 @@
 $(function(){
 
-
   // BABIES INDEX AJAX CALLS
 
   // Clear baby modal once modal closes
