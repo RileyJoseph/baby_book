@@ -39,7 +39,6 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
       <a class="navbar-brand" href="/">
         <div class="circle">
           <%= image_tag("elephant_yellow.png", :style => "height: 30px;") %>
@@ -68,7 +67,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-  <div class="container">
+  <div id="body" class="container">
 
     <%= render "layouts/flash" %>
 
@@ -84,31 +83,31 @@
   </div>
 </div>
 
+</body>
 <footer>
 <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Woolli</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-coffee"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
-                        </li>
-                        <li><a href="#">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="row">
+      <div class="col-md-4">
+          <span class="copyright">Copyright &copy; Woolli</span>
+      </div>
+      <div class="col-md-4">
+          <ul class="list-inline social-buttons">
+              <li><a href="/about"><i class="fa fa-info"></i></a>
+              </li>
+              <li><a href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+          </ul>
+      </div>
+      <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+              <li><a href="#">Privacy Policy</a>
+              </li>
+              <li><a href="#">Terms of Use</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
 </footer>
-</body>
 </html>
 

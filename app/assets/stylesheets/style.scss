@@ -5,6 +5,9 @@ body {
   max-width: 100%;
   overflow-x: hidden;
   background-color: rgba(251,255,216,.5);
+  margin: 0;
+  padding: 0;
+  height:100%;
 }
 
 a#eventBtn {
@@ -137,13 +140,15 @@ a.edit-link {
 /******* ABOUT **************/
 .about-page {
   margin-top: 5%;
+  height: 100%;
 }
 
 .about-pic .top {
   z-index: 99;
   position: absolute;
-  margin-left: 25%;
+  margin-left: 22%;
   border-radius: 100%;
+  border: 3px solid #9F21F6;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
 }
@@ -155,8 +160,9 @@ a.edit-link {
 .about-pic .bottom {
   z-index: 1;
   position: absolute;
-  margin-left: 25%;
+  margin-left: 22%;
   border-radius: 100%;
+  border: 3px solid #9F21F6;
 }
 
 .about-body {
@@ -255,19 +261,14 @@ body > div > div.btn-margins-large > div.social-container > div > div > a.pretty
 
 /**** SPLASH PAGE ****/
 .welcome-title {
-  background-image: url(image-path('baby.jpg'));
-  background-position: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   height: 89vh;
   width: 110%;
   left: -5%;
   text-align: center;
-  overflow-x: hidden;
 }
 
 .welcome-message {
-  margin-top: 20%;
+  margin-top: 2%;
 }
 /***********************/
 
@@ -318,6 +319,7 @@ body > div > div.btn-margins-large > div.social-container > div > div > a.pretty
 
 .horizontal-class {
   margin-top: 5%;
+  margin-bottom: 5%;
   text-align: center;
 }
 
@@ -379,7 +381,7 @@ body > div.container > div.col-md-12.container > div > div > div.horizontal-clas
 }
 
 a.edit-link {
-  color: gray;
+  color: #397FC5;
 }
 
 .add-profile {
@@ -618,10 +620,6 @@ ul.social-buttons li a:active {
 
 
 /******** BOOTSTRAP OVERRIDES ************/
-
-.btn {
-  border-radius: 0px;
-}
 
 .navbar-default {
     background-image: url("http://images2.layoutsparks.com/1/215352/fun-stripes-different-image-31000.jpg");
