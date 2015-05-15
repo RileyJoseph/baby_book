@@ -1,9 +1,16 @@
 <% if @events == [] %>
 
 <div class="text-center">
-  <h1>Add an event to create a timeline for <%= @baby.name %></h1>
-
-  <%= link_to "Make an Event", new_baby_event_path, :class => "btn btn-success", :id => "eventBtn", :data => {toggle: "modal", target: "#eventModal"} %>
+  <h1>Woolli timeline. Your child's very own baby book.
+  <br>
+  <small>Add an event to create a timeline for <%= @baby.name %></small></h1>
+  <%= link_to "Make an Event", new_baby_event_path, :class => "btn btn-success", :id => "no-event-btn", :data => {toggle: "modal", target: "#eventModal"} %>
+  <br>
+  <%= image_tag("wooli_front_purple.png") %>
+  <p class="timeline-start">Click the "Make an Event" button to add events and photos to the timeline.
+  Your baby's timeline will start at his/her birthday and every event will create a new tick on the timeline according to the date that you put in.
+  Woolli will store your photos and information so that you can always come back to reminisce about <%= @baby.name %>'s first steps.</p>
+  <br>
 </div>
 
 <% else %>
