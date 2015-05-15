@@ -17,6 +17,7 @@ body {
 .circle {
   background: white;
   border-radius: 50%;
+  border: 1px solid rgb(245, 234, 111);
   height: 50px;
   width: 50px;
   padding-top: 10px;
@@ -111,7 +112,7 @@ a.edit-link {
 }
 
 .new-user-image {
-  margin: 0 auto;
+  margin: 30px auto;
   display: block;
 }
 
