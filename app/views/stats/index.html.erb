@@ -45,6 +45,10 @@
 
 <hr>
 
+  <% if @stats == [] %>
+    <%= render partial: 'newStats' %>
+  <% end %>
+
 </div>
 
 <!-- canvas for stats graphs-->

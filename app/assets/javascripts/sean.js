@@ -48,6 +48,7 @@ $(function(){
     }).done(function(data){
       $('.baby-recent tbody').html(data);
       $('#myModal').modal('hide');
+      $('.first-timer-stats').remove();
     }).error(function(err){
       alert('Something Broke');
       console.log(err);
