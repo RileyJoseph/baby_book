@@ -26,7 +26,7 @@ class MediaController < ApplicationController
     # render json: params[:url]
     preloaded_array = params[:url]
 
-    if preloaded_array = []
+    if preloaded_array == []
       flash[:danger] = "Please add photos next time"
       new_baby_event_medium_path(@baby, @event)
     end
