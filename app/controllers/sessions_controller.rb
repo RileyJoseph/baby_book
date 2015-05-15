@@ -8,10 +8,8 @@ class SessionsController < ApplicationController
   def create
     @user = User.authenticate(params[:user][:email], params[:user][:password])
       if @user
-        # render json: @user
         session[:user_id] = @user.id
         session[:password_digest] = @user.password_digest
-        # render json: session
         flash[:success] = "Login Succesful!"
         redirect_to babies_path
       else
@@ -26,7 +24,4 @@ class SessionsController < ApplicationController
     flash[:info] = "User has logged out"
     redirect_to login_path
   end
-
-
-
 end
