@@ -260,27 +260,27 @@ $(function(){
     var monthsOld = parseInt(moment(stat[i].date).diff(moment(babyInfo.birthday),'months',true));
     // console.log(monthsOld)
     if(monthsOld < 0 || monthsOld > 36) continue;
-    MaleWeight.datasets[3].data[monthsOld-1] = stat[i].weight;
+    MaleWeight.datasets[3].data[monthsOld] = stat[i].weight;
   }
 
   // canvas 2 (male length)
   for (var j = 0; j < stat.length; j++){
     var monthsOld2 = parseInt(moment(stat[j].date).diff(moment(babyInfo.birthday),'months',true));
     if(monthsOld2 < 0 || monthsOld2 > 36) continue;
-    MaleLength.datasets[3].data[monthsOld2-1] = stat[j].height;
+    MaleLength.datasets[3].data[monthsOld2] = stat[j].height;
   }
 
   // canvas 3 (female length)
   for (var k = 0; k < stat.length; k++){
     var monthsOld3 = parseInt(moment(stat[k].date).diff(moment(babyInfo.birthday),'months',true));
     if(monthsOld3 < 0 || monthsOld3 > 36) continue;
-    FemaleLength.datasets[3].data[monthsOld3-1] = stat[k].height;
+    FemaleLength.datasets[3].data[monthsOld3] = stat[k].height;
   }
   // canvas 4 (female weight)
   for (var l = 0; l < stat.length; l++){
     var monthsOld4 = parseInt(moment(stat[l].date).diff(moment(babyInfo.birthday),'months',true));
     if(monthsOld4 < 0 || monthsOld4 > 36) continue;
-    FemaleWeight.datasets[3].data[monthsOld4-1] = stat[l].weight;
+    FemaleWeight.datasets[3].data[monthsOld4] = stat[l].weight;
   }
 
 });
