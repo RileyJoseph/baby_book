@@ -5,4 +5,4 @@ Woolli is an web application that allows you to commemorate your baby's progress
 
 ##Technologies
 Woolli was developed in a Ruby on Rails framework. It utilizes a variety of JavaScript libraries, including Timeline.js, Chart.js, and Moment.js, as well the Facebook and Cloudinary APIs.
-To view the site, visit, http://baby-book.herokuapp.com
+To view the site, visit: http://baby-book.herokuapp.com
